@@ -1,0 +1,7 @@
+workspace/**/.settings/
+.classpath
+.project
+workspace/**/.gitignore
+workspace/Servers/
+workspace/semiPrj/webapp/WEB-INF/lib/jstl-1.2.jar
+workspace/semiPrj/webapp/WEB-INF/lib/ojdbc8-21.8.0.0.jar
