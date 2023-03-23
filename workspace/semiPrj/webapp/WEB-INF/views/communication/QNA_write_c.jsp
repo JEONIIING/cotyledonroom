@@ -7,15 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COTYLEDON ROOM</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/membereditpage.css">
-    <link rel="stylesheet" href="./css/sidebar.css">
-    <link rel="stylesheet" href="./css/L_css.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
+    <link rel="stylesheet" href="/resources/css/common/sidebar.css">
+    <link rel="stylesheet" href="/resources/css/admin/L_css.css">
 </head>
 <body>
-            <%@ include file="./header_be.jsp" %>
-
-  <%@include file="./sidebar_com.jsp" %>
+  <%@ include file="/WEB-INF/views/common/header_be.jsp" %>
+  <%@include file="/WEB-INF/views/common/sidebar_com.jsp" %>
 
 <div class="aaaa">
 
@@ -46,17 +44,16 @@
                 </div>             
             </div>
             <div class="bt_wrap">
-                <a href="QNA_list_c.html" class="on">등록</a>
-                <a href="QNA_list_c.html">취소</a>
+                <a href="/communication/QNA_list_c" class="on">등록</a>
+                <a href="/communication/QNA_list_c">취소</a>
             </div>
         </div>
      </div>
   </div>
   
 
-</section>
 
-<%@include file="./footer.jsp" %>
+<%@include file="/WEB-INF/views/common/footer.jsp" %>
 
 
 

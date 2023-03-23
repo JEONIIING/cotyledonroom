@@ -12,13 +12,13 @@
 	<div id="sidebar">
         <div class="admin">게시판 목록</div>
         <ul>
-          <li><a href="./Notice_list_c.jsp">공지사항</a></li>
+          <li><a href="/communication/Notice_list_c">공지사항</a></li>
           <br>
-          <li><a href="./FAQ_list_c.jsp">FAQ</a></li>
+          <li><a href="/communication/FAQ_list_c">FAQ</a></li>
           <br>
-          <li><a href="./QNA_list_c.jsp">QNA</a></li>
+          <li><a href="/communication/QNA_list_c">QNA</a></li>
           <br>
-          <li><a href="./review_list.jsp">리뷰게시판</a></li>
+          <li><a href="">리뷰게시판</a></li>
         </ul>
       </div>
 

@@ -44,8 +44,9 @@
       <tr>
         <td colspan="2">
           <div class="find">
-            <a href="./missingId.jsp">아이디 찾기</a> | <a href="./missingPwd.jsp">비밀번호 찾기</a> | <a href="./agree.jsp">회원가입</a></td>
+            <a href="./missingId.jsp">아이디 찾기</a> | <a href="./missingPwd.jsp">비밀번호 찾기</a> | <a href="./agree.jsp">회원가입</a>
           </div>
+          </td>
       </tr>
   
     </table>

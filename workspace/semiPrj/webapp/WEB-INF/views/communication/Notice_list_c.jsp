@@ -7,15 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COTYLEDON ROOM</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/membereditpage.css">
-    <link rel="stylesheet" href="./css/sidebar.css">
-    <link rel="stylesheet" href="./css/L_css.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
+    <link rel="stylesheet" href="/resources/css/common/sidebar.css">
+    <link rel="stylesheet" href="/resources/css/admin/L_css.css">
 </head>
 <body>
-      <%@include file="./header_be.jsp" %>
-
-     <%@include file="./sidebar_com.jsp" %>
+      <%@include file="/WEB-INF/views/common/header_be.jsp" %>
+      <%@include file="/WEB-INF/views/common/sidebar_com.jsp" %>
 
 <div class="aaaa">
     <div class="board_wrap">
@@ -33,33 +31,33 @@
                 </div>
                 <div>
                     <div class="num">5</div>
-                    <div class="title"><a href="Notice_view_c.html">글 제목이 들어갑니다.</a></div>
+                    <div class="title"><a href="/communication/Notice_view_c">글 제목이 들어갑니다.</a></div>
                     <div class="writer">김이름</div>
                     <div class="date">2023.03.15</div>
                     <div class="count">33</div>
                 </div>
                 <div>
                     <div class="num">4</div>
-                    <div class="title"><a href="Notice_view_c.html">글 제목이 들어갑니다.</a></div>
+                    <div class="title"><a href="/communication/Notice_view_c">글 제목이 들어갑니다.</a></div>
                     <div class="writer">김이름</div>
                     <div class="date">2023.03.15</div>
                     <div class="count">33</div>
                 </div>                
                 <div>
                     <div class="num">3</div>
-                    <div class="title"><a href="Notice_view_c.html">글 제목이 들어갑니다.</a></div>
+                    <div class="title"><a href="/communication/Notice_view_c">글 제목이 들어갑니다.</a></div>
                     <div class="writer">김이름</div>
                     <div class="date">2023.03.15</div>
                     <div class="count">33</div>
                 </div>                <div>
                     <div class="num">2</div>
-                    <div class="title"><a href="Notice_view_c.html">글 제목이 들어갑니다.</a></div>
+                    <div class="title"><a href="/communication/Notice_view_c">글 제목이 들어갑니다.</a></div>
                     <div class="writer">김이름</div>
                     <div class="date">2023.03.15</div>
                     <div class="count">33</div>
                 </div>                <div>
                     <div class="num">1</div>
-                    <div class="title"><a href="Notice_view_c.html">글 제목이 들어갑니다.</a></div>
+                    <div class="title"><a href="/communication/Notice_view_c">글 제목이 들어갑니다.</a></div>
                     <div class="writer">김이름</div>
                     <div class="date">2023.03.15</div>
                     <div class="count">33</div>
@@ -85,9 +83,8 @@
   </div>
   <br><br><br><br><br>
 
-</section>
 
-   <%@ include file="./footer.jsp" %>
+   <%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
 
 
