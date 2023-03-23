@@ -21,7 +21,7 @@
 
         <div class="Menu-1">
           <div class="Menu"><a href="shop_list_main.jsp">ABOUT</a></div>
-          <div class="Menu"><a href="ProductList.jsp">MARKET</a></div>
+          <div class="Menu"><a href="/market/productlist">MARKET</a></div>
           <div class="Menu"><a href="/member/membership">MEMBERSHIP</a></div>
           <div class="Menu"><a href="rv_sellect01.jsp">RESERVATION</a></div>
           <div class="Menu"><a href="Notice_list_c.jsp">COMMUNICATION</a></div>
