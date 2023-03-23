@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COTYLEDON ROOM</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/join.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
+    <link rel="stylesheet" href="/resources/css/member/join.css">
 </head>
 <body>
-   <%@include file="./header_be.jsp" %>
+   <%@include file="/WEB-INF/views/common/header_be.jsp" %>
 
     <div style="padding-top: 5%;"></div>
       <div><h2>회원 가입</h2></div>
@@ -83,7 +83,7 @@
         <tr>
           <td colspan="2">
             <div class="find">
-            <a href="./login.jsp">로그인</a> | <a href="./missingPwd.jsp">비밀번호 찾기</a> </td>
+            <a href="/member/login">로그인</a> | <a href="/member/missingpwd">비밀번호 찾기</a> </td>
             </div>
         </tr>
     
@@ -91,7 +91,7 @@
     </form>
   </div>
 
-   <%@include file="./footer.jsp" %>
+   <%@include file="/WEB-INF/views/common/footer.jsp" %>
 
 
 

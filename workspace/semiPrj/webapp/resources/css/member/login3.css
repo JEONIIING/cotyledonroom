@@ -1,7 +1,7 @@
 
 .content{
   margin: auto;
-  --margin-top: 50px;
+  margin-top: 50px;
   border: 1px solid rgb(196, 196, 196);
   padding: 40px 40px;
   border-radius: 10px;
@@ -64,11 +64,4 @@ a{
 div{
   text-align: center;
   
-}
-.m_btn {
-	height: 30px;
-    background-color: #ededed;
-    border-color: #ededed;
-    font-size: 15px
-    cursor: pointer;
 }

@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COTYLEDON ROOM</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/css.css">
-    <link rel="stylesheet" href="./css/sidebar.css">
-    <link rel="stylesheet" href="./css/S_orderList.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
+    <link rel="stylesheet" href="/resources/css/common/css.css">
+    <link rel="stylesheet" href="/resources/css/common/sidebar.css">
+    <link rel="stylesheet" href="/resources/css/member/S_orderList.css">
 </head>
 <body>
-    <%@ include file="./header_af.jsp" %>
-    <%@ include file="./sidebar_my.jsp" %>
+    <%@ include file="/WEB-INF/views/common/header_af.jsp" %>
+    <%@ include file="/WEB-INF/views/common/sidebar_my.jsp" %>
 <br>
 <br>
 <div class="order_title">
@@ -41,8 +41,8 @@
             </div>
             <div>
                
-                <div class="num"><a href="./orderhistory.jsp">12345</a></div>
-                <div class="num"><a href="./orderhistory.jsp">샴푸</a></div>
+                <div class="num"><a href="/member/orderhistory">12345</a></div>
+                <div class="num"><a href="/member/orderhistory">샴푸</a></div>
                 <div class="num">1</div>
                 <div class="num">500,000</div>
                 <div class="num">2023.03.16</div>
@@ -91,7 +91,7 @@
 </div>
 
 
-   <%@ include file="./footer.jsp" %>
+   <%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
 
 
