@@ -1,4 +1,4 @@
-package com.coty.app.member.controller;
+package coty.member.controller;
 
 import java.io.IOException;
 
