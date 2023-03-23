@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>디자이너 계정 양식</title>
+    <title>관리자 페이지</title>
     <link rel="stylesheet" href="/resources/css/admin/a_admin.css">
     <link rel="stylesheet" href="/resources/css/admin/a_main.css">
     <link rel="stylesheet" href="/resources/css/admin/a_designerForm.css">

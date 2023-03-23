@@ -15,7 +15,7 @@
     
   </header>
   
-  <img class="menu-icon" id="sidearea" src="./image/134216_menu_lines_hamburger_icon.png" alt="이미지">
+  <img class="menu-icon" id="sidearea" src="/resources/image/134216_menu_lines_hamburger_icon.png" alt="이미지">
   
   <div id="sidebar" style="margin-top: 20px;">
     <div class="admin">ADMIN</div>
