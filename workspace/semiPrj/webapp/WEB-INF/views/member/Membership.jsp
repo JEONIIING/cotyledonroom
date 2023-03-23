@@ -7,15 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>멤버쉽</title>
-    <link rel="stylesheet" href="./css/membershipstyle.css">
-    <link rel="stylesheet" href="./css/sidebar.css">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="/resources/css/member/membershipstyle.css">
+    <link rel="stylesheet" href="/resources/css/common/sidebar.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
 </head>
 <body>
-<%@include file="./header_af.jsp" %>
+<%@include file="/WEB-INF/views/common/header_be.jsp" %>
 <br><br><br><br><br>
     <div>
-      <img src="./image/membershipcard.png" alt="" width="350px">
+      <img src="/resources/image/membershipcard.png" alt="" width="350px">
       </div>
       <br><br>
       <div class="membership">
@@ -28,9 +28,9 @@
         <table class="order_table">
           <tr>
             <td>등급</td>
-            <td><img src="./image/멤버쉽 실버 영역.png" alt="" width="100px"></td>
-            <td><img src="./image/멤버쉽 골드영역.png" alt="" width="100px"></td>
-            <td><img src="./image/멤버쉽 다이아몬드영역.png" alt="" width="130px"></td>
+            <td><img src="/resources/image/멤버쉽 실버 영역.png" alt="" width="100px"></td>
+            <td><img src="/resources/image/멤버쉽 골드영역.png" alt="" width="100px"></td>
+            <td><img src="/resources/image/멤버쉽 다이아몬드영역.png" alt="" width="130px"></td>
           </tr>
           <tr>
             <td>기준</td>
@@ -56,6 +56,6 @@
         </table>
       </div>
       <br><br><br>
-   <%@include file="./footer.jsp" %>
+   <%@include file="/WEB-INF/views/common/footer.jsp" %>
 </body>
 </html>
