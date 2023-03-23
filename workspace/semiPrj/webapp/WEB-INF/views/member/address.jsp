@@ -7,16 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COTYLEDON ROOM</title>
-	<link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/css.css">
-    <link rel="stylesheet" href="./css/sidebar.css">
-    <link rel="stylesheet" href="./css/S_orderList.css">
+	<link rel="stylesheet" href="/resources/css/common/main.css">
+    <link rel="stylesheet" href="/resources/css/common/css.css">
+    <link rel="stylesheet" href="/resources/css/common/sidebar.css">
+    <link rel="stylesheet" href="/resources/css/member/S_orderList.css">
     
 </head>
 <body>
 
-	<%@include file="./header_af.jsp" %>
-	<%@include file="./sidebar_my.jsp" %>
+	<%@include file="/WEB-INF/views/common/header_af.jsp" %>
+	<%@include file="/WEB-INF/views/common/sidebar_my.jsp" %>
    
    
 <br>
@@ -51,7 +51,7 @@
                     <td>강원도 원주시 00fh 304 (00동, 00아파트) 00동 000호 </td>
                 </tr>
                 <tr>
-                    <td style="padding-top: 2%;"><button><a href="./addressedit.jsp">수정</a></button> 
+                    <td style="padding-top: 2%;"><button><a href="/member/addressedit">수정</a></button> 
                     <span><button>삭제</button> </span> </td>
                 </tr>
                 </table>
@@ -119,14 +119,14 @@
 
 
         <div class="bt_wrap">
-            <a href="./addressenroll.jsp" class="on">등록</a>
-            <!-- <a href="#">수정</a> -->
+            <a href="/member/addressenroll" class="on">등록</a>
+           
         </div>
     </div>
 </div>
 
 
-   	<%@include file="./footer.jsp" %>
+   	<%@include file="/WEB-INF/views/common/footer.jsp" %>
 
 
 

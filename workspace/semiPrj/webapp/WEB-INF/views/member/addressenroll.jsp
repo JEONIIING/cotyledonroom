@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COTYLEDON ROOM</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/sidebar.css">
-    <link rel="stylesheet" href="./css/S_orderList.css">
-    <link rel="stylesheet" href="./css/L_css.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
+    <link rel="stylesheet" href="/resources/css/common/sidebar.css">
+    <link rel="stylesheet" href="/resources/css/member/S_orderList.css">
+    <link rel="stylesheet" href="/resources/css/admin/L_css.css">
 </head>
 <body>
-  <%@include file="./header_af.jsp" %>
-    <%@include file="./sidebar_my.jsp" %>
+  <%@include file="/WEB-INF/views/common/header_af.jsp" %>
+    <%@include file="/WEB-INF/views/common/sidebar_my.jsp" %>
 <br>
 <br>
 <div class="order_title">
@@ -69,7 +69,7 @@
 </div>
 <br><br><br><br>
 
-   <%@include file="./footer.jsp" %>
+   <%@include file="/WEB-INF/views/common/footer.jsp" %>
 
 
 

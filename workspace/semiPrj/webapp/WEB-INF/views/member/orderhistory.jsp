@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COTYLEDON ROOM</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/css.css">
-    <link rel="stylesheet" href="./css/sidebar.css">
-    <link rel="stylesheet" href="./css/S_orderhistory.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
+    <link rel="stylesheet" href="/resources/css/common/css.css">
+    <link rel="stylesheet" href="/resources/css/common/sidebar.css">
+    <link rel="stylesheet" href="/resources/css/member/S_orderhistory.css">
 
 </head>
-   <%@include file="./header_af.jsp" %>
-    <%@include file="./sidebar_my.jsp" %>
+   <%@include file="/WEB-INF/views/common/header_af.jsp" %>
+   <%@include file="/WEB-INF/views/common/sidebar_my.jsp" %>
 <br>
 <br>
 <div class="order_title">
@@ -34,17 +34,17 @@
             <div style="width: 900px; overflow: hidden;">
               <table id="banner" style="width: 250px;">
                 <tr>
-                  <td><img src="./image/누베스 알바 600ml.png" ></td>
-                  <td><img src="./image/레조나레 100ml.png"></td>
-                  <td><img src="./image/미티스 100ml.png"></td>
-                  <td><img src="./image/누베스 알바 600ml.png"></td>
-                  <td><img src="./image/레조나레 100ml.png"></td>
-                  <td><img src="./image/미티스 100ml.png"></td>
+                  <td><img src="/resources/image/누베스 알바 600ml.png" ></td>
+                  <td><img src="/resources/image/레조나레 100ml.png"></td>
+                  <td><img src="/resources/image/미티스 100ml.png"></td>
+                  <td><img src="/resources/image/누베스 알바 600ml.png"></td>
+                  <td><img src="/resources/image/레조나레 100ml.png"></td>
+                  <td><img src="/resources/image/미티스 100ml.png"></td>
                 </tr>
               </table>
               <div>
-              <button onclick="moveRight()" style="float: left;"><img src="./image/back_arrow_icon.png" alt="" style="width: 20px;"></button>
-              <button onclick="moveLeft()" style="float: right;"><img src="./image/forward_arrow_icon.png" alt="" style="width: 20px;"></button></div>
+              <button onclick="moveRight()" style="float: left;"><img src="/resources/image/back_arrow_icon.png" alt="" style="width: 20px;"></button>
+              <button onclick="moveLeft()" style="float: right;"><img src="/resources/image/forward_arrow_icon.png" alt="" style="width: 20px;"></button></div>
             </div>
             </div>
             </div>
@@ -153,7 +153,7 @@
     </div>
 </div>
 </div>
-<%@include file="./footer.jsp" %>
+<%@include file="/WEB-INF/views/common/footer.jsp" %>
 
 </body>
 </html>

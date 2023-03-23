@@ -12,7 +12,7 @@
             <div class="Title"><a  href = "./Main.jsp">COTYLEDON ROOM</a></div>
             <div class="abc-right">
             <div class="abc-menu"><a href = "./Cart.jsp">CART&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
-            <div class="abc-menu"><a href = "./memberedit.jsp">MYPAGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div> 
+            <div class="abc-menu"><a href = "/member/memberedit">MYPAGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div> 
             <div class="abc-menu"><a href = "./login.jsp">LOGOUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div> 
             </div>
         </div>
