@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COTYLEDON ROOM</title>
-    <link rel="stylesheet" href="resources/css/common/main.css">
-    <link rel="stylesheet" href="resources/css/common/login4.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
+    <link rel="stylesheet" href="/resources/css/member/login4.css">
 </head>
 <body>
    <%@include file="/WEB-INF/views/common/header_be.jsp" %>
@@ -54,7 +54,7 @@
 	<script>
 		${loginfailMsg}
 	</script>
+	
 	<c:remove var="${loginfailMsg}"/>
-
 </body>
 </html>
