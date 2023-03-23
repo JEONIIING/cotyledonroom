@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COTYLEDON ROOM</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/login4.css">
+    <link rel="stylesheet" href="resources/css/common/main.css">
+    <link rel="stylesheet" href="resources/css/common/login4.css">
 </head>
 <body>
-   <%@include file="./header_be.jsp" %>
-
+   <%@include file="/WEB-INF/views/common/header_be.jsp" %>
+	
     <div style="padding-top: 5%;">
-      <h2>로그인</h2>
+      <h2>관리자 로그인</h2>
   </div>
   <div class="red_bar"></div>
   
@@ -23,12 +23,12 @@
  
  	<a href="./login_M.jsp"><button style="width: 163px" class="m_btn">회원</button></a>
 	<a href="./login_D.jsp"><button style="width: 163px" class="m_btn">디자이너</button></a>
-	<a href="./login_A.jsp"><button style="width: 163px" class="m_btn">관리자</button></a>
+	<a href="/admin/login"><button style="width: 163px" class="m_btn">관리자</button></a>
   
   
   </div>
   
-  <form action="" method="post">
+  <form action="/admin/Notice_list" method="post">
     <table class="content">
       <tr>
         <td class="text">아이디</td>
@@ -49,9 +49,12 @@
     </table>
   </form>
 
-    <%@include file="./footer.jsp" %>
+    <%@include file="/WEB-INF/views/common/footer.jsp" %>
 
-
+	<script>
+		${loginfailMsg}
+	</script>
+	<c:remove var="${loginfailMsg}"/>
 
 </body>
 </html>
