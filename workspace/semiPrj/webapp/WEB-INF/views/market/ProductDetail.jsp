@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상품목록</title>
-    <link rel="stylesheet" href="./css/product.css">
-    <link rel="stylesheet" href="./css/sidebar.css">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="/resources/css/market/product.css">
+    <link rel="stylesheet" href="/resources/css/common/sidebar.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
 </head>
 <body>
-<%@include file="./header_af.jsp" %>
+<%@include file="/WEB-INF/views/common/header_be.jsp" %>
       
-<%@include file="./sidebar_mk.jsp" %>
+<%@include file="/WEB-INF/views/common/sidebar_mk.jsp" %>
 
     <div>
       <h1>MARKET</h1>
@@ -26,7 +26,7 @@
                 <td>
                         <div class="detail" style="display: inline-block;">
                         <div >
-                        <a href="./ProductList.jsp" class="btnback"><span>BACK TO SHOP</span></a><br><br>
+                        <a href="/market/productlist" class="btnback"><span>BACK TO SHOP</span></a><br><br>
                         <h1 class="title">베레 플루비아 600ml - 민감성 두피용 샴푸</h1><br>
                         <p class="price">65,000원</p><br>
                         <div class="txtbox">
@@ -49,7 +49,7 @@
                                 </tr>
                             </div></div><br><br><br></div></div></td>
                             <td>
-                                <img src="./image/상품상세사진/베레플루비아상세.png" alt="">
+                                <img src="/resources/image/product/베레플루비아상세.png" alt="">
                             </td>
                         </tr>
                         </div>
@@ -121,13 +121,12 @@
                 </div>
 
         <div class="detail_img">
-            <div class="prodviewEdit"><img src="./image/상품상세사진/설명1.png" alt=""></div>
-            <div class="prodviewEdit"><img src="./image/상품상세사진/설명2.png" alt=""></div>
-            <div class="prodviewEdit"><img src="./upload/marketproduct/202102/e46aefd932d84eb88847c1e23af02cb3.png" alt=""></div>
+            <div class="prodviewEdit"><img src="/resources/image/product/설명1.png" alt=""></div>
+            <div class="prodviewEdit"><img src="/resources/image/product/설명2.png" alt=""></div>
         </div></div>
     </div>
 
-   <%@include file="./footer.jsp" %>
-
+<%@include file="/WEB-INF/views/common/footer.jsp" %>
+      
   </body>
 </html>

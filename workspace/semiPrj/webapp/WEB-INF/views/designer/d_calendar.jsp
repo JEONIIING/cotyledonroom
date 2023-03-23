@@ -7,15 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COTYLEDON ROOM</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/sidebar.css">
-    <link rel="stylesheet" href="./css/d_calendar.css">
-    <link rel="stylesheet" href="./css/css.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
+    <link rel="stylesheet" href="/resources/css/common/sidebar.css">
+    <link rel="stylesheet" href="/resources/css/designer/d_calendar.css">
+    <link rel="stylesheet" href="/resources/css/common/css.css">
 </head>
 <body>
-<%@include file="./header_af.jsp" %>
+<%@include file="/WEB-INF/views/common/header_de.jsp" %>
 
-<%@include file="./sidebar_de.jsp" %>
 
 <br>
 <br>
@@ -50,9 +49,9 @@
 <div class="back"></div>
 
 
-    <%@include file="./footer.jsp" %>
+    <%@include file="/WEB-INF/views/common/footer.jsp" %>
 
-    <script src="./js/calendar.js"></script>
+    <script src="/resources/js/calendar.js"></script>
 
 </body>
 </html>

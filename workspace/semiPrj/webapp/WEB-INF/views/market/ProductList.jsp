@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상품목록</title>
-    <link rel="stylesheet" href="/css/productListstyle.css">
-    <link rel="stylesheet" href="/css/sidebar.css">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/resources/css/market/productListstyle.css">
+    <link rel="stylesheet" href="/resources/css/common/sidebar.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
 </head>
 <body>
-<%@include file="/header_af.jsp" %>
+<%@include file="/WEB-INF/views/common/header_be.jsp" %>
       
-<%@include file="/sidebar_mk.jsp" %>
+<%@include file="/WEB-INF/views/common/sidebar_mk.jsp" %>
 
     <div>
         <h1>MARKET</h1>
@@ -25,10 +25,10 @@
         <table cellspacing ="50">
           <tr><td><div class="menu">SHAMPOO</div></td></tr>
           <tr>
-            <td><a href=""><img src="./image/누베스 알바 600ml.png" alt=""></a></td>
-            <td><a href=""><img src="./image/로제아 하비투 600ml.png" alt=""></a></td>
-            <td><a href="./ProductDetail.jsp"><img src="./image/베레 플루비아 600ml.png" alt=""></a></td>
-            <td><a href=""><img src="./image/포스트 플루비아 600ml - 지성두피용 샴푸.png" alt=""></a></td>
+            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img src="/resources/image/누베스 알바 600ml.png" alt=""></a></td>
+            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img src="/resources/image/로제아 하비투 600ml.png" alt=""></a></td>
+            <td><a href="/market/productdetail"><img src="/resources/image/베레 플루비아 600ml.png" alt=""></a></td>
+            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img src="/resources/image/포스트 플루비아 600ml - 지성두피용 샴푸.png" alt=""></a></td>
           </tr>
           <tr class="product_name">
             <td><a>누베스 알바 600ml</a></td>
@@ -38,8 +38,8 @@
           </tr>
           <tr><td><div class="menu">TREATMENT</div></td></tr>
           <tr>
-            <td><a href=""><img class="product_img" src="./image/몰리스마레 150ml -트리트먼트.png" alt=""></a></td>
-            <td><a href=""><img class="product_img" src="./image/몰리스마레 450ml -트리트먼트.png" alt=""></a></td>
+            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/몰리스마레 150ml -트리트먼트.png" alt=""></a></td>
+            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/몰리스마레 450ml -트리트먼트.png" alt=""></a></td>
           </tr>
           <tr class="product_name">
             <td><a>몰리스마레 150ml</a></td>
@@ -47,10 +47,10 @@
           </tr>
           <tr><td><div class="menu">STYLING</div></td></tr>
           <tr>
-            <td><a href=""><img class="product_img" src="./image/네불라 115g - 헤어 무스 에센스.png" alt=""></a></td>
-            <td><a href=""><img class="product_img" src="./image/레조나레 200ml.png" alt=""></a></td>
-            <td><a href=""><img class="product_img" src="./image/세도 심플렉스 45g.png" alt=""></a></td>
-            <td><a href=""><img class="product_img" src="./image/테네레 템푸스 45g.png" alt=""></a></td>
+            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/네불라 115g - 헤어 무스 에센스.png" alt=""></a></td>
+            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/레조나레 200ml.png" alt=""></a></td>
+            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/세도 심플렉스 45g.png" alt=""></a></td>
+            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/테네레 템푸스 45g.png" alt=""></a></td>
           </tr>
           <tr class="product_name">
             <td><a>네불라 115g</a></td>
@@ -60,9 +60,9 @@
           </tr>
           <tr><td><div class="menu">ESSENCE</div></td></tr>
           <tr>
-            <td><a href=""><img class="product_img" src="./image/칼리고 150ml - 두피 에센스.png" alt=""></a></td>
-            <td><a href=""><img class="product_img" src="./image/레미시오 100ml.png" alt=""></a></td>
-            <td><a href=""><img class="product_img" src="./image/미티스 100ml.png" alt=""></a></td>
+            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/칼리고 150ml - 두피 에센스.png" alt=""></a></td>
+            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/레미시오 100ml.png" alt=""></a></td>
+            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/미티스 100ml.png" alt=""></a></td>
           </tr>
           <tr class="product_name">
             <td><a>칼리고 150ml</a></td>
@@ -71,8 +71,8 @@
           </tr>
           <tr><td><div class="menu">MACHINE</div></td></tr>
           <tr>
-            <td><a href=""><img class="product_img" src="./image/다이슨 고데기.png" alt=""></a></td>
-            <td><a href=""><img class="product_img" src="./image/다이슨 헤어드라이기.png" alt=""></a></td>
+            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/다이슨 고데기.png" alt=""></a></td>
+            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/다이슨 헤어드라이기.png" alt=""></a></td>
           </tr>
           <tr class="product_name">
             <td><a>다이슨 고데기</a></td>
@@ -81,7 +81,7 @@
     </table>
 </section>
 
-<%@include file="./footer.jsp" %>
+<%@include file="/WEB-INF/views/common/footer.jsp" %>
 
   </body>
 </html>
