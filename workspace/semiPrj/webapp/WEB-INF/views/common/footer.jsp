@@ -13,9 +13,9 @@
       이용약관 |  개인정보처리방침&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
       COTYLEDONROOM@cotyledon.kr Copyright © All Rights reserved.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
       <li class="right">
-          <a  href = "https://www.instagram.com/"><img alt = "image" src = "./resources/image\instagram.png" width= 25px; height=25px; ></a> &nbsp;
-          <a  href = "https://ko-kr.facebook.com/"><img alt = "image" src = "./resources/image\facebook.png" width= 25px; height=25px; ></a> &nbsp;
-          <a  href = "https://www.youtube.com/"><img alt = "image" src = "./resources/image\youtube.png" width= 25px; height=25px; >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>
+          <a  href = "https://www.instagram.com/"><img alt = "image" src = "/resources/image\instagram.png" width= 25px; height=25px; ></a> &nbsp;
+          <a  href = "https://ko-kr.facebook.com/"><img alt = "image" src = "/resources/image\facebook.png" width= 25px; height=25px; ></a> &nbsp;
+          <a  href = "https://www.youtube.com/"><img alt = "image" src = "/resources/image\youtube.png" width= 25px; height=25px; >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>
       </li>
   </p>
 </footer>
