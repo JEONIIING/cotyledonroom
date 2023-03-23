@@ -10,7 +10,7 @@
 <body>
 	<header style="margin:1.5%">
     <div class="abc">
-      <div class="Title"><a  href = "./Main.jsp">COTYLEDON ROOM</a></div>
+      <div class="Title"><a  href = "/">COTYLEDON ROOM</a></div>
     </div>
     
   </header>
