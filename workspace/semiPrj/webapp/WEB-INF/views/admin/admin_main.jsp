@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>디자이너 계정 양식</title>
-    <link rel="stylesheet" href="./css/admin.css">
-    <link rel="stylesheet" href="./css/a_main.css">
-    <link rel="stylesheet" href="./css/designerForm.css">
+    <link rel="stylesheet" href="/resources/css/admin/admin.css">
+    <link rel="stylesheet" href="/resources/css/admin/a_main.css">
+    <link rel="stylesheet" href="/resources/css/admin/designerForm.css">
 </head>
 
 <body>

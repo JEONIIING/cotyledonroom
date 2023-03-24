@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상품목록</title>
-    <link rel="stylesheet" href="./css/productListstyle.css">
-    <link rel="stylesheet" href="./css/sidebar.css">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="/resources/css/market/productListstyle.css">
+    <link rel="stylesheet" href="/resources/css/common/sidebar.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
 </head>
 <body>
-<%@include file="./header_af.jsp" %>
+<%@include file="/WEB-INF/views/common/header_be.jsp" %>
       
-<%@include file="./sidebar_mk.jsp" %>
+<%@include file="/WEB-INF/views/common/sidebar_mk.jsp" %>
     <div>
         <h1>MARKET</h1>
     </div>
@@ -24,10 +24,10 @@
         <table cellspacing ="50">
           <tr><td><div class="menu">SHAMPOO</div></td></tr>
           <tr>
-            <td><a href=""><img src="./image/누베스 알바 600ml.png" alt=""></a></td>
-            <td><a href=""><img src="./image/로제아 하비투 600ml.png" alt=""></a></td>
-            <td><a href=""><img src="./image/베레 플루비아 600ml.png" alt=""></a></td>
-            <td><a href=""><img src="./image/포스트 플루비아 600ml - 지성두피용 샴푸.png" alt=""></a></td>
+            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img src="/resources/image/누베스 알바 600ml.png" alt=""></a></td>
+            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img src="/resources/image/로제아 하비투 600ml.png" alt=""></a></td>
+            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img src="/resources/image/베레 플루비아 600ml.png" alt=""></a></td>
+            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img src="/resources/image/포스트 플루비아 600ml - 지성두피용 샴푸.png" alt=""></a></td>
           </tr>
           <tr class="product_name">
             <td><a>누베스 알바 600ml</a></td>
@@ -38,7 +38,6 @@
     </table>
 </section>
 
-<%@include file="./footer.jsp" %>
-
+<%@include file="/WEB-INF/views/common/footer.jsp" %>
   </body>
 </html>

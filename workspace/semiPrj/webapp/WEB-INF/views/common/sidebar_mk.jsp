@@ -7,18 +7,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <img id="sidearea" class="menu-icon" src="./image/134216_menu_lines_hamburger_icon.png" alt="이미지">
+    <img id="sidearea" class="menu-icon" src="/resources/image/134216_menu_lines_hamburger_icon.png" alt="이미지">
     <br>
 	<div id="sidebar">
           <h2>MARKET</h2>
         
           <ul>
-            <li><a href="./ProductList.jsp">ALL</a></li>
-            <li><a href="./shampoo.jsp">SHAMPOO</a></li>
-            <li><a href="./treatment.jsp">TREATMENT</a></li>
-            <li><a href="./styling.jsp">STYLING</a></li>
-            <li><a href="./essence.jsp">ESSENCE</a></li>
-            <li><a href="./machine.jsp">MACHINE</a></li>
+            <li><a href="/market/productlist">ALL</a></li>
+            <li><a href="/market/shampoo">SHAMPOO</a></li>
+            <li><a href="/market/treatment">TREATMENT</a></li>
+            <li><a href="/market/styling">STYLING</a></li>
+            <li><a href="/market/essence">ESSENCE</a></li>
+            <li><a href="/market/machine">MACHINE</a></li>
           </ul>
         </div>
         <script>

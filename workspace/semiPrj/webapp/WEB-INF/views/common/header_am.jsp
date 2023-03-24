@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,12 +10,12 @@
 <body>
 	<header style="margin:1.5%">
     <div class="abc">
-      <div class="Title"><a  href = "./Main.jsp">COTYLEDON ROOM</a></div>
+      <div class="Title"><a  href = "/">COTYLEDON ROOM</a></div>
     </div>
     
   </header>
   
-  <img class="menu-icon" id="sidearea" src="./image/134216_menu_lines_hamburger_icon.png" alt="이미지">
+  <img class="menu-icon" id="sidearea" src="/resources/image/134216_menu_lines_hamburger_icon.png" alt="이미지">
   
   <div id="sidebar" style="margin-top: 20px;">
     <div class="admin">ADMIN</div>

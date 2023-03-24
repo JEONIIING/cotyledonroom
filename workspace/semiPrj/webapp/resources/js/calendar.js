@@ -11,8 +11,7 @@ const data = [
   // 데이터 가공
   const calendarList = data.reduce(
     (acc, v) => 
-      ({ ...acc, [v.date]: [...(acc[v.date] || []), v.content] })
-    , {}
+      ({ ...acc, [v.date]: [...(acc[v.date] || []), v.content] })   , {}
   );
   
   // pad method

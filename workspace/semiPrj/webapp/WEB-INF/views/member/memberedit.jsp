@@ -7,13 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COTYLEDON ROOM</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/S_membereditpage.css">
-    <link rel="stylesheet" href="./css/sidebar.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
+    <link rel="stylesheet" href="/resources/css/member/S_membereditpage.css">
+    <link rel="stylesheet" href="/resources/css/common/sidebar.css">
 </head>
 <body>
-    <%@include file="./header_af.jsp" %>
-    <%@include file="./sidebar_my.jsp" %>
+    <%@include file="/WEB-INF/views/common/header_af.jsp" %>
+    <%@include file="/WEB-INF/views/common/sidebar_my.jsp" %>
 
 <div>
 <h2>회원 정보</h2>
@@ -77,7 +77,7 @@
 
 </section>
 
-    <%@include file="./footer.jsp" %>
+    <%@include file="/WEB-INF/views/common/footer.jsp" %>
 
 
 

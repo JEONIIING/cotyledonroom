@@ -7,23 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COTYLEDON ROOM</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/login4.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
+    <link rel="stylesheet" href="/resources/css/member/login4.css">
 </head>
 <body>
-   <%@include file="./header_be.jsp" %>
+   <%@include file="/WEB-INF/views/common/header_be.jsp" %>
 
     <div style="padding-top: 5%;">
-      <h2>로그인</h2>
+      <h2>회원 로그인</h2>
   </div>
   <div class="red_bar"></div>
   
   <div style="padding-top: auto;  margin: auto;" >
   
  
-	<a href="./login_M.jsp"><button style="width: 163px" class="m_btn">회원</button></a>
-	<a href="./login_D.jsp"><button style="width: 163px" class="m_btn">디자이너</button></a>
-	<a href="./login_A.jsp"><button style="width: 163px" class="m_btn">관리자</button></a>
+	<a href="/member/login"><button style="width: 163px" class="m_btn">회원</button></a>
+	<a href="/designer/login"><button style="width: 163px" class="m_btn">디자이너</button></a>
+	<a href="/admin/login"><button style="width: 163px" class="m_btn">관리자</button></a>
   
   
   </div>
@@ -44,14 +44,14 @@
       <tr>
         <td colspan="2">
           <div class="find">
-            <a href="./missingId.jsp">아이디 찾기</a> | <a href="./missingPwd.jsp">비밀번호 찾기</a> | <a href="./agree.jsp">회원가입</a></td>
+            <a href="/member/missingid">아이디 찾기</a> | <a href="/member/missingpwd">비밀번호 찾기</a> | <a href="/member/agree">회원가입</a></td>
           </div>
       </tr>
   
     </table>
   </form>
 
-    <%@include file="./footer.jsp" %>
+    <%@include file="/WEB-INF/views/common/footer.jsp" %>
 
 
 
