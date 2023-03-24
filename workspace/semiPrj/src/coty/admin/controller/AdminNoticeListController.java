@@ -1,4 +1,4 @@
-package coty.admin.contoller;
+package coty.admin.controller;
 
 import java.io.IOException;
 
