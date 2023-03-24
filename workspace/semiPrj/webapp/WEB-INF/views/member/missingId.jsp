@@ -36,7 +36,7 @@
       <tr>
         <td colspan="2">
           <div class="find">
-            <a href="/member/login">로그인</a> | <a href="/member/missing">비밀번호 찾기</a> | <a href="/member/agree">회원가입</a></td>
+            <a href="/member/login">로그인</a> | <a href="/member/missingpwd">비밀번호 찾기</a> | <a href="/member/agree">회원가입</a></td>
           </div>
       </tr>
   

@@ -14,7 +14,7 @@
    <%@include file="/WEB-INF/views/common/header_be.jsp" %>
 
     <div style="padding-top: 5%;">
-      <h2>로그인</h2>
+      <h2>회원 로그인</h2>
   </div>
   <div class="red_bar"></div>
   
