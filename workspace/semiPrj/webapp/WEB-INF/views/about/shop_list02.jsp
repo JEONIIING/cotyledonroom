@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/shop_list.css">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="/resources/css/common/shop_list.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
     <style>
         
     </style>
@@ -16,7 +16,7 @@
 </head>
 <body>
 
-    <%@ include file="./header_be.jsp" %>
+    <%@ include file="/WEB-INF/views/common/header_be.jsp" %>
 
     <br><br><br>
     <div class="introduce" id="introduce1">COTYLEDON ROOM 강남점</div>
@@ -34,10 +34,10 @@
     <div id="divtable">
     <table class="designer-table">
         <tr class="designer">
-            <td><img src="./image/shop1.png" alt=""></td>
-            <td><img src="./image/shop1.png" alt=""></td>
-            <td><img src="./image/shop1.png" alt=""></td>
-            <td><img src="./image/shop1.png" alt=""></td>
+            <td><img src="/resources/image/shop1.png" alt=""></td>
+            <td><img src="/resources/image/shop1.png" alt=""></td>
+            <td><img src="/resources/image/shop1.png" alt=""></td>
+            <td><img src="/resources/image/shop1.png" alt=""></td>
         </tr>
         <tr class="designer-name">
             <td><p>구준표 디자이너</p></td>
@@ -46,16 +46,16 @@
             <td><p>구준표 디자이너</p></td>
         </tr>
         <tr class="sns">
-            <td><a href="#"><img src="./image/instagram.png" alt=""></a><a href="#"><img src="/image/facebook.png" alt=""></a></td>
-            <td><a href="#"><img src="./image/instagram.png" alt=""></a><a href="#"><img src="/image/facebook.png" alt=""></a></td>
-            <td><a href="#"><img src="./image/instagram.png" alt=""></a><a href="#"><img src="/image/facebook.png" alt=""></a></td>
-            <td><a href="#"><img src="./image/instagram.png" alt=""></a><a href="#"><img src="/image/facebook.png" alt=""></a></td>
+            <td><a href="#"><img src="/resources/image/instagram.png" alt=""></a><a href="#"><img src="/resources/image/facebook.png" alt=""></a></td>
+            <td><a href="#"><img src="/resources/image/instagram.png" alt=""></a><a href="#"><img src="/resources/image/facebook.png" alt=""></a></td>
+            <td><a href="#"><img src="/resources/image/instagram.png" alt=""></a><a href="#"><img src="/resources/image/facebook.png" alt=""></a></td>
+            <td><a href="#"><img src="/resources/image/instagram.png" alt=""></a><a href="#"><img src="/resources/image/facebook.png" alt=""></a></td>
         </tr>
         <tr class="designer">
-            <td><img src="./image/shop1.png" alt=""></td>
-            <td><img src="./image/shop1.png" alt=""></td>
-            <td><img src="./image/shop1.png" alt=""></td>
-            <td><img src="./image/shop1.png" alt=""></td>
+            <td><img src="/resources/image/shop1.png" alt=""></td>
+            <td><img src="/resources/image/shop1.png" alt=""></td>
+            <td><img src="/resources/image/shop1.png" alt=""></td>
+            <td><img src="/resources/image/shop1.png" alt=""></td>
         </tr>
         <tr class="designer-name">
             <td><p>구준표 디자이너</p></td>
@@ -64,15 +64,15 @@
             <td><p>구준표 디자이너</p></td>
         </tr>
         <tr class="sns">
-            <td><a href="#"><img src="./image/instagram.png" alt=""></a><a href="#"><img src="/image/facebook.png" alt=""></a></td>
-            <td><a href="#"><img src="./image/instagram.png" alt=""></a><a href="#"><img src="/image/facebook.png" alt=""></a></td>
-            <td><a href="#"><img src="./image/instagram.png" alt=""></a><a href="#"><img src="/image/facebook.png" alt=""></a></td>
-            <td><a href="#"><img src="./image/instagram.png" alt=""></a><a href="#"><img src="/image/facebook.png" alt=""></a></td>
+            <td><a href="#"><img src="/resources/image/instagram.png" alt=""></a><a href="#"><img src="/resources/image/facebook.png" alt=""></a></td>
+            <td><a href="#"><img src="/resources/image/instagram.png" alt=""></a><a href="#"><img src="/resources/image/facebook.png" alt=""></a></td>
+            <td><a href="#"><img src="/resources/image/instagram.png" alt=""></a><a href="#"><img src="/resources/image/facebook.png" alt=""></a></td>
+            <td><a href="#"><img src="/resources/image/instagram.png" alt=""></a><a href="#"><img src="/resources/image/facebook.png" alt=""></a></td>
         </tr>
     </table>
     </div>
 
-	<%@ include file="./footer.jsp" %>
+	<%@ include file="/WEB-INF/views/common/footer.jsp" %>
     
 
 </body>

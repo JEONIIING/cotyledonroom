@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COTYLEDON ROOM</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/rv_form.css">
-    <link rel="stylesheet" href="./css/rv_sellect05.css">
-    <link rel="stylesheet" href="./css/sidebar.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
+    <link rel="stylesheet" href="/resources/css/reservation/rv_form.css">
+    <link rel="stylesheet" href="/resources/css/reservation/rv_sellect05.css">
+    <link rel="stylesheet" href="/resources/css/common/sidebar.css">
     
     <style>
         
@@ -18,8 +18,8 @@
 </head>
 <body>
 
-	<%@ include file="./header_af.jsp" %>
-    <%@ include file="./sidebar_my.jsp" %>
+	<%@ include file="/WEB-INF/views/common/header_af.jsp" %>
+    <%@ include file="/WEB-INF/views/common/sidebar_my.jsp" %>
     
 
     <div class="rv_word">
@@ -51,7 +51,7 @@
             </colgroup>
             <tr>
                 <td rowspan="5">
-                    <img src="./image/shop3.jpg" alt="image" style="width: 300px; height: 300px; float: left;">
+                    <img src="/resources/image/shop3.jpg" alt="image" style="width: 300px; height: 300px; float: left;">
                     <br><br><br>
                     <h2>김승우 디자이너</h2>
                     <br>
@@ -89,7 +89,7 @@
 
         <div style="text-align: center;">
             <button type="button">
-                <a href="./rv_sellect04.jsp">이전</a>
+                <a href="/reservation/rvSellect04">이전</a>
             </button>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <button type="button">
@@ -101,7 +101,7 @@
     
 
     
-    <%@ include file="./footer.jsp" %>
+    <%@ include file="/WEB-INF/views/common/footer.jsp" %>
         
     
     

@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COTYLEDON ROOM</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/rv_form.css">
-    <link rel="stylesheet" href="./css/rv_sellect01.css">
-    <link rel="stylesheet" href="./css/sidebar.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
+    <link rel="stylesheet" href="/resources/css/reservation/rv_form.css">
+    <link rel="stylesheet" href="/resources/css/reservation/rv_sellect01.css">
+    <link rel="stylesheet" href="/resources/css/common/sidebar.css">
     
     
     <style>
@@ -21,8 +21,8 @@
 
 <body>
     
-	<%@ include file="./header_af.jsp" %>
-    <%@ include file="./sidebar_my.jsp" %>
+	<%@ include file="/WEB-INF/views/common/header_af.jsp" %>
+    <%@ include file="/WEB-INF/views/common/sidebar_my.jsp" %>
     
 
 
@@ -55,7 +55,7 @@
                 <col class="col2"/>
             </colgroup>
             <tr>
-                <td class="aa"><img class="shopimg" src="./image/shop3.jpg" alt=""></td>
+                <td class="aa"><img class="shopimg" src="/resources/image/shop3.jpg" alt=""></td>
                 <td>
                     <h1>역삼점<br></h1>
                     <p>주소 : 서울시 강남구 역삼동<br></p>
@@ -75,7 +75,7 @@
                 <col class="col2"/>
             </colgroup>
             <tr>
-                <td><img class="shopimg" src="./image/shop3.jpg" alt=""></td>
+                <td><img class="shopimg" src="/resources/image/shop3.jpg" alt=""></td>
                 <td>
                     <h1>강남점<br></h1>
                     <p>주소 : 서울시 강남구 역삼동<br></p>
@@ -95,7 +95,7 @@
                 <col class="col2"/>
             </colgroup>
             <tr>
-                <td class="aa"><img class="shopimg" src="./image/shop3.jpg" alt=""></td>
+                <td class="aa"><img class="shopimg" src="/resources/image/shop3.jpg" alt=""></td>
                 <td>
                     <h1>역삼점<br></h1>
                     <p>주소 : 서울시 강남구 역삼동<br></p>
@@ -115,7 +115,7 @@
                 <col class="col2"/>
             </colgroup>
             <tr>
-                <td class="aa"><img class="shopimg" src="./image/shop3.jpg" alt=""></td>
+                <td class="aa"><img class="shopimg" src="/resources/image/shop3.jpg" alt=""></td>
                 <td>
                     <h1>역삼점<br></h1>
                     <p>주소 : 서울시 강남구 역삼동<br></p>
@@ -132,7 +132,7 @@
         <div style="text-align: center;">
         
             <button type="button">
-                    <a href="./rv_sellect02.jsp">다음</a>
+                    <a href="/reservation/rvSellect02">다음</a>
             </button>
             
         </div>
@@ -141,7 +141,7 @@
     
 
 
-	<%@ include file="./footer.jsp" %>
+	<%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
     
         

@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/shop_list_main.css">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="/resources/css/common/shop_list_main.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
     
     <style>
         
@@ -17,7 +17,7 @@
 </head>
 <body>
 
-    <%@ include file="./header_be.jsp" %>
+    <%@ include file="/WEB-INF/views/common/header_be.jsp" %>
 
         <br><br>
         <div class="rv_word">
@@ -44,7 +44,7 @@
                     <td class="d_td">
                         <div style="text-align: center;">
                             <button type="button">
-                                    <a href="./shop_list01.jsp">매장 둘러보기</a>
+                                    <a href="/about/shopList01">매장 둘러보기</a>
                             </button>
                         </div>
                     </td>
@@ -67,7 +67,7 @@
                     <td class="d_td">
                         <div style="text-align: center;">
                             <button type="button">
-                                    <a href="./shop_list02.jsp">매장 둘러보기</a>
+                                    <a href="/about/shopList02">매장 둘러보기</a>
                             </button>
                         </div>
                     </td>
@@ -90,7 +90,7 @@
                     <td class="d_td">
                         <div style="text-align: center;">
                             <button type="button">
-                                    <a href="./shop_list03.jsp">매장 둘러보기</a>
+                                    <a href="/about/shopList03">매장 둘러보기</a>
                             </button>
                         </div>
                 
@@ -114,7 +114,7 @@
                     <td class="d_td">
                         <div style="text-align: center;">
                             <button type="button">
-                                    <a href="./shop_list04.jsp">매장 둘러보기</a>
+                                    <a href="/about/shopList04">매장 둘러보기</a>
                             </button>
                         </div>
                     </td>
@@ -122,7 +122,7 @@
             </table>
 
     
-		<%@ include file="./footer.jsp" %>
+		<%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
     
 

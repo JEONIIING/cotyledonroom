@@ -22,7 +22,7 @@
           <div class="Menu"><a href="./shop_list_main.jsp">ABOUT</a></div>
           <div class="Menu"><a href="./ProductList.jsp">MARKET</a></div>
           <div class="Menu"><a href="./Membership.jsp">MEMBERSHIP</a></div>
-          <div class="Menu"><a href="./rv_sellect01.jsp">RESERVATION</a></div>
+          <div class="Menu"><a href="/reservation/rvSellect01">RESERVATION</a></div>
           <div class="Menu"><a href="./Notice_list_c.jsp">COMMUNICATION</a></div>
           </div>
 

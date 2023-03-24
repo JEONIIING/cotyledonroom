@@ -44,7 +44,7 @@
                                     <option value="4">4</option>
                                     <option value="5">5</option>
                                 </select><tr>
-                                    <td><button class="btnbuy" onclick="add2Cart()">장바구니</button></td>
+                                    <td><button class="btnbuy" onclick=""><a href="/member/cart">장바구니</a></button></td>
                                     <td><button class="btnbuy" onclick="gotoBuy()">바로 구매</button></td>
                                 </tr>
                             </div></div><br><br><br></div></div></td>

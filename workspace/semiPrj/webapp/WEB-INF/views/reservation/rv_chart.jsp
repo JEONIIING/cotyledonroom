@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COTYLEDON ROOM</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/sidebar.css">
-    <link rel="stylesheet" href="./css/rv_chart.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
+    <link rel="stylesheet" href="/resources/css/common/sidebar.css">
+    <link rel="stylesheet" href="/resources/css/reservation/rv_chart.css">
 </head>
 <body>
     
-    <%@ include file="./header_af.jsp" %>
-    <%@ include file="./sidebar_my.jsp" %>
+    <%@ include file="/WEB-INF/views/common/header_af.jsp" %>
+    <%@ include file="/WEB-INF/views/common/sidebar_my.jsp" %>
     
     
         
@@ -53,7 +53,7 @@
             <td><button>예약취소</button></td>
             <td>
                 <button type="button">
-                    <a href="./reviewenroll.jsp">리뷰남기기</a>
+                    <a href="/communication/reviewenroll">리뷰남기기</a>
                 </button>
             </td>
         </tr>
@@ -66,9 +66,49 @@
             <td><button>예약취소</button></td>
             <td>
                 <button type="button">
-                    <a href="./reviewenroll.jsp">리뷰남기기</a>
+                    <a href="/communication/reviewenroll">리뷰남기기</a>
                 </button>
             </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>2021/03/04</td>
+            <td>강남점</td>
+            <td>김승우</td>
+            <td>파마</td>
+            <td>예약완료</td>
+            <td><button>예약취소</button></td>
+            <td>
+                <button type="button">
+                    <a href="/communication/reviewenroll">리뷰남기기</a>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -88,47 +128,7 @@
             <td><button>예약취소</button></td>
             <td>
                 <button type="button">
-                    <a href="./reviewenroll.jsp">리뷰남기기</a>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>2021/03/04</td>
-            <td>강남점</td>
-            <td>김승우</td>
-            <td>파마</td>
-            <td>예약완료</td>
-            <td><button>예약취소</button></td>
-            <td>
-                <button type="button">
-                    <a href="./reviewenroll.jsp">리뷰남기기</a>
+                    <a href="/communication/reviewenroll">리뷰남기기</a>
                 </button>
             </td>
         </tr>
@@ -141,7 +141,7 @@
             <td><button>예약취소</button></td>
             <td>
                 <button type="button">
-                    <a href="./reviewenroll.jsp">리뷰남기기</a>
+                    <a href="/communication/reviewenroll">리뷰남기기</a>
                 </button>
             </td>
         </tr>
@@ -154,7 +154,7 @@
             <td><button>예약취소</button></td>
             <td>
                 <button type="button">
-                    <a href="./reviewenroll.jsp">리뷰남기기</a>
+                    <a href="/communication/reviewenroll">리뷰남기기</a>
                 </button>
             </td>
         </tr>
@@ -167,7 +167,7 @@
             <td><button>예약취소</button></td>
             <td>
                 <button type="button">
-                    <a href="./reviewenroll.jsp">리뷰남기기</a>
+                    <a href="/communication/reviewenroll">리뷰남기기</a>
                 </button>
             </td>
         </tr>
@@ -180,7 +180,7 @@
             <td><button>예약취소</button></td>
             <td>
                 <button type="button">
-                    <a href="./reviewenroll.jsp">리뷰남기기</a>
+                    <a href="/communication/reviewenroll">리뷰남기기</a>
                 </button>
             </td>
         </tr>
@@ -193,7 +193,7 @@
 
 
     
-	<%@ include file="./footer.jsp" %>
+	<%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
 
 </body>

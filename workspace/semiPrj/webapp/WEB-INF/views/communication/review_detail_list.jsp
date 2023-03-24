@@ -7,15 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COTYLEDON ROOM</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/sidebar.css">
-    <link rel="stylesheet" href="./css/orderList.css">
-    <link rel="stylesheet" href="./css/L_css.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
+    <link rel="stylesheet" href="/resources/css/common/sidebar.css">
+    <link rel="stylesheet" href="/resources/css/member/orderList.css">
+    <link rel="stylesheet" href="/resources/css/admin/L_css.css">
 </head>
 <body>
     
-    <%@ include file="./header_af.jsp" %>
-    <%@ include file="./sidebar_com.jsp" %>
+    <%@ include file="/WEB-INF/views/common/header_be.jsp" %>
+    <%@ include file="/WEB-INF/views/common/sidebar_com.jsp" %>
+    <%@ include file="/WEB-INF/views/common/sidebar_com.jsp" %>
     
 <br>
 
@@ -60,7 +61,7 @@
             </div>
             <div class="cont">
                 <div>
-                    <img src="./image/shop3.jpg" alt="" style="width: 300px;"> <br>
+                    <img src="/resources/image/shop3.jpg" alt="" style="width: 300px;"> <br>
                 </div>
                 <div>
                     마음에 쏙 듭니다 <br>
@@ -72,8 +73,8 @@
             
         </div>
         <div class="bt_wrap">
-            <a href="./review_list.jsp" class="on">목록</a>
-            <a href="./review_edit.jsp">수정</a>
+            <a href="/communication/reviewlist" class="on">목록</a>
+            <a href="/communication/reviewedit">수정</a>
             <a href="#">삭제</a>
         </div>
         <div id="form-commentInfo">
@@ -89,12 +90,12 @@
 <br><br><br><br>
 
 
-<script src="./js/comment.js"></script>
+<script src="/resources/js/comment.js"></script>
 
 
 </div>
 
-    <%@ include file="./footer.jsp" %>
+    <%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
 
 
