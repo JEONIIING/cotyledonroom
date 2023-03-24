@@ -7,15 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>디자이너 정보</title>
-    <link rel="stylesheet" href="css/A_css.css">
-    <link rel="stylesheet" href="css/admin.css">
-    <link rel="stylesheet" href="./css/a_main.css">
-    <link rel="stylesheet" href="./css/designerForm.css">
-    <link rel="stylesheet" href="./css/desingerInfo.css">
-    <script defer src="./js/designerInfo.js"></script>
+    <link rel="stylesheet" href="/resources/css/admin/A_css.css">
+    <link rel="stylesheet" href="/resources/css/admin/admin.css">
+    <link rel="stylesheet" href="/resources/css/admin/a_main.css">
+    <link rel="stylesheet" href="/resources/css/admin/designerForm.css">
+    <link rel="stylesheet" href="/resources/css/admin/desingerInfo.css">
+    <script defer src="/resources/js/designerInfo.js"></script>
 </head>
 <body>
-		<%@ include file="./header_am.jsp" %>
+		<%@ include file="/WEB-INF/views/common/header_am.jsp" %>
 		
 		<div class="board_wrap">
     <div class="board_title">
@@ -70,7 +70,7 @@
                 <div class="greet_title"><소개내용></div>
                 <table>
                   <tr>
-                    <td><img class="photo"src="./image/디자이너1.jpg" alt="이미지" ></td>
+                    <td><img class="photo"src="/resources/image/디자이너1.jpg" alt="이미지" ></td>
                     <td class="greet_content">
                       경력 15년/ 거의 대부분의 시간을 서 있어야 하기 때문에, 허리에 무리가 갑니다. 허리 통증이 지속되다보니 중간 중간 스트레칭을 하거나 자세를 바꾸는 등으로 허리를 풀어주려고 합니다.
                     </td>
@@ -80,14 +80,14 @@
             
         </div>
         <div class="bt_wrap">
-            <a href="./designerList.jsp" class="on">목록</a>
-            <a href="./designerEdit.jsp">수정</a>
+            <a href="/admin/designerList" class="on">목록</a>
+            <a href="/admin/designerEdit">수정</a>
             <button class = "drop" type="button" onclick="button_desExit();">탈퇴</button>
         </div>
     </div>
 </div>
 		
-		<%@ include file="./footer.jsp" %>
+		<%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
 </body>
 </html>

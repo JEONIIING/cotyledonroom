@@ -25,9 +25,9 @@
       <li><a href="/admin/FAQ_list">FAQ</a></li>
       <li><a href="/admin/Notice_list">공지사항</a></li>
       <li><a href="/admin/designerList">디자이너 관리</a></li>
-      <li><a href="/admin/admin_product_list">상품 관리</a></li>
-      <li><a href="./admin_member_list.jsp">고객 관리</a></li>
-      <li><a href="./statistics_member.jsp">통계 조회</a></li>
+      <li><a href="/admin/productList">상품 관리</a></li>
+      <li><a href="/admin/memberList">고객 관리</a></li>
+      <li><a href="/statistics/member">통계 조회</a></li>
     </ul>
   </div>
   <div id="main_content" style="margin-top: 20px;">

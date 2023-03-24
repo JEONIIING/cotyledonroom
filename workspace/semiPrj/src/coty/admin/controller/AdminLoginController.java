@@ -21,9 +21,8 @@ public class AdminLoginController extends HttpServlet {
 	
 	//관리자 로그인
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp){
 		
-		try {
 			//데이터 꺼내기
 			String memberId = req.getParameter("memberId");
 			String memberPwd = req.getParameter("memberPwd");
@@ -34,13 +33,15 @@ public class AdminLoginController extends HttpServlet {
 			adminVo.setPwd(memberPwd);
 			
 			//서비스 실행
-			AdminLoginService service = new AdminLoginService();
-			AdminVo adminLogimVo = service.adminLogin(adminVo);
+			AdminVo adminLogimVo = null;
+			try {
+				AdminLoginService service = new AdminLoginService();
+				adminLogimVo = service.adminLogin(adminVo);
 			
 			//화면 보여주기
 			if(adminLogimVo != null) {
 				req.setAttribute("alertMsg", "관리자님 환영합니다!");
-				req.getSession().setAttribute("adminLoginVo", adminLogimVo);
+				req.getSession().setAttribute("adminLogimVo", adminLogimVo);
 				resp.sendRedirect("/WEB-INF/views/admin/Notice_list.jsp");
 			}else {
 				req.setAttribute("loginfailMsg", "로그인을 실패하였습니다.");

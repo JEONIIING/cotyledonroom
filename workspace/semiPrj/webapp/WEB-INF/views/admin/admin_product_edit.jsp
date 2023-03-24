@@ -7,13 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상품 상세 정보</title>
-    <link rel="stylesheet" href="./css/admin.css">
-  <link rel="stylesheet" href="./css/a_main.css">
-  <link rel="stylesheet" href="./css/admin_product.css">
-  <link rel="stylesheet" href="./css/admin_product_edit.css">
+    <link rel="stylesheet" href="/resources/css/admin/admin.css">
+  <link rel="stylesheet" href="/resources/css/admin/a_main.css">
+  <link rel="stylesheet" href="/resources/css/admin/admin_product.css">
+  <link rel="stylesheet" href="/resources/css/admin/admin_product_edit.css">
 </head>
 <body>
-		<%@ include file="./header_am.jsp" %>
+		<%@ include file="/WEB-INF/views/common/header_am.jsp" %>
 		
 		<div id="menu_title"><상품 수정></div>
     <div id="menu_title2">수정할 상품의 정보를 내용을 적어주세요.</div>
@@ -74,7 +74,7 @@
     </table>
   </form>
 		
-		<%@ include file="./footer.jsp" %>
+		<%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
 </body>
 </html>

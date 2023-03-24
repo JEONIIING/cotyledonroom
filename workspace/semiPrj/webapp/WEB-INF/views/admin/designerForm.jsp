@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>디자이너 계정 양식</title>
-    <link rel="stylesheet" href="./css/admin.css">
-    <link rel="stylesheet" href="./css/a_main.css">
-    <link rel="stylesheet" href="./css/designerForm.css">
-    <script defer src="./JS/designerForm.js"></script>
+    <link rel="stylesheet" href="/resources/css/admin/admin.css">
+    <link rel="stylesheet" href="/resources/css/admin/a_main.css">
+    <link rel="stylesheet" href="/resources/css/admin/designerForm.css">
+    <script defer src="/resources/js/designerForm.js"></script>
 </head>
 <body>
-		<%@ include file="./header_am.jsp" %>
+		<%@ include file="/WEB-INF/views/common/header_am.jsp" %>
 		
 		<div id="menu_title"><디자이너 계정 생성></div>
     <div id="menu_title2">새로운 디자이너의 정보를 입력해주세요.</div>
   </div>
   
   
-  <form action="" method="post">
+  <form action="/admin/designerList" method="post">
     <table class="content">
       <tr>
         <td class="text">* 아이디</td>
@@ -42,11 +42,11 @@
       </tr>
       <tr>
         <td class="text">* 디자이너 이름 </td>
-        <td ><input class="box" type="password" name="memberPwd" required></td>
+        <td ><input class="box" type="text" name="memberPwd" required></td>
       </tr>
       <tr>
         <td class="text">* 전화번호</td>
-        <td ><input class="box" type="text" name="memberPwd" required></td>
+        <td ><input class="box" type="tel" name="memberPwd" required></td>
       </tr>
       <tr>
         <td class="text">* 이메일</td>
@@ -64,7 +64,7 @@
   </form>
 <br><br><br><br><br>
 		
-		<%@ include file="./footer.jsp" %>
+		<%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
 </body>
 </html>

@@ -7,16 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상품관리</title>
-    <link rel="stylesheet" href="css/A_css.css">
-    <link rel="stylesheet" href="css/admin.css">
-    <link rel="stylesheet" href="./css/a_main.css">
-    <link rel="stylesheet" href="./css/designerForm.css">
-    <link rel="stylesheet" href="./css/admin_product_list.css">
-    <script defer src="./js/admin_product_list.js"></script>
+    <link rel="stylesheet" href="/resources/css/admin/A_css.css">
+    <link rel="stylesheet" href="/resources/css/admin/admin.css">
+    <link rel="stylesheet" href="/resources/css/admin/a_main.css">
+    <link rel="stylesheet" href="/resources/css/admin/designerForm.css">
+    <link rel="stylesheet" href="/resources/css/admin/admin_product_list.css">
+    <script defer src="/resources/js/admin_product_list.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <body>
-		<%@ include file="./header_am.jsp" %>
+		<%@ include file="/WEB-INF/views/common/header_am.jsp" %>
 		
 		<div style="height: px;">
     <div class="board_wrap">
@@ -37,7 +37,7 @@
               <div>
                   <div class="num"><input type="checkbox" class="check-item"></div>
                   <div class="title">
-                      <a href="./admin_product_info.jsp"><img class="p_img" src="./image/네불라 115g - 헤어 무스 에센스.png" alt="이미지"></a>
+                      <a href="/admin/productInfo"><img class="p_img" src="/resources/image/네불라 115g - 헤어 무스 에센스.png" alt="이미지"></a>
                   </div>
                   <div class="name"><a href="./admin_product_info.jsp">네불라 115g</a></div>
                   <div class="writer">24,000</div>
@@ -99,14 +99,14 @@
 
 
           <div class="bt_wrap">
-              <a href="./admin_product.html" class="on">등록</a>
+              <a href="/admin/product" class="on">등록</a>
               <button type="button" onclick="button_delete();" class="delete">삭제</button>
           </div>
       </div>
   </div> 
   </div>
 		
-		<%@ include file="./footer.jsp" %>
+		<%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
 </body>
 </html>
