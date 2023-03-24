@@ -70,4 +70,5 @@ div{
     background-color: #ededed;
     border-color: #ededed;
     font-size: 15px
+    cursor: pointer;
 }

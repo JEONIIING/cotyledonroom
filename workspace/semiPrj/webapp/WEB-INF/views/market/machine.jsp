@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상품목록</title>
-    <link rel="stylesheet" href="./css/productListstyle.css">
-    <link rel="stylesheet" href="./css/sidebar.css">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="/resources/css/market/productListstyle.css">
+    <link rel="stylesheet" href="/resources/css/common/sidebar.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
 </head>
 <body>
-<%@include file="./header_af.jsp" %>
+<%@include file="/WEB-INF/views/common/header_be.jsp" %>
       
-<%@include file="./sidebar_mk.jsp" %>
+<%@include file="/WEB-INF/views/common/sidebar_mk.jsp" %>
    
 
 
@@ -27,8 +27,8 @@
         <table cellspacing ="50">
           <tr><td><div class="menu">MACHINE</div></td></tr>
           <tr>
-            <td><a href=""><img class="product_img" src="./image/다이슨 고데기.png" alt=""></a></td>
-            <td><a href=""><img class="product_img" src="./image/다이슨 헤어드라이기.png" alt=""></a></td>
+            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/다이슨 고데기.png" alt=""></a></td>
+            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/다이슨 헤어드라이기.png" alt=""></a></td>
           </tr>
           <tr class="product_name">
             <td><a>다이슨 고데기</a></td>
@@ -37,6 +37,6 @@
     </table>
 </section>
 
-  <%@include file="./footer.jsp" %>   
+<%@include file="/WEB-INF/views/common/footer.jsp" %>
   </body>
 </html>

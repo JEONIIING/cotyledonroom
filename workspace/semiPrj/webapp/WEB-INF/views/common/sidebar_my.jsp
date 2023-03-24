@@ -7,22 +7,22 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<img id="sidearea" class="menu-icon" src="./image/134216_menu_lines_hamburger_icon.png" alt="이미지">
+	<img id="sidearea" class="menu-icon" src="/resources/image/134216_menu_lines_hamburger_icon.png" alt="이미지">
 	    <br>
 	<div id="sidebar">
     <div class="admin">My 쇼핑</div>
     <ul>
-      <li><a href="./Cart.jsp">장바구니</a></li>
-      <li><a href="./orderList.jsp">주문목록</a></li>
-      <li><a href="./address.jsp">배송지목록</a></li>
+      <li><a href="/member/cart">장바구니</a></li>
+      <li><a href="/member/orderlist">주문목록</a></li>
+      <li><a href="/member/address">배송지목록</a></li>
       <br>
       <div class="admin">My 예약</div>
         <li><a href="./rv_chart.jsp">예약목록</a></li>
         <br>
         <div class="admin">회원 정보</div>
-          <li><a href="./memberedit.jsp">회원수정</a></li>
+          <li><a href="/member/memberedit">회원수정</a></li>
           <li><a href="./QNA_list_c.jsp">Q&A</a></li>
-          <li><a href="./memberquit.jsp">회원탈퇴</a></li>
+          <li><a href="/member/memberquit">회원탈퇴</a></li>
   </ul>
 </div>
 <script>

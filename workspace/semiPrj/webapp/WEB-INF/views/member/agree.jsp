@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COTYLEDON ROOM</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/agree.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
+    <link rel="stylesheet" href="/resources/css/member/agree.css">
 </head>
 <body>
-    <%@include file="./header_be.jsp" %>
+    <%@include file="/WEB-INF/views/common/header_be.jsp" %>
     
     <div style="padding-top: 5%;"></div>
     <div style="text-align: center;"><h2>회원 가입</h2></div>
@@ -131,13 +131,13 @@
   <div class="line"></div>
   
   
-  <div class="btn_red" style="display: inline-block;"><a href ="./join.jsp" class="next">다음단계</a></div>
+  <div class="btn_red" style="display: inline-block;"><a href ="/member/join" class="next">다음단계</a></div>
   <span class="btn_black" style="display: inline-block;"><a href ="#" class="next">취소</a></span>
   
   
 </div>
 
-	<%@include file="./footer.jsp" %>
+	<%@include file="/WEB-INF/views/common/footer.jsp" %>
 
 
 

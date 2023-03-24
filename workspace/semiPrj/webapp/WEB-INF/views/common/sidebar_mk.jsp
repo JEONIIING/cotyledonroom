@@ -13,12 +13,12 @@
           <h2>MARKET</h2>
         
           <ul>
-            <li><a href="./ProductList.jsp">ALL</a></li>
-            <li><a href="./shampoo.jsp">SHAMPOO</a></li>
-            <li><a href="./treatment.jsp">TREATMENT</a></li>
-            <li><a href="./styling.jsp">STYLING</a></li>
-            <li><a href="./essence.jsp">ESSENCE</a></li>
-            <li><a href="./machine.jsp">MACHINE</a></li>
+            <li><a href="/market/productlist">ALL</a></li>
+            <li><a href="/market/shampoo">SHAMPOO</a></li>
+            <li><a href="/market/treatment">TREATMENT</a></li>
+            <li><a href="/market/styling">STYLING</a></li>
+            <li><a href="/market/essence">ESSENCE</a></li>
+            <li><a href="/market/machine">MACHINE</a></li>
           </ul>
         </div>
         <script>
