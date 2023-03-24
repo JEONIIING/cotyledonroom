@@ -21,11 +21,11 @@
     <div class="admin">ADMIN</div>
     <div class="line"></div>
     <ul>
-      <li><a href="./QNA_list_a.jsp">QNA</a></li>
-      <li><a href="./FAQ_list.jsp">FAQ</a></li>
-      <li><a href="./Notice_list.jsp">공지사항</a></li>
-      <li><a href="./designerList.jsp">디자이너 관리</a></li>
-      <li><a href="./admin_product_list.jsp">상품 관리</a></li>
+      <li><a href="/admin/QNA_list_a">QNA</a></li>
+      <li><a href="/admin/FAQ_list">FAQ</a></li>
+      <li><a href="/admin/Notice_list">공지사항</a></li>
+      <li><a href="/admin/designerList">디자이너 관리</a></li>
+      <li><a href="/admin/admin_product_list">상품 관리</a></li>
       <li><a href="./admin_member_list.jsp">고객 관리</a></li>
       <li><a href="./statistics_member.jsp">통계 조회</a></li>
     </ul>

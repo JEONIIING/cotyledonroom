@@ -15,7 +15,7 @@
     <div class="aaa"><img src="/resources/image\main.webp" alt="background-image" width=1300px; height=600px;></div>
    <br><br><br>
 
-    <%@include file="/WEB-INF/views/common/footer.jsp" %>
+    <%@include file="/WEB-INF/views/common/footer.jsp"%>
 
 
 

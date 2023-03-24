@@ -7,35 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>디자이너 계정 양식</title>
-    <link rel="stylesheet" href="./css/a_admin.css">
-    <link rel="stylesheet" href="./css/a_main.css">
-    <link rel="stylesheet" href="./css/a_designerForm.css">
-    <link rel="stylesheet" href="./css/L_css.css">
+    <link rel="stylesheet" href="/resources/css/admin/a_admin.css">
+    <link rel="stylesheet" href="/resources/css/admin/a_main.css">
+    <link rel="stylesheet" href="/resources/css/admin/a_designerForm.css">
+    <link rel="stylesheet" href="/resources/css/admin/L_css.css">
 </head>
 
 <body>
-    <%@include file="./header_am.jsp" %>
+	<%@include file="/WEB-INF/views/common/header_am.jsp" %>
 
-  
-  <img class="menu-icon" id="sidearea" src="./image/134216_menu_lines_hamburger_icon.png" alt="이미지">
-  
-  <div id="sidebar" style="margin-top: 20px;">
-    <div class="admin">ADMIN</div>
-    <div class="line"></div>
-    <ul>
-      <li><a href="QNA_list_a.html">QNA</a></li>
-      <li><a href="FAQ_list.html">FAQ</a></li>
-      <li><a href="Notice_list.html">공지사항</a></li>
-      <li><a href="designerList.html">디자이너 관리</a></li>
-      <li><a href="admin_product_list.html">상품 관리</a></li>
-      <li><a href="admin_member_list.html">고객 관리</a></li>
-      <li><a href="statistics_member.html">통계 조회</a></li>
-    </ul>
-  </div>
-  <div id="main_content" style="margin-top: 20px;">
-    <div id="admin_main_title">시스템 정보</div>
-    <div class="mainline"></div>
-  </div>
+ 
   
   <div style="height: 600px;">
     
@@ -73,28 +54,16 @@
               </div>             
           </div>
           <div class="bt_wrap">
-              <a href="Notice_view.html" class="on">수정</a>
-              <a href="Notice_view.html">취소</a>
+              <a href="/admin/Notice_view" class="on">수정</a>
+              <a href="/admin/Notice_view">취소</a>
           </div>
       </div>
     </div>
     
   </div>
   <br><br><br><br>
-  <script>
-    const sidebar = document.getElementById('sidebar');
-    const sidearea = document.getElementById('sidearea');
 
-    sidearea.addEventListener('mouseover', () => {
-      sidebar.classList.add('active');
-    });
-    sidebar.addEventListener('mouseleave', () => {
-      sidebar.classList.remove('active');
-    });
-
-    const menuItems = document.querySelectorAll('#sidebar li');
-  </script>
-<%@include file="./footer.jsp" %>
+<%@include file="/WEB-INF/views/common/footer.jsp" %>
 
    
   </body>

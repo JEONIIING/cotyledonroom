@@ -46,6 +46,7 @@
           <div class="find">
             <a href="/member/missingid">아이디 찾기</a> | <a href="/member/missingpwd">비밀번호 찾기</a> | <a href="/member/agree">회원가입</a></td>
           </div>
+          </td>
       </tr>
   
     </table>

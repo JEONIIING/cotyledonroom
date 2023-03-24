@@ -22,8 +22,6 @@
 		</script>
 	</c:if>
 	<c:remove var="alertMsg" scope="request"/>
-
-	
 	
   <div style="height: 600px;">
     <div class="board_wrap">
@@ -41,33 +39,33 @@
               </div>
               <div>
                   <div class="num">5</div>
-                  <div class="title"><a href="Notice_view.html">글 제목이 들어갑니다.</a></div>
+                  <div class="title"><a href="/admin/Notice_view">글 제목이 들어갑니다.</a></div>
                   <div class="writer">김이름</div>
                   <div class="date">2023.03.15</div>
                   <div class="count">33</div>
               </div>
               <div>
                   <div class="num">4</div>
-                  <div class="title"><a href="Notice_view.html">글 제목이 들어갑니다.</a></div>
+                  <div class="title"><a href="/admin/Notice_view">글 제목이 들어갑니다.</a></div>
                   <div class="writer">김이름</div>
                   <div class="date">2023.03.15</div>
                   <div class="count">33</div>
               </div>                
               <div>
                   <div class="num">3</div>
-                  <div class="title"><a href="Notice_view.html">글 제목이 들어갑니다.</a></div>
+                  <div class="title"><a href="/admin/Notice_view">글 제목이 들어갑니다.</a></div>
                   <div class="writer">김이름</div>
                   <div class="date">2023.03.15</div>
                   <div class="count">33</div>
               </div>                <div>
                   <div class="num">2</div>
-                  <div class="title"><a href="Notice_view.html">글 제목이 들어갑니다.</a></div>
+                  <div class="title"><a href="/admin/Notice_view">글 제목이 들어갑니다.</a></div>
                   <div class="writer">김이름</div>
                   <div class="date">2023.03.15</div>
                   <div class="count">33</div>
               </div>                <div>
                   <div class="num">1</div>
-                  <div class="title"><a href="Notice_view.html">글 제목이 들어갑니다.</a></div>
+                  <div class="title"><a href="/admin/Notice_view">글 제목이 들어갑니다.</a></div>
                   <div class="writer">김이름</div>
                   <div class="date">2023.03.15</div>
                   <div class="count">33</div>
@@ -89,7 +87,7 @@
 
 
           <div class="bt_wrap">
-              <a href="Notice_write.html" class="on">등록</a>
+              <a href="/admin/Notice_write" class="on">등록</a>
               <!-- <a href="#">수정</a> -->
           </div>
       </div>
@@ -97,7 +95,7 @@
   </div>
   <br><br><br><br>
  
-   <%@ include file="/WEB-INF/views/common/footer.jsp" %>
+<%@include file="/WEB-INF/views/common/footer.jsp" %>
    
   </body>
 </html>
