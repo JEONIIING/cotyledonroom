@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<img id="sidearea" class="menu-icon" src="./image/134216_menu_lines_hamburger_icon.png" alt="이미지">
+	<img id="sidearea" class="menu-icon" src="/resources/image/menuicon.png" alt="이미지">
 	    <br>
 	<div id="sidebar">
     <div class="admin">My 쇼핑</div>
