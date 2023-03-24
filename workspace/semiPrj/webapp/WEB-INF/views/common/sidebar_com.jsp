@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-      <img id="sidearea" class="menu-icon" src="./image/134216_menu_lines_hamburger_icon.png" alt="이미지">
+      <img id="sidearea" class="menu-icon" src="/resources/image/134216_menu_lines_hamburger_icon.png" alt="이미지">
     <br>
 	<div id="sidebar">
         <div class="admin">게시판 목록</div>
@@ -18,7 +18,7 @@
           <br>
           <li><a href="./QNA_list_c.jsp">QNA</a></li>
           <br>
-          <li><a href="./review_list.jsp">리뷰게시판</a></li>
+          <li><a href="/communication/reviewlist">리뷰게시판</a></li>
         </ul>
       </div>
 

@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COTYLEDON ROOM</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/rv_form.css">
-    <link rel="stylesheet" href="./css/rv_sellect02.css">
-    <link rel="stylesheet" href="./css/sidebar.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
+    <link rel="stylesheet" href="/resources/css/reservation/rv_form.css">
+    <link rel="stylesheet" href="/resources/css/reservation/rv_sellect02.css">
+    <link rel="stylesheet" href="/resources/css/common/sidebar.css">
     
     <style>
         
@@ -18,8 +18,8 @@
 </head>
 <body>
     
-    <%@ include file="./header_af.jsp" %>
-    <%@ include file="./sidebar_my.jsp" %>
+    <%@ include file="/WEB-INF/views/common/header_af.jsp" %>
+    <%@ include file="/WEB-INF/views/common/sidebar_my.jsp" %>
     
     <div class="rv_word">
         <p class="rv_word_title">예약</p><br>
@@ -51,7 +51,7 @@
                 <col class="col4"/>
             </colgroup>
             <tr>
-                <td><img src="./image/shop3.jpg" alt=""></td>
+                <td><img src="/resources/image/shop3.jpg" alt=""></td>
                 <td>
                     <h2>&nbsp;&nbsp;김승우 디자이너</h2><br>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;고객이 왕이다</p>
@@ -59,7 +59,7 @@
                     <input type="radio" name="designer" value="designer1">
                     <label for="designer1">선택하기</label>
                 </td>
-                <td><img src="./image/shop3.jpg" alt=""></td>
+                <td><img src="/resources/image/shop3.jpg" alt=""></td>
                 <td>
                     <h2>&nbsp;&nbsp;김수잔 디자이너</h2><br>
                     <p>당신만의 분위기를 담은 디자인</p>
@@ -69,7 +69,7 @@
                 </td>
             </tr>
             <tr>
-                <td><img src="./image/shop3.jpg" alt=""></td>
+                <td><img src="/resources/image/shop3.jpg" alt=""></td>
                 <td>
                     <h2>&nbsp;&nbsp;김연우 디자이너</h2><br>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;변신시켜 드립니다</p>
@@ -77,7 +77,7 @@
                     <input type="radio" name="designer" value="designer3">
                     <label for="designer3">선택하기</label>
                 </td>
-                <td><img src="/image/shop3.jpg" alt=""></td>
+                <td><img src="/resources/image/shop3.jpg" alt=""></td>
                 <td>
                     <h2>&nbsp;&nbsp;김승우 디자이너</h2><br>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;변신시켜 드립니다</p>
@@ -87,7 +87,7 @@
                 </td>
             </tr>
             <tr>
-                <td><img src="./image/shop3.jpg" alt=""></td>
+                <td><img src="/resources/image/shop3.jpg" alt=""></td>
                 <td>
                     <h2>&nbsp;&nbsp;김승우 디자이너</h2><br>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;변신시켜 드립니다</p>
@@ -95,7 +95,7 @@
                     <input type="radio" name="designer" value="designer5">
                     <label for="designer5">선택하기</label>
                 </td>
-                <td><img src="./image/shop3.jpg" alt=""></td>
+                <td><img src="/resources/image/shop3.jpg" alt=""></td>
                 <td>
                     <h2>&nbsp;&nbsp;김승우 디자이너</h2><br>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;변신시켜 드립니다</p>
@@ -104,7 +104,7 @@
                     <label for="designer6">선택하기</label>
                 </td>
             </tr> <tr>
-                <td><img src="./image/shop3.jpg" alt=""></td>
+                <td><img src="/resources/image/shop3.jpg" alt=""></td>
                 <td>
                     <h2>&nbsp;&nbsp;김승우 디자이너</h2><br>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;변신시켜 드립니다</p>
@@ -112,7 +112,7 @@
                     <input type="radio" name="designer" value="designer7">
                     <label for="designer7">선택하기</label>
                 </td>
-                <td><img src="./image/shop3.jpg" alt=""></td>
+                <td><img src="/resources/image/shop3.jpg" alt=""></td>
                 <td>
                     <h2>&nbsp;&nbsp;김승우 디자이너</h2><br>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;변신시켜 드립니다</p>
@@ -125,11 +125,11 @@
 
             <div style="text-align: center;">
                 <button type="button">
-                    <a href="./rv_sellect01.jsp">이전</a>
+                    <a href="/reservation/rvSellect01">이전</a>
                 </button>
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <button type="button">
-                    <a href="./rv_sellect03.jsp">다음</a>
+                    <a href="/reservation/rvSellect03">다음</a>
                 </button>
             </div>
     </form>
@@ -137,7 +137,7 @@
     
         
     
-    <%@ include file="./footer.jsp" %>
+    <%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
 
 

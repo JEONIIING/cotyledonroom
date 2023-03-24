@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COTYLEDON ROOM</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/rv_form.css">
-    <link rel="stylesheet" href="./css/rv_sellect04.css">
-    <link rel="stylesheet" href="./css/sidebar.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
+    <link rel="stylesheet" href="/resources/css/reservation/rv_form.css">
+    <link rel="stylesheet" href="/resources/css/reservation/rv_sellect04.css">
+    <link rel="stylesheet" href="/resources/css/common/sidebar.css">
     
     <style>
 
@@ -18,8 +18,8 @@
 </head>
 <body>
     
-    <%@ include file="./header_af.jsp" %>
-    <%@ include file="./sidebar_my.jsp" %>
+    <%@ include file="/WEB-INF/views/common/header_af.jsp" %>
+    <%@ include file="/WEB-INF/views/common/sidebar_my.jsp" %>
 
     <div class="rv_word">
         <p class="rv_word_title">예약</p><br>
@@ -110,11 +110,11 @@
 
         <div style="text-align: center;">
             <button type="button">
-                <a href="./rv_sellect03.jsp">이전</a>
+                <a href="/reservation/rvSellect03">이전</a>
             </button>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <button type="button">
-                <a href="./rv_sellect05.jsp">다음</a>
+                <a href="/reservation/rvSellect05">다음</a>
             </button>
         </div>
         
@@ -122,7 +122,7 @@
 
     </form>
 
-    <%@ include file="./footer.jsp" %>
+    <%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
 
 
