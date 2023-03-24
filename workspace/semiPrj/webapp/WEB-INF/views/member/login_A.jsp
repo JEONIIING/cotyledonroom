@@ -55,6 +55,5 @@
 		${loginfailMsg}
 	</script>
 	
-	<c:remove var="${loginfailMsg}"/>
 </body>
 </html>
