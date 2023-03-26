@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import coty.admin.adminVo.AdminVo;
-import coty.util.JDBCTemplate;
+import static coty.util.JDBCTemplate.*;
 
 public class AdminLoginDao {
 
@@ -29,8 +29,8 @@ public class AdminLoginDao {
 		}
 		
 		//close
-		JDBCTemplate.close(pstmt);
-		JDBCTemplate.close(rs);
+		close(pstmt);
+		close(rs);
 		
 		return adminLogimVo;
 	}

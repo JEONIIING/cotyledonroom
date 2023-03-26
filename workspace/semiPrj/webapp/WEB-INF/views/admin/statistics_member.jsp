@@ -7,15 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>방문자 통계</title>
-    <link rel="stylesheet" href="./css/admin.css">
-    <link rel="stylesheet" href="./css/a_main.css">
-    <link rel="stylesheet" href="./css/designerForm.css">
-    <link rel="stylesheet" href="./css/statistics_member.css">
+    <link rel="stylesheet" href="/resources/css/admin/admin.css">
+    <link rel="stylesheet" href="/resources/css/admin/a_main.css">
+    <link rel="stylesheet" href="/resources/css/admin/designerForm.css">
+    <link rel="stylesheet" href="/resources/css/admin/statistics_member.css">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-    <script defer src="./js/statistics_member.js"></script>
+    <script defer src="/resources/js/statistics_member.js"></script>
 </head>
 <body>
-	<%@ include file="./header_am.jsp" %>
+	<%@ include file="/WEB-INF/views/common/header_am.jsp" %>
 
 	<div class="statistics_area">
     <div class="aboutmenu">
@@ -47,6 +47,6 @@
     </div>
   </div>
   <br><br><br><br><br><br><br><br>
-	<%@ include file="./footer.jsp" %>
+	<%@ include file="/WEB-INF/views/common/footer.jsp" %>
 </body>
 </html>

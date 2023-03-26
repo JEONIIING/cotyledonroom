@@ -7,13 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상품 상세 정보</title>
-    <link rel="stylesheet" href="css/A_css.css">
-    <link rel="stylesheet" href="css/admin.css">
-    <link rel="stylesheet" href="./css/a_main.css">
-    <link rel="stylesheet" href="./css/designerForm.css">
+    <link rel="stylesheet" href="/resources/css/admin/A_css.css">
+    <link rel="stylesheet" href="/resources/css/admin/admin.css">
+    <link rel="stylesheet" href="/resources/css/admin/a_main.css">
+    <link rel="stylesheet" href="/resources/css/admin/designerForm.css">
 </head>
 <body>
-		<%@ include file="./header_am.jsp" %>
+		<%@ include file="/WEB-INF/views/common/header_am.jsp" %>
 		
 		<div class="board_wrap">
     <div class="board_title">
@@ -46,7 +46,7 @@
             </div>
             <div class="cont">
                 상세내용<br>
-                <img src="./image/네불라 115g - 헤어 무스 에센스.png" alt="이미지"><br>
+                <img src="/resources/image/네불라 115g - 헤어 무스 에센스.png" alt="이미지"><br>
                 영양성분표에는 나트륨, 탄수화물, 당류, 지방, 트랜스지방, 포화지방, 콜레스테롤, 단백질 등이 표기되어 있다. 식품마다 표기된 내용이 다를 수 있다.
 총 내용량(총 제공량)/열량(칼로리)/1회 제공량
 총 내용량(총 제공량)은 말 그대로 제품의 총 내용량(g)을 의미한다. 열량(칼로리)은 총 내용량(총 제공량)을 모두 섭취했을 경우의 열량(칼로리)이다. 1회 제공량은 보통 1회 섭취하기에 적당한 양을 의미한다.
@@ -56,13 +56,13 @@
             
         </div>
         <div class="bt_wrap">
-            <a href="./admin_product_list.jsp" class="on">목록</a>
-            <a href="./admin_product_edit.jsp">수정</a>
+            <a href="/admin/productList" class="on">목록</a>
+            <a href="/admin/productEdit">수정</a>
         </div>
     </div>
 </div>
 		
-		<%@ include file="./footer.jsp" %>
+		<%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
 </body>
 </html>

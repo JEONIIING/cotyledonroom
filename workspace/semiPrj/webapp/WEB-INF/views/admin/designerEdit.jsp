@@ -6,13 +6,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/admin.css">
-  <link rel="stylesheet" href="./css/a_main.css">
-  <link rel="stylesheet" href="./css/disignerEdit.css">
+  <link rel="stylesheet" href="/resources/css/admin/admin.css">
+  <link rel="stylesheet" href="/resources/css/admin/a_main.css">
+  <link rel="stylesheet" href="/resources/css/admin/disignerEdit.css">
   <title>디자이너 정보 수정</title>
 </head>
 <body>
-		<%@ include file="./header_am.jsp" %>
+		<%@ include file="/WEB-INF/views/common/header_am.jsp" %>
 		
 		<div id="menu_title"><디자이너 정보 수정></div>
     <div id="menu_title2">디자이너의 정보를 수정할 수 있습니다.</div>
@@ -20,7 +20,7 @@
 
   <div class="red_bar"></div>
   
-  <form action="" method="post">
+  <form action="/admin/designerInfo" method="post">
     <table class="content">
       <tr>
         <td class="text" readonly>* 매장번호</td>
@@ -86,7 +86,7 @@
   </form>
 
 		
-		<%@ include file="./footer.jsp" %>
+		<%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
 </body>
 </html>

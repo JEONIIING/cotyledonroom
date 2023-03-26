@@ -15,7 +15,7 @@
 
 <body>
  <%@ include file="/WEB-INF/views/common/header_am.jsp" %>
-	<c:if test="${adminLogimVo != null}">
+	<c:if test="${alertMsg != null}">
 		<button onclick="location.href='/admin/logout'">로그아웃</button>
 		<script >
 			alert('${alertMsg}');

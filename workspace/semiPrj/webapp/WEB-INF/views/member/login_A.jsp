@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,7 @@
     <title>COTYLEDON ROOM</title>
     <link rel="stylesheet" href="/resources/css/common/main.css">
     <link rel="stylesheet" href="/resources/css/member/login4.css">
+	
 </head>
 <body>
    <%@include file="/WEB-INF/views/common/header_be.jsp" %>
@@ -48,12 +50,13 @@
   
     </table>
   </form>
-
+	
     <%@include file="/WEB-INF/views/common/footer.jsp" %>
-
-	<script>
-		${loginfailMsg}
-	</script>
+	<c:if test="${adminLogimVo !=null}">
+		<script>
+			alert('${loginfailMsg}');
+		</script>
+	</c:if>
 	
 </body>
 </html>

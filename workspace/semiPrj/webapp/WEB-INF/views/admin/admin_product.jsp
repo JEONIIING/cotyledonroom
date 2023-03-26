@@ -7,106 +7,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상품관리</title>
-    <link rel="stylesheet" href="css/A_css.css">
-    <link rel="stylesheet" href="css/admin.css">
-    <link rel="stylesheet" href="./css/a_main.css">
-    <link rel="stylesheet" href="./css/designerForm.css">
-    <link rel="stylesheet" href="./css/admin_product_list.css">
-    <script defer src="./js/admin_product_list.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="/resources/css/admin/admin.css">
+    <link rel="stylesheet" href="/resources/css/admin/a_main.css">
+    <link rel="stylesheet" href="/resources/css/admin/admin_product.css">
 </head>
 <body>
-		<%@ include file="./header_am.jsp" %>
+		<%@ include file="/WEB-INF/views/common/header_am.jsp" %>
 		
-		<div style="height: px;">
-    <div class="board_wrap">
-      <div class="board_title">
-          <Strong>상품목록</Strong>
-          <p>고객에게 판매할 상품들의 목록입니다.</p>
-      </div>
-      <div class="board_list_wrap">
-          <div class="board_list">
-              <div class="top">
-                  <div class="num"><input type="checkbox" id="check-all"></div>
-                  <div class="title"> 상품 정보</div>
-                  <div class="name"> 상품명</div>
-                  <div class="writer">상품가격</div>
-                  <div class="date">상품코드</div>
-                  <div class="count">카테고리</div>
-              </div>
-              <div>
-                  <div class="num"><input type="checkbox" class="check-item"></div>
-                  <div class="title">
-                      <a href="./admin_product_info.jsp"><img class="p_img" src="./image/네불라 115g - 헤어 무스 에센스.png" alt="이미지"></a>
-                  </div>
-                  <div class="name"><a href="./admin_product_info.html">네불라 115g</a></div>
-                  <div class="writer">24,000</div>
-                  <div class="date">A083F1</div>
-                  <div class="count">에센스</div>
-              </div>
-              <div>
-                <div class="num"><input type="checkbox" class="check-item"></div>
-                <div class="title">
-                    <img class="p_img" src="./image/누베스 알바 600ml.png" alt="이미지">
-                </div>
-                <div class="name"><a href="view.html">누베스 알바 600ml</a></div>
-                <div class="writer">68,000</div>
-                <div class="date">A083F1</div>
-                <div class="count">에센스</div>
-              </div>                
-              <div>
-                <div class="num"><input type="checkbox" class="check-item"></div>
-                <div class="title">
-                    <img class="p_img" src="./image/다이슨 고데기.png" alt="이미지">
-                </div>
-                <div class="name"><a href="view.html">다이슨 고데기</a></div>
-                <div class="writer">329,000</div>
-                <div class="date">A083F1</div>
-                <div class="count">기계</div>
-              </div>                <div>
-                <div class="num"><input type="checkbox" class="check-item"></div>
-                <div class="title">
-                    <img class="p_img" src="./image/다이슨 헤어드라이기.png" alt="이미지">
-                </div>
-                <div class="name"><a href="view.html">다이슨 헤어드라이기</a></div>
-                <div class="writer">613,000</div>
-                <div class="date">A083F1</div>
-                <div class="count">기계</div>
-              </div>                <div>
-                <div class="num"><input type="checkbox" class="check-item"></div>
-                <div class="title">
-                    <img class="p_img" src="./image/레미시오 100ml.png" alt="이미지">
-                </div>
-                <div class="name"><a href="view.html">레미시오 100ml</a></div>
-                <div class="writer">19,000</div>
-                <div class="date">A083F1</div>
-                <div class="count">에센스</div>
-              </div>
-          </div>
-
-
-          <div class="board_page">
-              <a href="#" class="bt first"><<</a>
-              <a href="#" class="bt prev"><</a>
-              <a href="#" class="num on">1</a>
-              <a href="#" class="num">2</a>
-              <a href="#" class="num">3</a>
-              <a href="#" class="num">4</a>
-              <a href="#" class="num">5</a>
-              <a href="#" class="bt next">></a>
-              <a href="#" class="bt last">>></a>
-          </div>
-
-
-          <div class="bt_wrap">
-              <a href="./admin_product.jsp" class="on">등록</a>
-              <button type="button" onclick="button_delete();" class="delete">삭제</button>
-          </div>
-      </div>
-  </div> 
+		<div id="menu_title"><상품 등록></div>
+    <div id="menu_title2">등록할 새로운 상품의 정보를 입력해주세요.</div>
   </div>
+
+  <form action="/admin/productList" method="post">
+    <table class="content">
+      <tr>
+        <td class="text">* 상품코드</td>
+        <td><input class="box" type="text" name="productCode"></td>
+      </tr>
+      <tr>
+        <td class="text">* 상품명</td>
+        <td ><input class="box" type="text" name="productName"></td>
+      </tr>
+      <tr>
+        <td class="text">* 상품 금액</td>
+        <td ><input class="box" type="text" name="productPrice"></td>
+      </tr>
+      <tr>
+        <td class="text">* 카테고리 </td>
+        <td >
+          <select name="categoly" id="categoly"vrequired>
+            <option value="shampoo">샴푸</option>
+            <option value="treatment">트리트먼트</option>
+            <option value="styling">스타일링</option>
+            <option value="essence">에센스</option>
+            <option value="machine">기계</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class="text">* 기본내용</td>
+        <td ><textarea name="" id="" cols="100" rows="2"></textarea></td>
+      </tr>
+      <tr>
+        <td class="text">* 상세내용</td>
+        <td ><textarea name="" id="" cols="100" rows="20"></textarea></td>
+      </tr>
+      <tr>
+        <td class="text">* 상품 이미지</td>
+        <td>
+          <input class="box" type="password" name="memberPwd">
+          <input type="file" name="" id="" required multiple>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input class="register" input type="submit" value="등록">
+          <button class="cancel" type="button" ><a href="./admin_product_list.html">취소</a></button>
+        <td>
+        </td>
+      </tr>
+      
+  
+    </table>
+  </form>
 		
-		<%@ include file="./footer.jsp" %>
+		<%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
 </body>
 </html>

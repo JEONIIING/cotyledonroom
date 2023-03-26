@@ -7,15 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>고객 관리</title>
-    <link rel="stylesheet" href="css/D_css.css">
-    <link rel="stylesheet" href="css/admin.css">
-    <link rel="stylesheet" href="./css/a_main.css">
-    <link rel="stylesheet" href="./css/designerForm.css">
-    <link rel="stylesheet" href="./css/admin_member_list.css">
+    <link rel="stylesheet" href="/resources/css/admin/D_css.css">
+    <link rel="stylesheet" href="/resources/css/admin/admin.css">
+    <link rel="stylesheet" href="/resources/css/admin/a_main.css">
+    <link rel="stylesheet" href="/resources/css/admin/designerForm.css">
+    <link rel="stylesheet" href="/resources/css/admin/admin_member_list.css">
     
 </head>
 <body>
-	<%@ include file="./header_am.jsp" %>
+	<%@ include file="/WEB-INF/views/common/header_am.jsp" %>
 	
 	<div>
     <div class="board_wrap">
@@ -34,7 +34,7 @@
               </div>
               <div class = "infoLine" onclick="location.href='http://192.168.200.164:5500/admin_member_info.jsp'">
                   <div class="num">7</div>
-                  <div class="title"><a href="./admin_member_info.html">도리도리</a></div>
+                  <div class="title"><a href="/admin/memberInfo">도리도리</a></div>
                   <div class="writer">친절하신 편임</div>
                   <div class="gender">F</div>
                   <div class="count">2021.07.22</div>
@@ -103,6 +103,6 @@
   </div>
   <br><br><br><br><br><br>
 	
-	<%@ include file="./footer.jsp" %>
+	<%@ include file="/WEB-INF/views/common/footer.jsp" %>
 </body>
 </html>
