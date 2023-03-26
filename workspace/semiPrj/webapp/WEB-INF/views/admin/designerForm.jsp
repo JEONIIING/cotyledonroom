@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/resources/css/admin/admin.css">
     <link rel="stylesheet" href="/resources/css/admin/a_main.css">
     <link rel="stylesheet" href="/resources/css/admin/designerForm.css">
-    <script defer src="/resources/js/designerForm.js"></script>
+    <script defer src="/resources/js/designerForm.js?ver=1"></script>
 </head>
 <body>
 		<%@ include file="/WEB-INF/views/common/header_am.jsp" %>
@@ -20,41 +20,43 @@
   </div>
   
   
-  <form action="/admin/designerList" method="post">
+  <form action="/admin/designerList" onsubmit="return checkValid();" method="post">
     <table class="content">
       <tr>
         <td class="text">* 아이디</td>
         <td>
-          <input class="box" type="text" name="memberId" required>
-          <button>중복확인</button>
+          <input class="box" type="text" name="deId" required placeholder="4~12자리 소문자로 시작(숫자포함)">
         </td>
       </tr>
       <tr>
         <td class="text">* 비밀번호</td>
-        <td ><input class="box" type="password" name="memberPwd" required></td>
+        <td ><input class="box" type="password" name="dePwd" required placeholder="비밀번호를 입력하십시오."></td>
       </tr>
       <tr>
         <td class="text">* 비밀번호 확인</td>
         <td>
-          <input class="box" type="password" name="memberPwd" required>
-          <span>*</span>
+          <input class="box" type="password" name="dePwd2" required placeholder="비밀번호를 입력하십시오.">
+          <span id="same"></span>
         </td>
       </tr>
       <tr>
         <td class="text">* 디자이너 이름 </td>
-        <td ><input class="box" type="text" name="memberPwd" required></td>
+        <td ><input class="box" type="text" name="deName" required placeholder="한글 2~4글자">
+          <span class="sameName"></span>
+        </td>
+        
       </tr>
       <tr>
         <td class="text">* 전화번호</td>
-        <td ><input class="box" type="tel" name="memberPwd" required></td>
+        <td ><input class="box" type="text" name="deTel" required placeholder="010-xxxx-xxxx"></td>
       </tr>
       <tr>
         <td class="text">* 이메일</td>
-        <td ><input class="box" type="email" name="memberPwd" required></td>
+        <td ><input class="box" type="email" name="deEmail" required placeholder="abc@abc.com"></td>
       </tr>
       <tr>
         <td colspan="2">
-          <input class="create" input class="box" type="submit" value="계정 생성" onclick="des_create();">
+          <input class="create" input class="box" type="submit" value="계정 생성" >
           <button class="cancel" type="button" ><a href="javascript:window.history.back();">취소</a></button>
         </td>
       </tr>
