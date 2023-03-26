@@ -56,16 +56,18 @@
                     <h2>&nbsp;&nbsp;김승우 디자이너</h2><br>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;고객이 왕이다</p>
                     <br>&nbsp;&nbsp;&nbsp;
-                    <input type="radio" name="designer" value="designer1">
-                    <label for="designer1">선택하기</label>
+                    <label>
+                        <input type="radio" name="designer" value="designer1">선택하기
+                    </label>
                 </td>
                 <td><img src="/resources/image/shop3.jpg" alt=""></td>
                 <td>
                     <h2>&nbsp;&nbsp;김수잔 디자이너</h2><br>
                     <p>당신만의 분위기를 담은 디자인</p>
                     <br>&nbsp;&nbsp;&nbsp;
-                    <input type="radio" name="designer" value="designer2">
-                    <label for="designer2">선택하기</label>
+                    <label>
+                        <input type="radio" name="designer" value="designer2">선택하기
+                    </label>
                 </td>
             </tr>
             <tr>
@@ -74,16 +76,18 @@
                     <h2>&nbsp;&nbsp;김연우 디자이너</h2><br>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;변신시켜 드립니다</p>
                     <br>&nbsp;&nbsp;&nbsp;
-                    <input type="radio" name="designer" value="designer3">
-                    <label for="designer3">선택하기</label>
+                    <label>
+                        <input type="radio" name="designer" value="designer3">선택하기
+                    </label>
                 </td>
                 <td><img src="/resources/image/shop3.jpg" alt=""></td>
                 <td>
                     <h2>&nbsp;&nbsp;김승우 디자이너</h2><br>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;변신시켜 드립니다</p>
                     <br>&nbsp;&nbsp;&nbsp;
-                    <input type="radio" name="designer" value="designer4">
-                    <label for="designer4">선택하기</label>
+                    <label>
+                        <input type="radio" name="designer" value="designer4">선택하기
+                    </label>
                 </td>
             </tr>
             <tr>
@@ -92,16 +96,18 @@
                     <h2>&nbsp;&nbsp;김승우 디자이너</h2><br>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;변신시켜 드립니다</p>
                     <br>&nbsp;&nbsp;&nbsp;
-                    <input type="radio" name="designer" value="designer5">
-                    <label for="designer5">선택하기</label>
+                    <label>
+                        <input type="radio" name="designer" value="designer5">선택하기
+                    </label>
                 </td>
                 <td><img src="/resources/image/shop3.jpg" alt=""></td>
                 <td>
                     <h2>&nbsp;&nbsp;김승우 디자이너</h2><br>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;변신시켜 드립니다</p>
                     <br>&nbsp;&nbsp;&nbsp;
-                    <input type="radio" name="designer" value="designer6">
-                    <label for="designer6">선택하기</label>
+                    <label>
+                        <input type="radio" name="designer" value="designer6">선택하기
+                    </label>
                 </td>
             </tr> <tr>
                 <td><img src="/resources/image/shop3.jpg" alt=""></td>
@@ -109,16 +115,18 @@
                     <h2>&nbsp;&nbsp;김승우 디자이너</h2><br>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;변신시켜 드립니다</p>
                     <br>&nbsp;&nbsp;&nbsp;
-                    <input type="radio" name="designer" value="designer7">
-                    <label for="designer7">선택하기</label>
+                    <label>
+                        <input type="radio" name="designer" value="designer7">선택하기
+                    </label>
                 </td>
                 <td><img src="/resources/image/shop3.jpg" alt=""></td>
                 <td>
                     <h2>&nbsp;&nbsp;김승우 디자이너</h2><br>
                     <p>&nbsp;&nbsp;&nbsp;&nbsp;변신시켜 드립니다</p>
                     <br>&nbsp;&nbsp;&nbsp;
-                    <input type="radio" name="designer" value="designer8">
-                    <label for="designer8">선택하기</label>
+                    <label>
+                        <input type="radio" name="designer" value="designer8">선택하기
+                    </label>
                 </td>
             </tr>
         </table>
@@ -128,10 +136,11 @@
                     <a href="/reservation/rvSellect01">이전</a>
                 </button>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <button type="button">
-                    <a href="/reservation/rvSellect03">다음</a>
-                </button>
+                <button type="button" onclick="nextPage2()">다음</button>
+
+                <script src="/resources/js/rv_sellect.js"></script>
             </div>
+
     </form>
     
     

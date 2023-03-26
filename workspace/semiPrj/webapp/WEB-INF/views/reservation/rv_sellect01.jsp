@@ -63,8 +63,9 @@
                     <p>전화 : 02-222-4444</p>
                 </td>
                 <td class="d_td">
-                    <input type="radio" name="shop" value="shop1">
-                    <label for="shop1">선택하기</label>
+                    <label>
+                        <input type="radio" name="shop" value="shop1">선택하기
+                    </label>
                 </td>
             </tr>
         </table>
@@ -83,8 +84,9 @@
                     <p>전화 : 02-222-3333</p>
                 </td>
                 <td class="d_td">
-                    <input type="radio" name="shop" value="shop2">
-                    <label for="shop2">선택하기</label>
+                    <label>
+                        <input type="radio" name="shop" value="shop2">선택하기
+                    </label>
                 </td>
             </tr>
         </table>
@@ -103,8 +105,9 @@
                     <p>전화 : 02-222-4444</p>
                 </td>
                 <td class="d_td">
-                    <input type="radio" name="shop" value="shop3">
-                    <label for="shop3">선택하기</label>
+                    <label>
+                        <input type="radio" name="shop" value="shop3">선택하기
+                    </label>
                 </td>
             </tr>
         </table>
@@ -123,18 +126,19 @@
                     <p>전화 : 02-222-4444</p>
                 </td>
                 <td class="d_td">
-                    <input type="radio" name="shop" value="shop4">
-                    <label for="shop8">선택하기</label>
+                    <label>
+                        <input type="radio" name="shop" value="shop4">선택하기
+                    </label>
                 </td>
             </tr>
         </table>
 
         <div style="text-align: center;">
         
-            <button type="button">
-                    <a href="/reservation/rvSellect02">다음</a>
-            </button>
             
+            <button type="button" onclick="nextPage1()">다음</button>
+            
+            <script src="/resources/js/rv_sellect.js"></script>
         </div>
 
     </form>

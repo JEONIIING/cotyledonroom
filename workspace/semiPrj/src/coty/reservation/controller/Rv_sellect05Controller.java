@@ -1,4 +1,4 @@
-package com.coty.app.reservation.controller;
+package coty.reservation.controller;
 
 import java.io.IOException;
 
@@ -8,12 +8,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/reservation/rvSellect04")
-public class Rv_sellect04Controller extends HttpServlet {
+@WebServlet("/reservation/rvSellect05")
+public class Rv_sellect05Controller extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("/WEB-INF/views/reservation/rv_sellect04.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/views/reservation/rv_sellect05.jsp").forward(req, resp);
 	}
 	
 	@Override
