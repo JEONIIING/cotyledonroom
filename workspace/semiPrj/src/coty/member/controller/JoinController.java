@@ -7,15 +7,76 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import coty.member.service.MemberService;
+import coty.member.vo.MemberVo;
 @WebServlet("/member/join")
 public class JoinController extends HttpServlet{
+	//화면
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.getRequestDispatcher("/WEB-INF/views/member/join.jsp").forward(req, resp);
 	}
+	//회원가입 기능
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		doGet(req, resp);
-	}
+		
+		//데이터 꺼내기
+			String memberId = req.getParameter("memberId");
+			String memberPwd = req.getParameter("memberPwd");
+			String memberPwd2 = req.getParameter("memberPwd2");
+			String membername = req.getParameter("membername");
+			String memberIdnum1 = req.getParameter("memberIdnum1");
+			String memberIdnum2 = req.getParameter("memberIdnum2");
+			String memberPhone = req.getParameter("memberPhone");
+			String memberPhone2 = req.getParameter("memberPhone2");
+			String memberPhone3 = req.getParameter("memberPhone3");
+			String memberEmail = req.getParameter("memberEmail");
+			String memberEmail2 = req.getParameter("memberEmail2");
+			String memberAddress = req.getParameter("memberAddress");
+			String memberAddress2 = req.getParameter("memberAddress2");
+			String memberNick = req.getParameter("memberNick");
+			String [] genderArr = req.getParameterValues("gender");
 
+			//데이터 뭉치기
+			MemberVo vo = new MemberVo();
+			vo.setId(memberId);
+			vo.setPwd(memberPwd);
+			vo.setName(membername);
+			vo.setSsno(memberIdnum1);
+			vo.setNick(memberNick);
+			vo.setAddress(memberAddress);
+			vo.setEmail(memberEmail);
+			vo.setPhone(memberPhone);
+			vo.setBirth(memberIdnum1);
+			if (genderArr != null) {
+				vo.setGender_fm(String.join(",", genderArr));
+			}
+			
+			//서비스로직 호출
+			int result = 0;
+			try {
+				MemberService service = new MemberService();
+				result = service.join(vo);
+			} catch (Exception e) {
+				System.out.println("[ERROR] 회원가입 중 예외 발생..");
+				e.printStackTrace();
+			}
+		
+			//화면
+			if(result == 1) {
+				req.getSession().setAttribute("alertMsg", "회원가입 성공!");
+				resp.sendRedirect("/");
+			}else {
+				req.setAttribute("errorMsg", "회원가입 실패..");
+				req.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(req, resp);
+			}
+		}
 }
+			
+				
+				
+			
+
+
+
