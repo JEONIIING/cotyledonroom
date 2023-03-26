@@ -49,8 +49,8 @@
                 <col class="col2"/>
             </colgroup>
             <tr>
-                <td class="d_td">날짜</td>
-                <td><input type="date"></td>
+                <td class="d_td"><label for="date">날짜</label></td>
+                <td><input type="date" id="date" name="date" required></td>
             </tr>
             <tr>
                 <td class="d_td">오전</td>
@@ -73,35 +73,35 @@
                     <div>
                         <input type="radio" name="time" value="time_1200">
                         <label for="time_1200">12:00</label> &nbsp;
-                        <input type="radio" name="time"" value="time_1230">
+                        <input type="radio" name="time" value="time_1230">
                         <label for="time_1230">12:30</label> &nbsp;
-                        <input type="radio" name="time"" value="time_1300">
+                        <input type="radio" name="time" value="time_1300">
                         <label for="time_1300">1:00</label> &nbsp;&nbsp;&nbsp;
-                        <input type="radio" name="time"" value="time_1330">
+                        <input type="radio" name="time" value="time_1330">
                         <label for="time_1330">1:30</label>&nbsp; <br>
-                        <input type="radio" name="time"" value="time_1400">
+                        <input type="radio" name="time" value="time_1400">
                         <label for="time_1400">2:00</label> &nbsp;&nbsp;
-                        <input type="radio" name="time"" value="time_1430">
+                        <input type="radio" name="time" value="time_1430">
                         <label for="time_1430">2:30</label> &nbsp;&nbsp;
-                        <input type="radio" name="time"" value="time_1500">
+                        <input type="radio" name="time" value="time_1500">
                         <label for="time_1500">3:00</label> &nbsp;&nbsp;
-                        <input type="radio" name="time"" value="time_1530">
+                        <input type="radio" name="time" value="time_1530">
                         <label for="time_1530">3:30</label> <br>
-                        <input type="radio" name="time"" value="time_1600">
+                        <input type="radio" name="time" value="time_1600">
                         <label for="time_1600">4:00</label> &nbsp;&nbsp;
-                        <input type="radio" name="time"" value="time_1630">
+                        <input type="radio" name="time" value="time_1630">
                         <label for="time_1630">4:30</label> &nbsp;&nbsp;
-                        <input type="radio" name="time"" value="time_1700">
+                        <input type="radio" name="time" value="time_1700">
                         <label for="time_1700">5:00</label> &nbsp;&nbsp;
-                        <input type="radio" name="time"" value="time_1730">
+                        <input type="radio" name="time" value="time_1730">
                         <label for="time_1730">5:30</label> <br>
-                        <input type="radio" name="time"" value="time_1800">
+                        <input type="radio" name="time" value="time_1800">
                         <label for="time_1800">6:00</label> &nbsp;&nbsp;
-                        <input type="radio" name="time"" value="time_1830">
+                        <input type="radio" name="time" value="time_1830">
                         <label for="time_1830">6:30</label> &nbsp;&nbsp;
-                        <input type="radio" name="time"" value="time_1900">
+                        <input type="radio" name="time" value="time_1900">
                         <label for="time_1900">7:00</label> &nbsp;&nbsp;
-                        <input type="radio" name="time"" value="time_1930">
+                        <input type="radio" name="time" value="time_1930">
                         <label for="time_1930">7:30</label>
                     </div>
                 </td>
@@ -113,9 +113,9 @@
                 <a href="/reservation/rvSellect03">이전</a>
             </button>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <button type="button">
-                <a href="/reservation/rvSellect05">다음</a>
-            </button>
+            <button type="button" onclick="nextPage4()">다음</button>
+
+                <script src="/resources/js/rv_sellect.js"></script>
         </div>
         
 

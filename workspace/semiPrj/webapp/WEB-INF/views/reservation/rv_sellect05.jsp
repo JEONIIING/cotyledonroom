@@ -84,7 +84,7 @@
         </table>
 
         <div class="agree">
-            <input type="checkbox">이용약관을 동의합니다.
+            <input type="checkbox" name="checkbox" id="checkbox">이용약관을 동의합니다.
         </div>
 
         <div style="text-align: center;">
@@ -92,9 +92,9 @@
                 <a href="/reservation/rvSellect04">이전</a>
             </button>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <button type="button">
-                <a href="">결제하기</a>
-            </button>
+            <button type="button" onclick="nextPage5()">다음</button>
+
+                <script src="/resources/js/rv_sellect.js"></script>
         </div>
 
     </form>

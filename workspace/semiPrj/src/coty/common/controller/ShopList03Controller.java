@@ -1,4 +1,4 @@
-package com.coty.app.common.controller;
+package coty.common.controller;
 
 import java.io.IOException;
 

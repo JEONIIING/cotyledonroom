@@ -69,8 +69,9 @@
                     <p>15,000 원</p>
                 </td>
                 <td>
-                    <input type="radio" name="cut" value="m_cut">
-                    <label for="m_cut""></label>
+                    <label>
+                        <input type="radio" name="cut" value="m_cut">선택하기
+                    </label>
                 </td>
             </tr>
             <tr>
@@ -88,8 +89,9 @@
                     <p>18,000 원</p>
                 </td>
                 <td>
-                    <input type="radio" name="cut" value="f_cut">
-                    <label for="f_cut""></label>
+                    <label>
+                        <input type="radio" name="cut" value="f_cut">선택하기
+                    </label>
                 </td>
             </tr>
             <tr>
@@ -106,8 +108,9 @@
                     <p>27,000 원</p>
                 </td>
                 <td>
-                    <input type="radio" name="cut" value="care_cut">
-                    <label for="care_cut"></label>
+                    <label>
+                        <input type="radio" name="cut" value="care_cut">선택하기
+                    </label>
                 </td>
             </tr>
             <tr>
@@ -123,8 +126,9 @@
                     <p>20,000 원</p>
                 </td>
                 <td>
-                    <input type="radio" name="cut" value="dowm_pama">
-                    <label for="dowm_pama"></label>
+                    <label>
+                        <input type="radio" name="cut" value="down_fama">선택하기
+                    </label>
                 </td>
             </tr>
             <tr>
@@ -141,8 +145,9 @@
                     <p>70,000 원</p>
                 </td>
                 <td>
-                    <input type="radio" name="cut" value="m_pama">
-                    <label for="m_pama"></label>
+                    <label>
+                        <input type="radio" name="cut" value="m_pama">선택하기
+                    </label>
                 </td>
             </tr>
             <tr>
@@ -159,8 +164,9 @@
                     <p>20,000 원</p>
                 </td>
                 <td>
-                    <input type="radio" name="cut" value="w_pama">
-                    <label for="w_pama"></label>
+                    <label>
+                        <input type="radio" name="cut" value="w_pama">선택하기
+                    </label>
                 </td>
             </tr>
             <tr>
@@ -177,8 +183,9 @@
                     <p>50,000 원</p>
                 </td>
                 <td>
-                    <input type="radio" name="cut" value="m_dye">
-                    <label for="m_dye"></label>
+                    <label>
+                        <input type="radio" name="cut" value="m_dye">선택하기
+                    </label>
                 </td>
             </tr>
             <tr>
@@ -195,8 +202,9 @@
                     <p>60,000 원</p>
                 </td>
                 <td>
-                    <input type="radio" name="cut" value="w_dye">
-                    <label for="w_dye"></label>
+                    <label>
+                        <input type="radio" name="cut" value="w_dye">선택하기
+                    </label>
                 </td>
             </tr>
             <tr>
@@ -212,8 +220,9 @@
                     <p>18,000 원</p>
                 </td>
                 <td>
-                    <input type="radio" name="cut" value="dry">
-                    <label for="dry"></label>
+                    <label>
+                        <input type="radio" name="cut" value="dry">선택하기
+                    </label>
                 </td>
             </tr>
             
@@ -224,9 +233,9 @@
                 <a href="/reservation/rvSellect02">이전</a>
             </button>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <button type="button">
-                <a href="/reservation/rvSellect04">다음</a>
-            </button>
+            <button type="button" onclick="nextPage3()">다음</button>
+
+                <script src="/resources/js/rv_sellect.js"></script>
         </div>
 
 
