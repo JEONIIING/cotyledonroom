@@ -9,6 +9,8 @@
     <title>COTYLEDON ROOM</title>
     <link rel="stylesheet" href="/resources/css/common/main.css">
     <link rel="stylesheet" href="/resources/css/member/agree.css">
+    
+    
 </head>
 <body>
     <%@include file="/WEB-INF/views/common/header_be.jsp" %>
@@ -131,7 +133,7 @@
   <div class="line"></div>
   
   
-  <div class="btn_red" style="display: inline-block;"><a href ="/member/join" class="next">다음단계</a></div>
+  <div class="btn_red" style="display: inline-block;"><a href ="/member/join" class="next" onclick="nextForm()">다음단계</a></div>
   <span class="btn_black" style="display: inline-block;"><a href ="#" class="next">취소</a></span>
   
   
