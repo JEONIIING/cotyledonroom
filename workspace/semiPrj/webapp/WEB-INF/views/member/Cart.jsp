@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -34,52 +35,41 @@
                 <div class="writer">선택</div>
                 <div class="num">상품번호</div>
                 <div class="product">상품</div>
-                <div class="writer">수량</div>
                 <div class="writer">가격</div>
-                <div class="writer">배송비</div>
+                <div class="writer">수량</div>
+                <div class="writer"></div>
             </div>
+          <c:forEach items="${cartList}" var="cvo">
             <div class="product_1"> 
               <div class="num"><input type="checkbox"></div>
-                <div class="num"><a href="./view.jsp">1</a></div>
-                <div class="num2"><img class="cart_img" src="/resources/image/로제아 하비투 600ml.png" alt=""></div>
-                <div class="num">로제아 하비투</div>
-                <div class="num">2</div>
-                <div class="num">65,000</div>
-                <div class="num">5,000</div>
+                <div class="num">${cvo.no}</div>
+                <div class="num2"><img class="cart_img" src="/resources/image/${cvo.src}.png" alt=""></div>
+                <div class="num">${cvo.name }</div>
+                <div class="num">${cvo.price }</div>
+                <div class="num">${cvo.amount }</div>
+                <div class="num"><button onclick="location.href='${cvo.src}.jsp'"></button></div>
             </div>
-            <div class="product_1"> 
-              <div class="num"><input type="checkbox"></div>
-                <div class="num"><a href="./view.jsp">9</a></div>
-                <div class="num2"><img class="cart_img" src="/resources/image/다이슨 헤어드라이기.png" alt=""></div>
-                <div class="num">다이슨 헤어드라이기</div>
-                <div class="num">1</div>
-                <div class="num">500,000</div>
-                <div class="num">0</div>
-            </div>
-            <div class="product_1"> 
-              <div class="num"><input type="checkbox"></div>
-                <div class="num"><a href="./view.jsp">10</a></div>
-                <div class="num2"><img class="cart_img" src="/resources/image/세도 심플렉스 45g.png" alt=""></div>
-                <div class="num">로제아 하비투</div>
-                <div class="num">3</div>
-                <div class="num">19,000</div>
-                <div class="num">5,000</div>
-            </div>
-            
-           
+           </c:forEach>
         </div>
 
 
         <div class="board_page">
-            <a href="#" class="bt first"><<</a>
-            <a href="#" class="bt prev"><</a>
-            <a href="#" class="num on">1</a>
-            <a href="#" class="num">2</a>
-            <a href="#" class="num">3</a>
-            <a href="#" class="num">4</a>
-            <a href="#" class="num">5</a>
-            <a href="#" class="bt next">></a>
-            <a href="#" class="bt last">>></a>
+            <c:if test="${ pageVo.currentPage > 1 }">
+                    <a href="/board/list?page=${pageVo.currentPage-1}">이전</a>
+                </c:if>
+
+                <c:forEach var="i" begin="${pageVo.startPage}" end="${pageVo.endPage}">
+                    <c:if test="${pageVo.currentPage == i}">
+                        <span>${i}</span>
+                    </c:if>
+                    <c:if test="${pageVo.currentPage != i}">
+                        <a href="/board/list?page=${i}">${i}</a>
+                    </c:if>
+                </c:forEach>
+
+                <c:if test="${ pageVo.currentPage < pageVo.maxPage }">
+                    <a href="/board/list?page=${pageVo.currentPage+1}">다음</a>
+                </c:if>
         </div>
 
 
