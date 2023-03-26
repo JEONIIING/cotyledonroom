@@ -1,7 +1,7 @@
 package coty.market.vo;
 
 public class ProductVo {
-
+	
 	private String no;
 	private String c_no;
 	private String name;
@@ -9,25 +9,7 @@ public class ProductVo {
 	private String p_yn;
 	private String ex;
 	private String src;
-	public ProductVo() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public ProductVo(String no, String c_no, String name, String price, String p_yn, String ex, String src) {
-		super();
-		this.no = no;
-		this.c_no = c_no;
-		this.name = name;
-		this.price = price;
-		this.p_yn = p_yn;
-		this.ex = ex;
-		this.src = src;
-	}
-	@Override
-	public String toString() {
-		return "ProductVo [no=" + no + ", c_no=" + c_no + ", name=" + name + ", price=" + price + ", p_yn=" + p_yn
-				+ ", ex=" + ex + ", src=" + src + "]";
-	}
+	private String amount;
 	public String getNo() {
 		return no;
 	}
@@ -70,4 +52,31 @@ public class ProductVo {
 	public void setSrc(String src) {
 		this.src = src;
 	}
-}
+	public String getAmount() {
+		return amount;
+	}
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+	@Override
+	public String toString() {
+		return "ProductVo [no=" + no + ", c_no=" + c_no + ", name=" + name + ", price=" + price + ", p_yn=" + p_yn
+				+ ", ex=" + ex + ", src=" + src + ", amount=" + amount + "]";
+	}
+	public ProductVo(String no, String c_no, String name, String price, String p_yn, String ex, String src,
+			String amount) {
+		super();
+		this.no = no;
+		this.c_no = c_no;
+		this.name = name;
+		this.price = price;
+		this.p_yn = p_yn;
+		this.ex = ex;
+		this.src = src;
+		this.amount = amount;
+	}
+	public ProductVo() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	}

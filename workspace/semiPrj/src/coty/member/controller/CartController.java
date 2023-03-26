@@ -1,6 +1,7 @@
 package coty.member.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,12 +9,42 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import coty.market.vo.ProductVo;
+import coty.member.service.CartService;
+import coty.util.page.PageVo;
+
 @WebServlet("/member/cart")
 public class CartController extends HttpServlet{
+	private CartService cs = new CartService();
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("/WEB-INF/views/member/Cart.jsp").forward(req, resp);
+		
+		try {
+			//데이터 꺼내기
+			String no = req.getParameter("");
+			int currentPage = Integer.parseInt( req.getParameter("page") );
+			int listCount = cs.selectCount();
+			int pageLimit = 5;
+			int cartLimit = 5;
+			
+			//데이터 뭉치기
+			PageVo pageVo = new PageVo(listCount, currentPage, pageLimit, cartLimit);
+			
+			//서비스 호출
+			List<ProductVo> cartList = cs.selectList(pageVo);
+			
+			//화면
+			req.setAttribute("cartList", cartList);
+			req.setAttribute("pageVo", pageVo);
+			req.getRequestDispatcher("/WEB-INF/views/member/Cart.jsp").forward(req, resp);
+			
+		}catch(Exception e) {
+			System.out.println("[ERROR] 장바구니 조회중 예외 발생 ...");
+			e.printStackTrace();
+			req.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(req, resp);
+		}
+	
 	}
 	
 	@Override
