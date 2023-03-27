@@ -46,11 +46,11 @@ public class Notice_a_Dao {
 	public int write(Connection conn, Notice_a_Vo vo) throws Exception {
 		
 		//SQL (close)
-		String sql = "INSERT INTO NOTICE(NO, TITLE, CONTENT, WRITER, ENROLL_DATE) VALUES(SEQ_NOTICE_NO.NEXTVAL, ?, ?, ?, SYSDATE)";
+		String sql = "INSERT INTO NOTICE(NO,WRITER,TITLE, CONTENT) VALUES(SEQ_NOTICE_NO.NEXTVAL, 1, ?, ?)";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
+		
 		pstmt.setString(1, vo.getTitle());
 		pstmt.setString(2, vo.getContent());
-		pstmt.setString(3, vo.getwriter());
 		int result = pstmt.executeUpdate();
 		
 		JDBCTemplate.close(pstmt);

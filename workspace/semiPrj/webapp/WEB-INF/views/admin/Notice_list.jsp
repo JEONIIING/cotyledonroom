@@ -15,14 +15,7 @@
 
 <body>
  <%@ include file="/WEB-INF/views/common/header_am.jsp" %>
-	<c:if test="${alertMsg != null}">
-		<button onclick="location.href='/admin/logout'">로그아웃</button>
-		<script >
-			alert('${alertMsg}');
-		</script>
-	</c:if>
-	<c:remove var="alertMsg" scope="request"/>
-	
+
   <div style="height: 600px;">
     <div class="board_wrap">
       <div class="board_title">
