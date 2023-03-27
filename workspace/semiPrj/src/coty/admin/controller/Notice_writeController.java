@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import coty.admin.noticeVo.Notice_a_Vo;
+import coty.admin.service.NoticeService;
+
 @WebServlet("/admin/Notice_write")
 public class Notice_writeController extends HttpServlet{
 
@@ -18,6 +21,34 @@ public class Notice_writeController extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		doGet(req, resp);
+
+		String writer = req.getParameter("writer");
+		String title = req.getParameter("title");
+		String content = req.getParameter("content");
+		
+		Notice_a_Vo vo = new Notice_a_Vo();
+		vo.setwriter(writer);
+		vo.setTitle(title);
+		vo.setContent(content);
+		
+		int result = 0;
+		try {
+			NoticeService ns = new NoticeService();
+			result = ns.write(vo);
+			
+		} catch (Exception e) {
+			System.out.println("[ERROR] 게시글 작성 중 예외발생 ...");
+			e.printStackTrace();
+		}
+		
+		if(result == 1) {
+			req.getSession().setAttribute("alertMsg", "게시글 작성 성공");
+			resp.sendRedirect("/");
+
+		}else{
+			req.getSession().setAttribute("alertMsg", "게시글 작성 실패..");
+			resp.sendRedirect("/");
+		}
+		
 	}
 }

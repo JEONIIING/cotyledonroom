@@ -1,24 +1,24 @@
 package coty.admin.noticeVo;
 
-public class Notice_aVo {
+public class Notice_a_Vo {
 	
 	private String no;
-	private String a_no;
 	private String title;
 	private String content;
 	private String enrollDate;
 	private String deleteYn;
+	private String writer;
 	
 	
 	
 	
-	public Notice_aVo() {
+	public Notice_a_Vo() {
 		
 	}
-	public Notice_aVo(String no, String a_no, String title, String content, String enrollDate, String deleteYn) {
+	public Notice_a_Vo(String no, String writer, String title, String content, String enrollDate, String deleteYn) {
 		super();
 		this.no = no;
-		this.a_no = a_no;
+		this.writer = writer;
 		this.title = title;
 		this.content = content;
 		this.enrollDate = enrollDate;
@@ -26,7 +26,7 @@ public class Notice_aVo {
 	}
 	@Override
 	public String toString() {
-		return "Notice_aVo [no=" + no + ", a_no=" + a_no + ", title=" + title + ", content=" + content + ", enrollDate="
+		return "Notice_a_Vo [no=" + no + ", writer=" + writer + ", title=" + title + ", content=" + content + ", enrollDate="
 				+ enrollDate + ", deleteYn=" + deleteYn + "]";
 	}
 	public String getNo() {
@@ -35,11 +35,11 @@ public class Notice_aVo {
 	public void setNo(String no) {
 		this.no = no;
 	}
-	public String getA_no() {
-		return a_no;
+	public String getwriter() {
+		return writer;
 	}
-	public void setA_no(String a_no) {
-		this.a_no = a_no;
+	public void setwriter(String writer) {
+		this.writer = writer;
 	}
 	public String getTitle() {
 		return title;
