@@ -1,5 +1,7 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+	
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,10 +13,10 @@
     <link rel="stylesheet" href="/resources/css/admin/admin.css">
     <link rel="stylesheet" href="/resources/css/admin/a_main.css">
     <link rel="stylesheet" href="/resources/css/admin/designerForm.css">
+	   
 </head>
 <body>
 		<%@ include file="/WEB-INF/views/common/header_am.jsp" %>
-		
 		<div style="height: px;">
     <div class="board_wrap">
       <div class="board_title">
@@ -25,45 +27,50 @@
           <div class="board_list">
               <div class="top">
                   <div class="num">번호</div>
-                  <div class="title">이름</div>
+                  <div class="title">닉네임</div>
                   <div class="writer">계정명</div>
                   <div class="gender">근무 매장</div>
-                  <div class="count">탈퇴여부</div>
+                  <div class="count">전화번호</div>
               </div>
-              <div>
-                  <div class="num">5</div>
-                  <div class="title"><a href="/admin/designerInfo">리아</a></div>
-                  <div class="writer">yec220409</div>
-                  <div class="gender">역삼역점</div>
-                  <div class="count">N</div>
-              </div>
-              <div>
-                  <div class="num">4</div>
-                  <div class="title"><a href="view.html">브라운</a></div>
-                  <div class="writer">gan230102</div>
-                  <div class="gender">강남점</div>
-                  <div class="count">N</div>
-              </div>                
-              <div>
-                  <div class="num">3</div>
-                  <div class="title"><a href="view.html">호이</a></div>
-                  <div class="writer">inc200615</div>
-                  <div class="gender">인천점</div>
-                  <div class="count">Y</div>
-              </div>                <div>
-                  <div class="num">2</div>
-                  <div class="title"><a href="view.html">글로리</a></div>
-                  <div class="writer">bus210830</div>
-                  <div class="gender">일산점</div>
-                  <div class="count">Y</div>
-              </div>                <div>
-                  <div class="num">1</div>
-                  <div class="title"><a href="view.html">지노</a></div>
-                  <div class="writer">dea230213</div>
-                  <div class="gender">부천역점</div>
-                  <div class="count">N</div>
-              </div>
-          </div>
+
+				<c:forEach items="${designerList}" var="devo">
+				
+		              <div>
+		                  <div class="num">${devo.no}</div>
+		                  <div class="title"><a href="/admin/designerInfo">${devo.nick}</a></div>
+		                  <div class="writer">${devo.id}</div>
+		                  <div class="gender">${devo.shop}</div>
+		                  <div class="count">${devo.phone}</div>
+		              </div>
+		              <div>
+		                  <div class="num">4</div>
+		                  <div class="title"><a href="view.html">브라운</a></div>
+		                  <div class="writer">gan230102</div>
+		                  <div class="gender">강남점</div>
+		                  <div class="count">N</div>
+		              </div>                
+		              <div>
+		                  <div class="num">3</div>
+		                  <div class="title"><a href="view.html">호이</a></div>
+		                  <div class="writer">inc200615</div>
+		                  <div class="gender">인천점</div>
+		                  <div class="count">Y</div>
+		              </div>                <div>
+		                  <div class="num">2</div>
+		                  <div class="title"><a href="view.html">글로리</a></div>
+		                  <div class="writer">bus210830</div>
+		                  <div class="gender">일산점</div>
+		                  <div class="count">Y</div>
+		              </div>                <div>
+		                  <div class="num">1</div>
+		                  <div class="title"><a href="view.html">지노</a></div>
+		                  <div class="writer">dea230213</div>
+		                  <div class="gender">부천역점</div>
+		                  <div class="count">N</div>
+		              </div>
+		          </div>
+				
+				</c:forEach>
 
 
           <div class="board_page">
@@ -92,4 +99,14 @@
 		<%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
 </body>
+
+ 
+		
 </html>
+<c:if test="${alertMsg != null}">
+    	<script>
+    		alert('${alertMsg}');
+    	</script>
+    	
+    </c:if>
+    <c:remove var="alertMsg"/>

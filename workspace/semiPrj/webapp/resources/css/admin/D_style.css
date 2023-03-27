@@ -107,7 +107,7 @@ a{
 }
 
 .board_list .writer{
-  width: 50%;
+  width: 30%;
 }
 
 .board_list .gender{
@@ -115,7 +115,7 @@ a{
 }
 
 .board_list .count{
-  width: 10%;
+  width: 30%;
 }
 
 .board_page{

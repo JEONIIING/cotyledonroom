@@ -79,3 +79,10 @@ button{
 	font-weight: 600;
 	color: blue;
 }
+.sel{
+	padding-left: 20px;
+}
+select{
+	height:30px;
+	margin-bottom: 10px;
+}

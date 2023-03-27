@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,10 +10,13 @@
 <body>
 	<header>
         <div class="abc">
-            <div class="Title"><a  href = "/">COTYLEDON ROOM</a></div>
+            <div class="Title"><a  href = "/designer/rv_chart">COTYLEDON ROOM</a></div>
             <div class="abc-right">
+            	<c:if test="${deLoginVo != null}">
+	            	<div class="abc-menu">${deLoginVo.name}님 환영합니다!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>        	
+            	</c:if>
               <div class="abc-menu"><a href = "/designer/rv_chart">MYPAGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div> 
-              <div class="abc-menu"><a href = "/">LOGOUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div> 
+              <div class="abc-menu"><a href = "/designer/logout">LOGOUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div> 
             </div>
         </div>
     </header>
