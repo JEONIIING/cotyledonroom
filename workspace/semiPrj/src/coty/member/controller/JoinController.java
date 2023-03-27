@@ -24,34 +24,25 @@ public class JoinController extends HttpServlet{
 		//데이터 꺼내기
 			String memberId = req.getParameter("memberId");
 			String memberPwd = req.getParameter("memberPwd");
-			String memberPwd2 = req.getParameter("memberPwd2");
 			String membername = req.getParameter("membername");
-			String memberIdnum1 = req.getParameter("memberIdnum1");
-			String memberIdnum2 = req.getParameter("memberIdnum2");
+			String memberIdnum = req.getParameter("memberIdnum");
 			String memberPhone = req.getParameter("memberPhone");
-			String memberPhone2 = req.getParameter("memberPhone2");
-			String memberPhone3 = req.getParameter("memberPhone3");
 			String memberEmail = req.getParameter("memberEmail");
-			String memberEmail2 = req.getParameter("memberEmail2");
 			String memberAddress = req.getParameter("memberAddress");
-			String memberAddress2 = req.getParameter("memberAddress2");
 			String memberNick = req.getParameter("memberNick");
-			String [] genderArr = req.getParameterValues("gender");
+			String gender = req.getParameter("gender");
 
 			//데이터 뭉치기
 			MemberVo vo = new MemberVo();
 			vo.setId(memberId);
 			vo.setPwd(memberPwd);
 			vo.setName(membername);
-			vo.setSsno(memberIdnum1);
-			vo.setNick(memberNick);
-			vo.setAddress(memberAddress);
-			vo.setEmail(memberEmail);
+			vo.setSsno(memberIdnum);
 			vo.setPhone(memberPhone);
-			vo.setBirth(memberIdnum1);
-			if (genderArr != null) {
-				vo.setGender_fm(String.join(",", genderArr));
-			}
+			vo.setEmail(memberEmail);
+			vo.setAddress(memberAddress);
+			vo.setNick(memberNick);
+			vo.setGender_fm(gender);
 			
 			//서비스로직 호출
 			int result = 0;

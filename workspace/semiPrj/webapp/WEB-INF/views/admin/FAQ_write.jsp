@@ -47,8 +47,8 @@
               </div>             
           </div>
           <div class="bt_wrap">
-              <a href="/admin/FAQ_list" class="on">등록</a>
-              <a href="/admin/FAQ_list">취소</a>
+            <a href="/admin/Notice_write" class="on" type="submit">등록</a>
+            <a href="/admin/FAQ_list">취소</a>
           </div>
       </div>
    </div>

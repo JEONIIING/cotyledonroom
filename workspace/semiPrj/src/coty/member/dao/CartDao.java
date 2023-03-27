@@ -12,7 +12,7 @@ import coty.market.vo.ProductVo;
 import static coty.util.JDBCTemplate.*;
 
 import coty.util.JDBCTemplate;
-import coty.util.page.PageVo;
+import coty.util.PageVo;
 
 public class CartDao {
 
@@ -20,10 +20,10 @@ public class CartDao {
 	public List<ProductVo> selectList(Connection conn , PageVo pageVo) throws Exception {
 
 		//SQL (close)
-		String sql = "SELECT * FROM ( SELECT ROWNUM AS RNUM , TEMP.* FROM ( SELECT P.NO , P.C_NO , P.NAME , P.PRICE , P.P_YN , P.EX , P.SRC, O.AMOUNT FROM PRODUCT P JOIN ORD_LIST O ON P.NO = O.P_NO WHERE P.P_YN = 'N' ORDER BY NO DESC ) TEMP ) WHERE RNUM BETWEEN ? AND ?";
+		String sql = "SELECT * FROM ( SELECT ROWNUM AS RNUM, TEMP.* FROM ( SELECT P.NO, P.C_NO, P.NAME, P.PRICE, P.DELETE_YN, P.EX, P.SRC, O.AMOUNT FROM PRODUCT P JOIN ORD_LIST O ON P.NO = O.P_NO WHERE P.DELETE_YN = 'N' ORDER BY P.NO DESC ) TEMP) WHERE RNUM BETWEEN ? AND ?";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
-		int startRow = (pageVo.getCurrentPage()-1) * pageVo.getcartLimit() + 1;
-		int endRow = startRow + pageVo.getcartLimit() - 1;
+		int startRow = (pageVo.getCurrentPage()-1) * pageVo.getBoardLimit() + 1;
+		int endRow = startRow + pageVo.getBoardLimit() - 1;
 		pstmt.setInt(1, startRow);
 		pstmt.setInt(2, endRow);
 		ResultSet rs = pstmt.executeQuery();
@@ -50,14 +50,14 @@ public class CartDao {
 			
 			cartList.add(vo);
 		}
-		
+		System.out.println(cartList);
 		return cartList;
 	}
 
 	public int selectCount(Connection conn) throws Exception {
 		
 		//SQL (close)
-		String sql = "SELECT COUNT(*) AS CNT FROM CART WHERE P_YN = 'N'";
+		String sql = "SELECT COUNT(*) AS CNT FROM PRODUCT WHERE DELETE_YN = 'N'";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		ResultSet rs = pstmt.executeQuery();
 		

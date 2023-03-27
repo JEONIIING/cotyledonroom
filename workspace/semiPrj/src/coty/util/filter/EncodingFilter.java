@@ -12,14 +12,16 @@ import javax.servlet.annotation.WebFilter;
 @WebFilter("/*")
 public class EncodingFilter implements Filter {
 
-	//이 필터를 거칠 때 실행되는 메소드
-	@Override
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-			throws IOException, ServletException {
-		
-		request.setCharacterEncoding("UTF-8");
-		chain.doFilter(request, response);
-		
-	}
+
+   //이 필터를 거칠 때 실행되는 메소드
+   @Override
+   public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+         throws IOException, ServletException {
+      
+      request.setCharacterEncoding("UTF-8");
+      chain.doFilter(request, response);
+      
+   }
 
 }
+

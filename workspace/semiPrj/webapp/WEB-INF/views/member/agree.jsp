@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,7 +54,7 @@
              
 전속관할로 합니다. 다만, 제소 당시 이용자의 주소 또는 거소가 분명하지 않거…</textarea>
             </div>
-          <div class="checkbox"><input type="checkbox">동의함</div>
+          <div class="checkbox"><input type="checkbox" required; name="check">동의함</div>
         </div>
         
       </div>
@@ -98,7 +99,7 @@
 </textarea>
           </div>
         </div>
-        <div class="checkbox"><input type="checkbox">동의함</div>
+        <div class="checkbox"><input type="checkbox" required; name="check">동의함</div>
       </div>
   
     </div>
@@ -123,7 +124,7 @@
         <div>
           <div style="display: inline-block;">
             *선택항목에 동의하지 않으셔도 회원가입은 가능합니다.
-        <div class="checkbox"><input type="checkbox">동의함</div>
+        <div class="checkbox"><input type="checkbox" required>동의함</div>
       </div>
   
     </div>
@@ -140,6 +141,15 @@
 </div>
 
 	<%@include file="/WEB-INF/views/common/footer.jsp" %>
+
+	<script type="text/javascript">
+	
+	const check = document.querySelector('#check');
+	const checkedA = check.checked;
+	// 선택 상태 확인
+	console.log("checka" , checkedA )
+	
+	</script>
 
 
 

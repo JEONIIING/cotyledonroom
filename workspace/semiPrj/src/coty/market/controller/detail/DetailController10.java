@@ -1,4 +1,4 @@
-package coty.admin.controller;
+package coty.market.controller.detail;
 
 import java.io.IOException;
 
@@ -8,13 +8,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/admin/FAQ_list")
-public class FAQ_listController extends HttpServlet{
+@WebServlet("/market/productdetail10")
+public class DetailController10 extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("/WEB-INF/views/admin/FAQ_list.jsp").forward(req, resp);
-
+		req.getRequestDispatcher("/WEB-INF/views/market/detail/ProductDetail10.jsp").forward(req, resp);
 	}
 	
 	@Override
@@ -22,3 +21,4 @@ public class FAQ_listController extends HttpServlet{
 		doGet(req, resp);
 	}
 }
+
