@@ -13,8 +13,9 @@ public class AdminLogoutController extends HttpServlet{
 	//관리자 로그아웃 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String root = req.getContextPath();
 		req.getSession().invalidate();
-		resp.sendRedirect("/");
+		resp.sendRedirect("/"+ root);
 	
 	}
 }

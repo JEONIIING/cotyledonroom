@@ -13,7 +13,8 @@ public class DesignerLogoutController extends HttpServlet{
 	//디자이너 계정 로그아웃
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String root = req.getContextPath();
 		req.getSession().invalidate();
-		resp.sendRedirect("/");
+		resp.sendRedirect("/"+ root);
 	}
 }
