@@ -16,9 +16,9 @@ public class ReviewDao {
 		public List<ReviewVo> selectList(Connection conn , PageVo pageVo) throws Exception {
 
 			//SQL (close)
-			String sql = "SELECT * FROM ( SELECT ROWNUM AS RNUM , TEMP.* FROM ( SELECT B.NO , B.TITLE , B.CONTENT , B.WRITER , B.ENROLL_DATE , B.HIT , M.NICK FROM BOARD B JOIN MEMBER M ON B.WRITER = M.NO WHERE B.DELETE_YN = 'N' ORDER BY NO DESC ) TEMP ) WHERE RNUM BETWEEN ? AND ?";
+			String sql = "SELECT * FROM ( SELECT ROWNUM AS RNUM , TEMP.* FROM ( SELECT r.NO, r.CONTENT, r.ENROLL_DATE, r.DEL_YN, d.NAME as DESIGNER_NAME, s.NAME as SHOP_NAME, c.NICK as CUSTOMER_NICK, st.NAME as STYLE_NAME FROM REVIEW r INNER JOIN RESERVATION rv ON r.R_NO = rv.NO INNER JOIN DESIGNER d ON rv.D_NO = d.NO INNER JOIN SHOP s ON d.S_NO = s.NO INNER JOIN COSTOMER c ON rv.C_NO = c.NO INNER JOIN STYLE st ON rv.S_NO = st.NO ) TEMP ) WHERE RNUM BETWEEN ? AND ?";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			int startRow = (pageVo.getCurrentPage()-1) * pageVo.getBoardLimit() + 1;
+			int startRow = (pageVo.getCurrentPage()-1) * pageVo.getBoardLimit() + 1; 
 			int endRow = startRow + pageVo.getBoardLimit() - 1;
 			pstmt.setInt(1, startRow);
 			pstmt.setInt(2, endRow);
@@ -30,13 +30,13 @@ public class ReviewDao {
 			while( rs.next() ) {
 				
 				String no = rs.getString("NO");
-				String rNo = rs.getString("R_NO");
+				//String rNo = rs.getString("R_NO");
 				String content = rs.getString("CONTENT");
 				String enrollDate = rs.getString("ENROLL_DATE");
 				
 				ReviewVo vo = new ReviewVo();
 				vo.setNo(no);
-				vo.setrNo(rNo);
+				//vo.setrNo(rNo);
 				vo.setContent(content);
 				vo.setEnrollDate(enrollDate);
 				
@@ -51,7 +51,7 @@ public class ReviewDao {
 		public int selectCount(Connection conn) throws Exception {
 			
 			//SQL (close)
-			String sql = "SELECT COUNT(*) AS CNT FROM REVIEW WHERE DELETE_YN = 'N'";
+			String sql = "SELECT COUNT(*) AS CNT FROM REVIEW WHERE DEL_YN = 'N'";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
 			
@@ -67,4 +67,38 @@ public class ReviewDao {
 			return cnt;
 		}
 
-}
+
+		//게시글 상세조회
+		public ReviewVo selectOne(Connection conn, String no) throws Exception {
+			
+			//SQL
+			String sql = "SELECT B.NO , B.TITLE , B.CONTENT , B.WRITER , B.ENROLL_DATE , B.HIT , A.CHANGE_NAME FROM BOARD B JOIN ATTACHMENT A ON (B.NO = A.REF_BOARD_NO) WHERE B.NO = ? AND B.DELETE_YN = 'N'";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, no);
+			ResultSet rs = pstmt.executeQuery();
+			
+			//rs -> obj
+			ReviewVo reviewVo = null;
+			if( rs.next() ) {
+				String reviewNo = rs.getString("NO");
+				String content = rs.getString("CONTENT");
+				String enrollDate = rs.getString("ENROLL_DATE");
+				String hit = rs.getString("HIT");
+				String changeName = rs.getString("CHANGE_NAME");
+				
+				reviewVo = new ReviewVo();
+				reviewVo.setNo(reviewNo);
+				reviewVo.setContent(content);
+				reviewVo.setEnrollDate(enrollDate);
+				reviewVo.setHit(hit);
+				reviewVo.setChangeName(changeName);
+			}
+			
+			JDBCTemplate.close(rs);
+			JDBCTemplate.close(pstmt);
+			
+			return reviewVo;
+
+
+		}
+}		

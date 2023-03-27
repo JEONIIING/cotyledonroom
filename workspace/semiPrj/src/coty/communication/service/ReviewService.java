@@ -44,7 +44,32 @@ public class ReviewService {
 			JDBCTemplate.close(conn);
 			
 			return result;
-		}	
+		}
+
+		//게시글 상세조회 
+		public ReviewVo selectOne(String no) throws Exception {
+			//비즈니스 로직
+			
+			//conn
+			Connection conn = JDBCTemplate.getConnection();
+			
+			//DAO 호출 (조회쿼리 + 증가쿼리)
+			ReviewDao dao = new ReviewDao();
+			int result = dao.increaseHit(conn, no);
+			
+			if(result != 1) {
+				//문제가 발생
+				throw new Exception("[ERROR]조회수 증가 실패...");
+			}
+				
+			ReviewVo reviewVo = dao.selectOne(conn , no);
+			
+			//tx , close
+			JDBCTemplate.commit(conn);
+			JDBCTemplate.close(conn);
+			
+			return reviewVo;
+		}//method
 	
 	
 }
