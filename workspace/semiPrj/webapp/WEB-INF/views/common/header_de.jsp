@@ -13,7 +13,7 @@
             <div class="Title"><a  href = "/designer/rv_chart">COTYLEDON ROOM</a></div>
             <div class="abc-right">
             	<c:if test="${deLoginVo != null}">
-	            	<div class="abc-menu">${deLoginVo.name}님 환영합니다!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>        	
+	            	<div class="abc-menu">${deLoginVo.nick}님 환영합니다!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>        	
             	</c:if>
               <div class="abc-menu"><a href = "/designer/rv_chart">MYPAGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div> 
               <div class="abc-menu"><a href = "/designer/logout">LOGOUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div> 
