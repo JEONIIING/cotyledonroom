@@ -7,7 +7,7 @@ import coty.market.vo.ProductVo;
 import coty.market.vo.Product_ImgVo;
 import coty.member.dao.CartDao;
 import coty.util.JDBCTemplate;
-import coty.util.page.PageVo;
+import coty.util.PageVo;
 
 public class CartService {
 
@@ -21,12 +21,12 @@ public class CartService {
 			
 			//SQL (DAO)
 			CartDao dao = new CartDao();
-			List<ProductVo> boardList = dao.selectList(conn , pageVo);
+			List<ProductVo> cartList = dao.selectList(conn , pageVo);
 			
 			//close
 			JDBCTemplate.close(conn);
 			
-			return boardList;
+			return cartList;
 		}
 		
 		//게시글 전체 갯수 조회 (삭제되지않은)

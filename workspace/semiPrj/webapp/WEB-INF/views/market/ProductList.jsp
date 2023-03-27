@@ -27,7 +27,7 @@
           <tr>
             <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img src="/resources/image/누베스 알바 600ml.png" alt=""></a></td>
             <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img src="/resources/image/로제아 하비투 600ml.png" alt=""></a></td>
-            <td><a href="/market/productdetail"><img src="/resources/image/베레 플루비아 600ml.png" alt=""></a></td>
+            <td><a href="/market/productdetail3"><img src="/resources/image/verepluvia.png" alt=""></a></td>
             <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img src="/resources/image/포스트 플루비아 600ml - 지성두피용 샴푸.png" alt=""></a></td>
           </tr>
           <tr class="product_name">
