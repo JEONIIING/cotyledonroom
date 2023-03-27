@@ -1,3 +1,5 @@
+<%@page import="coty.member.vo.MemberVo"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,11 +11,13 @@
 <body>
 	<header>
         <div class="abc">
+		
             <div class="Title"><a  href = "/">COTYLEDON ROOM</a></div>
-            <div class="abc-right">
+            <div class="abc-right">	
             <div class="abc-menu"><a href = "/member/cart">CART&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
             <div class="abc-menu"><a href = "/member/memberedit">MYPAGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div> 
             <div class="abc-menu"><a href = "/">LOGOUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div> 
+		
             </div>
         </div>
 
