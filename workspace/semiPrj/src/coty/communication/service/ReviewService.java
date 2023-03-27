@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.util.List;
 
 import coty.communication.dao.ReviewDao;
+import coty.communication.vo.ReviewAttachmentVo;
 import coty.communication.vo.ReviewVo;
 import coty.util.JDBCTemplate;
 import coty.util.PageVo;
@@ -55,12 +56,12 @@ public class ReviewService {
 			
 			//DAO 호출 (조회쿼리 + 증가쿼리)
 			ReviewDao dao = new ReviewDao();
-			int result = dao.increaseHit(conn, no);
+			//int result = dao.increaseHit(conn, no);
 			
-			if(result != 1) {
+			//if(result != 1) {
 				//문제가 발생
-				throw new Exception("[ERROR]조회수 증가 실패...");
-			}
+			//	throw new Exception("[ERROR]조회수 증가 실패...");
+			//}
 				
 			ReviewVo reviewVo = dao.selectOne(conn , no);
 			
@@ -70,6 +71,32 @@ public class ReviewService {
 			
 			return reviewVo;
 		}//method
+		
+		//게시글 작성 (+첨부파일 인서트)
+		public int write(ReviewVo vo, ReviewAttachmentVo atVo) throws Exception {
+			
+			//비지니스 로직
+			
+			//conn
+			Connection conn = JDBCTemplate.getConnection();
+			
+			ReviewDao dao = new ReviewDao();
+			//SQL (DAO) == 게시글 인서트
+			int result = dao.write(conn , vo);
+			//SQL (DAO) == 첨부파일 인서트
+			int atResult = dao.insertAttachment(conn, atVo);
+			
+			//tx , close
+			if(result * atResult == 1) {
+				JDBCTemplate.commit(conn);
+			}else {
+				JDBCTemplate.rollback(conn);
+			}
+			
+			JDBCTemplate.close(conn);
+			
+			return result * atResult;
+		}
 	
 	
 }
