@@ -18,40 +18,5 @@ public class AdminLoginController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.getRequestDispatcher("/WEB-INF/views/member/login_A.jsp").forward(req, resp);
 	}
-	
-	//관리자 로그인
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp){
-		
-			//데이터 꺼내기
-			String memberId = req.getParameter("memberId");
-			String memberPwd = req.getParameter("memberPwd");
-			
-			//데이터 뭉치기
-			AdminVo adminVo = new AdminVo();
-			adminVo.setId(memberId);
-			adminVo.setPwd(memberPwd);
-			
-			//서비스 실행
-			AdminVo adminLogimVo = null;
-			try {
-				AdminLoginService service = new AdminLoginService();
-				adminLogimVo = service.adminLogin(adminVo);
-			
-			//화면 보여주기
-			if(adminLogimVo != null) {
-				req.setAttribute("alertMsg", "관리자님 환영합니다!");
-				req.getSession().setAttribute("adminLogimVo", adminLogimVo);
-				resp.sendRedirect("/WEB-INF/views/admin/Notice_list.jsp");
-			}else {
-				req.setAttribute("loginfailMsg", "로그인을 실패하였습니다.");
-				resp.sendRedirect("/WEB-IFN/views/member/login_A.jsp");
-			}
-		}catch(Exception e) {
-			System.out.println("[ERROR] 관리자 로그인 중 예외 발생!");
-			e.printStackTrace();
-		}
-	
-	
-	}
+
 }

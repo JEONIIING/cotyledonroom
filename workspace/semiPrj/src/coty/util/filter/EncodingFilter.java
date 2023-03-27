@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebFilter;
 @WebFilter("/*")
 public class EncodingFilter implements Filter {
 
+
    //이 필터를 거칠 때 실행되는 메소드
    @Override
    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -23,3 +24,4 @@ public class EncodingFilter implements Filter {
    }
 
 }
+

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +13,14 @@
 </head>
 <body>
    <%@include file="/WEB-INF/views/common/header_be.jsp" %>
-
+	<c:if test="${alertMsg != null}">
+		<script>
+			alert('${alertMsg}');
+		</script>
+	</c:if>
+	<c:remove var="alertMsg"/>
+	
+	
     <div style="padding-top: 5%;">
       <h2>디자이너 로그인</h2>
   </div>
@@ -28,15 +36,15 @@
   
   </div>
   
-  <form action="" method="post">
+  <form action="/designer/rv_chart" method="post">
     <table class="content">
       <tr>
         <td class="text">아이디</td>
-        <td><input class="box" type="text" name="memberId"></td>
+        <td><input class="box" type="text" name="deId"></td>
       </tr>
       <tr>
         <td class="text">비밀번호</td>
-        <td ><input class="box" type="password" name="memberPwd"></td>
+        <td ><input class="box" type="password" name="dePwd"></td>
       </tr>
       <tr>
         <td colspan="2"><input class="login" input class="box" type="submit" value="로 그 인"></td>

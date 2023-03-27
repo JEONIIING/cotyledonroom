@@ -26,6 +26,7 @@
         <td class="text">* 아이디</td>
         <td>
           <input class="box" type="text" name="deId" required placeholder="4~12자리 소문자로 시작(숫자포함)">
+        	<button type="button" onclick="dbCheckId();">중복확인</button>
         </td>
       </tr>
       <tr>
@@ -40,11 +41,23 @@
         </td>
       </tr>
       <tr>
-        <td class="text">* 디자이너 이름 </td>
+        <td class="text">* 이름 </td>
         <td ><input class="box" type="text" name="deName" required placeholder="한글 2~4글자">
           <span class="sameName"></span>
         </td>
         
+      </tr>
+      <tr>
+        <td class="text">* 근무 매장 </td>
+        <td class="sel">
+	       	<select name="shop">
+	        	<option value="역삼점">역삼점</option>
+	        	<option value="신사점">신사점</option>
+	        	<option value="논현점">논현점</option>
+	        	<option value="압구정점">압구정점</option>
+	        </select>
+        
+        </td>
       </tr>
       <tr>
         <td class="text">* 전화번호</td>
@@ -55,8 +68,13 @@
         <td ><input class="box" type="email" name="deEmail" required placeholder="abc@abc.com"></td>
       </tr>
       <tr>
+      <tr>
+        <td class="text">* 디자이너 닉네임 </td>
+        <td ><input class="box" type="text" name="deNick" required>
+        </td>
+       </tr> 
         <td colspan="2">
-          <input class="create" input class="box" type="submit" value="계정 생성" >
+          <input class="create" class="box" type="submit" value="계정 생성" >
           <button class="cancel" type="button" ><a href="javascript:window.history.back();">취소</a></button>
         </td>
       </tr>

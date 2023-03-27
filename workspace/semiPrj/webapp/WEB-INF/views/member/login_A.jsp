@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<c:if test="${loginfailMsg !=null}">
+		<script>
+			alert('${loginfailMsg}');
+		</script>
+	</c:if>
+	<c:remove var="loginfailMsg" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,22 +29,22 @@
   <div style="padding-top: auto;  margin: auto;" >
   
  
- 	<a href="./login_M.jsp"><button style="width: 163px" class="m_btn">회원</button></a>
-	<a href="./login_D.jsp"><button style="width: 163px" class="m_btn">디자이너</button></a>
+ 	<a href="/member/login"><button style="width: 163px" class="m_btn">회원</button></a>
+	<a href="/designer/login"><button style="width: 163px" class="m_btn">디자이너</button></a>
 	<a href="/admin/login"><button style="width: 163px" class="m_btn">관리자</button></a>
   
   
   </div>
   
-  <form action="/admin/Notice_list" method="post">
+  <form action="/admin/main" method="post">
     <table class="content">
       <tr>
         <td class="text">아이디</td>
-        <td><input class="box" type="text" name="memberId"></td>
+        <td><input class="box" type="text" name="adminId"></td>
       </tr>
       <tr>
         <td class="text">비밀번호</td>
-        <td ><input class="box" type="password" name="memberPwd"></td>
+        <td ><input class="box" type="password" name="adminPwd"></td>
       </tr>
       <tr>
         <td colspan="2"><input class="login" input class="box" type="submit" value="로 그 인"></td>
@@ -52,11 +58,7 @@
   </form>
 	
     <%@include file="/WEB-INF/views/common/footer.jsp" %>
-	<c:if test="${adminLogimVo !=null}">
-		<script>
-			alert('${loginfailMsg}');
-		</script>
-	</c:if>
+	
 	
 </body>
 </html>

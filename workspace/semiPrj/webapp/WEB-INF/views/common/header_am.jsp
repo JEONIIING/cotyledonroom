@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +9,14 @@
 <body>
 	<header style="margin:1.5%">
     <div class="abc">
-      <div class="Title"><a  href = "/">COTYLEDON ROOM</a></div>
+      <div class="Title"><a  href = "/admin/main">COTYLEDON ROOM</a></div>
+   	<c:if test="${adminLogimVo != null}">
+       	<div class="abc-menu" style="margin-left:960px;">관리자님 환영합니다!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       	<a href = "/admin/logout">LOGOUT&nbsp;&nbsp;</a>
+       	</div>   	
+    </c:if>
     </div>
-    
+    <div class="abc-right">
   </header>
   
   <img class="menu-icon" id="sidearea" src="/resources/image/134216_menu_lines_hamburger_icon.png" alt="이미지">

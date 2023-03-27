@@ -74,8 +74,10 @@ function checkValid(){
 		alert("이름을 확인하세요.");
 		return false;
 	}
-	alert("디자이너 계정을 성공적으로 생성하였습니다!")
 	return true;
 }
 
+function dbCheckId(){
+	window.open("http://127.0.0.1:8888/designer/checkId", "아이디 중복확인" ,"width=500 , height=300");
 
+}
