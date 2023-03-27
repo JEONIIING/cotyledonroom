@@ -65,5 +65,42 @@ public class MemberDao {
 			
 			return loginMember;
 		}
+
+		//탈퇴
+		public int quit(Connection conn, MemberVo loginMember) throws Exception {
+			
+			String sql = "DELETE CUSTOMER WHERE ID=?";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, loginMember.getId());
+			int result = pstmt.executeUpdate();
+			
+			JDBCTemplate.close(pstmt);
+			
+			return result;
+		}
 		
-	}
+		//아이디찾기
+
+	    public String findId(Connection conn, MemberVo vo) throws Exception {
+	        String result = null;
+
+	        String sql = "SELECT ID FROM CUSTOMER WHERE NAME=? AND SSNO=?";
+	        PreparedStatement pstmt = conn.prepareStatement(sql);
+	        pstmt.setString(1, vo.getName());
+	        pstmt.setString(2, vo.getSsno());
+	        ResultSet rs = pstmt.executeQuery();
+
+	        if (rs.next()) {
+	            result = rs.getString("ID");
+	        }
+
+	        JDBCTemplate.close(rs);
+	        JDBCTemplate.close(pstmt);
+
+	        return result;
+	    }
+	    
+	  
+		
+	}//class
+	

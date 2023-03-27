@@ -1,5 +1,23 @@
+<%@page import="coty.member.vo.MemberVo"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <c:if test ="${alertLoginMsg != null}">
+		
+	<script type="text/javascript">
+	MemberVo loginMember = (MemberVo)session.getAttribute("loginMember");
+	
+	
+	
+	alert("${alertLoginMsg}")
+	
+	
+	</script>
+	</c:if>
+	
+	<c:remove var = "alertLoginMsg" scope="session"/>
+	
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,9 +44,8 @@
       </tr>
       <tr>
         <td class="text">주민번호</td>
-        <td ><input class="box1" type="text" name="memberidnum1">
-        <span>-</span>
-        <span><input class="box1" type="password" name="memberidnum2" style="margin-left: 0px;"></span></td>
+        <td ><input class="box" type="text" name="memberidnum" placeholder="123456-123789">
+       	</td>
       </tr>
       <tr>
         <td colspan="2"><input class="login" input class="box" type="submit" value="아이디 찾기"></td>

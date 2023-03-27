@@ -14,7 +14,7 @@
 	</script>
 	</c:if>
 	
-	<c:remove var = "alertMsg"/>
+	<c:remove var = "alertMsg" scope="session"/>
     
     
 <!DOCTYPE html>

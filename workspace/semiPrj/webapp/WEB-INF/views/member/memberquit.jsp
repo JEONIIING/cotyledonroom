@@ -20,20 +20,20 @@
 </div>
 <div class="red_bar"></div>
 <section>
-<form action="">
+<form action="" method="post">
 <table  cellpadding="5"  cellspacing="0" class="edit_table">
   <tr>
     <td>이름</td>
-    <td><input type="text" value=""></td>
+    <td><input type="text" value="" required="required"></td>
   </tr>
   <tr>
     <td>전화번호</td>
-    <td><input type="text" value=""></td>
+    <td><input type="text" value="" required="required"></td>
   </tr>
   <tr>
     <td>비밀번호</td>
     <td><input type="password" value="" style=" height: 40px;
-      font-size: 20px;"></td>
+      font-size: 20px;" required="required"></td>
   </tr>
 
   <tr>
