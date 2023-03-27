@@ -51,5 +51,46 @@ public class MemberService {
 			
 			return loginMember;
 		}
+		//탈퇴
+		public int quit(MemberVo loginMember) throws Exception {
+			
+			//비지니스 로직
+			
+			//conn
+			Connection conn = JDBCTemplate.getConnection();
+			
+			//sql
+			MemberDao dao = new MemberDao();
+			int result = dao.quit(conn, loginMember);
+			
+			//tx close
+			if(result == 1) {
+				JDBCTemplate.commit(conn);
+			}else {
+				JDBCTemplate.rollback(conn);
+			}
+			JDBCTemplate.close(conn);
+			return result;
+		}
 		
-	}//class
+		// 아이디 찾기
+	    public String findId(MemberVo vo) throws Exception{       
+    	  
+    	//conn
+    	Connection conn = JDBCTemplate.getConnection();
+    	
+    	//sql 실행
+          MemberDao dao = new MemberDao();
+          String result = dao.findId(conn, vo);
+          
+        //tx close
+			if(result != null) {
+				JDBCTemplate.commit(conn);
+			}else {
+				JDBCTemplate.rollback(conn);
+			}
+			JDBCTemplate.close(conn);
+			return result;
+		}
+	}
+

@@ -21,13 +21,13 @@
 		 <div class="abc-menu"><%=loginMember.getNick() %> 님 환영합니다 &nbsp; &nbsp;</div><% } %>
 			
             <div class="abc-menu"><a href = "/member/cart">CART&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
-            <div class="abc-menu"><a href = "/member/memberedit">MYPAGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
             	<c:if test="${loginMember == null}">
             <div class="abc-menu"><a href = "/member/login">LOGIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div> 
             <div class="abc-menu"><a href = "/member/agree">SIGNUP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>  
 			</c:if>
 			<c:if test="${loginMember != null}">
-			 <div class="abc-menu"><a href = "/">LOGOUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>     
+            <div class="abc-menu"><a href = "/member/memberedit">MYPAGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+			 <div class="abc-menu"><a href = "/member/logout">LOGOUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>     
 			</c:if> 
 			
             </div>
