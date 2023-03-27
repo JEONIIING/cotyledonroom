@@ -3,6 +3,7 @@ package coty.admin.controller;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,6 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import coty.admin.noticeVo.Notice_a_Vo;
 import coty.admin.service.NoticeService;
+
+@MultipartConfig(
+	maxFileSize = 1024 * 1024 * 50,
+	maxRequestSize = 1024 * 1024* 50 * 10
+)
 
 @WebServlet("/admin/Notice_write")
 public class Notice_writeController extends HttpServlet{
@@ -26,10 +32,14 @@ public class Notice_writeController extends HttpServlet{
 		String title = req.getParameter("title");
 		String content = req.getParameter("content");
 		
+
+		
 		Notice_a_Vo vo = new Notice_a_Vo();
 		vo.setwriter(writer);
 		vo.setTitle(title);
 		vo.setContent(content);
+		
+		
 		
 		int result = 0;
 		try {
