@@ -32,44 +32,20 @@
           <div class="board_list">
               <div class="top">
                   <div class="num">번호</div>
-                  <div class="title"> 제목</div>
+                  <div class="title">제목</div>
                   <div class="writer">글쓴이</div>
                   <div class="date">작성일</div>
-                  <div class="count">조회</div>
               </div>
+
+              
+              <c:forEach items="${noticeList}" var="nvo">
               <div>
-                  <div class="num">5</div>
-                  <div class="title"><a href="/admin/Notice_view">글 제목이 들어갑니다.</a></div>
-                  <div class="writer">김이름</div>
-                  <div class="date">2023.03.15</div>
-                  <div class="count">33</div>
+                  <div class="num">${nvo.no}</div>
+                  <div class="title"><a href="/admin/Notice_view">${nvo.title}</a></div>
+                  <div class="writer">${nvo.writer}</div>
+                  <div class="date">${nvo.enrollDate}</div>
               </div>
-              <div>
-                  <div class="num">4</div>
-                  <div class="title"><a href="/admin/Notice_view">글 제목이 들어갑니다.</a></div>
-                  <div class="writer">김이름</div>
-                  <div class="date">2023.03.15</div>
-                  <div class="count">33</div>
-              </div>                
-              <div>
-                  <div class="num">3</div>
-                  <div class="title"><a href="/admin/Notice_view">글 제목이 들어갑니다.</a></div>
-                  <div class="writer">김이름</div>
-                  <div class="date">2023.03.15</div>
-                  <div class="count">33</div>
-              </div>                <div>
-                  <div class="num">2</div>
-                  <div class="title"><a href="/admin/Notice_view">글 제목이 들어갑니다.</a></div>
-                  <div class="writer">김이름</div>
-                  <div class="date">2023.03.15</div>
-                  <div class="count">33</div>
-              </div>                <div>
-                  <div class="num">1</div>
-                  <div class="title"><a href="/admin/Notice_view">글 제목이 들어갑니다.</a></div>
-                  <div class="writer">김이름</div>
-                  <div class="date">2023.03.15</div>
-                  <div class="count">33</div>
-              </div>
+			  </c:forEach>
           </div>
 
 

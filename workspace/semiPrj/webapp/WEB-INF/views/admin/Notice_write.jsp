@@ -22,19 +22,23 @@
       <div class="board_title">
           <Strong>공지사항</Strong>
       </div>
+      
+      
+      <form action="/admin/Notice_write" method="post" enctype="multipart/form-data">
       <div class="board_write_wrap">
           <div class="board_write">
               <div class="title">
                   <dl>
                       <dt>제목</dt>
-                      <dd><input type="text" placeholder="제목 입력"></dd>
+                      <dd><input type="text" name="title" placeholder="제목 입력"></dd>
                   </dl>
               </div>
               <div class="info">
                   <dl>
                       <dt>글쓴이</dt>
-                      <dd><input type="text" placeholder="글쓴이 입력"></dd>
+                      <dd><input type="text" name="writer" placeholder="글쓴이 입력"></dd>
                   </dl>
+
                   <dl>
                       <dt>비밀번호</dt>
                       <dd><input type="password" placeholder="비밀번호 입력"></dd>
@@ -45,14 +49,22 @@
                   </dl>
               </div>
               <div class="cont">
-                  <textarea placeholder="내용 입력"></textarea>
+                  <textarea name="content" placeholder="내용 입력"></textarea>
               </div>             
           </div>
           <div class="bt_wrap">
-              <a href="/admin/Notice_write" class="on">등록</a>
-              <a href="/admin/Notice_list">취소</a>
+            <input class="qwerty" type="submit" value="작성하기" 
+            style="border-color: #000;background: #000;color: #fff; display: inline-block;
+   				   min-width: 90px;
+   				   padding: 10px;
+    			   margin-left: 10px;
+    			   border: 1px solid #000;
+    			   border-radius: 2px;
+    			   font-size: 1.4rem;" >
+            <a href="/admin/Notice_list">취소</a>
           </div>
       </div>
+    </form>
    </div>
   </div>
   <br><br><br><br>
