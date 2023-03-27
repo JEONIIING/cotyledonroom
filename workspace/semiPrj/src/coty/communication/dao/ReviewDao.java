@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import coty.communication.vo.ReviewAttachmentVo;
 import coty.communication.vo.ReviewVo;
 import coty.util.JDBCTemplate;
 import coty.util.PageVo;
@@ -72,7 +73,7 @@ public class ReviewDao {
 		public ReviewVo selectOne(Connection conn, String no) throws Exception {
 			
 			//SQL
-			String sql = "SELECT B.NO , B.TITLE , B.CONTENT , B.WRITER , B.ENROLL_DATE , B.HIT , A.CHANGE_NAME FROM BOARD B JOIN ATTACHMENT A ON (B.NO = A.REF_BOARD_NO) WHERE B.NO = ? AND B.DELETE_YN = 'N'";
+			String sql = "SELECT r.NO, r.CONTENT, r.ENROLL_DATE, A.CHANGE_NAME,  d.NAME as DESIGNER_NAME, s.NAME as SHOP_NAME, c.NICK as CUSTOMER_NICK, st.NAME as STYLE_NAME FROM REVIEW r  JOIN ATTACHMENT A ON (R.NO = A.REF_REVIEW_NO) INNER JOIN RESERVATION rv ON r.R_NO = rv.NO INNER JOIN DESIGNER d ON rv.D_NO = d.NO INNER JOIN SHOP s ON d.S_NO = s.NO INNER JOIN COSTOMER c ON rv.C_NO = c.NO INNER JOIN STYLE st ON rv.S_NO = st.NO WHERE R.NO = 5 AND R.DEL_YN = 'N'";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, no);
 			ResultSet rs = pstmt.executeQuery();
@@ -83,14 +84,12 @@ public class ReviewDao {
 				String reviewNo = rs.getString("NO");
 				String content = rs.getString("CONTENT");
 				String enrollDate = rs.getString("ENROLL_DATE");
-				String hit = rs.getString("HIT");
 				String changeName = rs.getString("CHANGE_NAME");
 				
 				reviewVo = new ReviewVo();
 				reviewVo.setNo(reviewNo);
 				reviewVo.setContent(content);
 				reviewVo.setEnrollDate(enrollDate);
-				reviewVo.setHit(hit);
 				reviewVo.setChangeName(changeName);
 			}
 			
@@ -101,4 +100,36 @@ public class ReviewDao {
 
 
 		}
+		
+		//게시글 작성
+		public int write(Connection conn, ReviewVo vo) throws Exception {
+			
+			//SQL (close)
+			String sql = "INSERT INTO REVIEW(NO , CONTENT) VALUES (SEQ_BOARD_NO.NEXTVAL , ?)";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getContent());
+			int result = pstmt.executeUpdate();
+			
+			JDBCTemplate.close(pstmt);
+			
+			return result;
+		}
+		
+		
+		//첨부파일 인서트
+		public int insertAttachment(Connection conn, ReviewAttachmentVo atVo) throws Exception {
+			
+			//SQL
+			String sql = "INSERT INTO ATTACHMENT (NO, ORIGIN_NAME, CHANGE_NAME, REF_REVIEW_NO) VALUES(SEQ_ATTACHMENT_NO.NEXTVAL , ? , ? , SEQ_REVIEW_NO.CURRVAL)";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, atVo.getOriginName());
+			pstmt.setString(2, atVo.getChangeName());
+			int result = pstmt.executeUpdate();
+			
+			//close
+			JDBCTemplate.close(pstmt);
+			
+			return result;
+		}
+		
 }		
