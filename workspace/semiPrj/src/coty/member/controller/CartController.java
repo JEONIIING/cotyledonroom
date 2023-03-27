@@ -11,10 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import coty.market.vo.ProductVo;
 import coty.member.service.CartService;
-import coty.util.page.PageVo;
+import coty.util.PageVo;
 
 @WebServlet("/member/cart")
 public class CartController extends HttpServlet{
+	
 	private CartService cs = new CartService();
 
 	@Override
@@ -22,14 +23,15 @@ public class CartController extends HttpServlet{
 		
 		try {
 			//데이터 꺼내기
-			String no = req.getParameter("");
-			int currentPage = Integer.parseInt( req.getParameter("page") );
+			String pageParam = req.getParameter("page"); 
+			int currentPage = (pageParam != null) ? Integer.parseInt(pageParam) : 1;
+//			int currentPage = Integer.parseInt(req.getParameter("page"));
 			int listCount = cs.selectCount();
 			int pageLimit = 5;
-			int cartLimit = 5;
+			int boardLimit = 5;
 			
 			//데이터 뭉치기
-			PageVo pageVo = new PageVo(listCount, currentPage, pageLimit, cartLimit);
+			PageVo pageVo = new PageVo(listCount, currentPage, pageLimit, boardLimit);
 			
 			//서비스 호출
 			List<ProductVo> cartList = cs.selectList(pageVo);
@@ -38,6 +40,7 @@ public class CartController extends HttpServlet{
 			req.setAttribute("cartList", cartList);
 			req.setAttribute("pageVo", pageVo);
 			req.getRequestDispatcher("/WEB-INF/views/member/Cart.jsp").forward(req, resp);
+//			resp.sendRedirect("/WEB-INF/views/member/Cart.jsp");
 			
 		}catch(Exception e) {
 			System.out.println("[ERROR] 장바구니 조회중 예외 발생 ...");
