@@ -1,5 +1,7 @@
 package coty.communication.vo;
 
+import coty.member.vo.MemberVo;
+
 public class ReviewVo {
 	
 	private String no;
@@ -7,9 +9,29 @@ public class ReviewVo {
 	private String content;
 	private String enrollDate;
 	private String delYn;
+	private String hit;
+	private String changeName;
 	
 	public ReviewVo() {
 		// TODO Auto-generated constructor stub
+	}
+
+	public ReviewVo(String no, String rNo, String content, String enrollDate, String delYn, String hit,
+			String changeName) {
+		super();
+		this.no = no;
+		this.rNo = rNo;
+		this.content = content;
+		this.enrollDate = enrollDate;
+		this.delYn = delYn;
+		this.hit = hit;
+		this.changeName = changeName;
+	}
+
+	@Override
+	public String toString() {
+		return "ReviewVo [no=" + no + ", rNo=" + rNo + ", content=" + content + ", enrollDate=" + enrollDate
+				+ ", delYn=" + delYn + ", hit=" + hit + ", changeName=" + changeName + "]";
 	}
 
 	public String getNo() {
@@ -52,20 +74,22 @@ public class ReviewVo {
 		this.delYn = delYn;
 	}
 
-	public ReviewVo(String no, String rNo, String content, String enrollDate, String delYn) {
-		super();
-		this.no = no;
-		this.rNo = rNo;
-		this.content = content;
-		this.enrollDate = enrollDate;
-		this.delYn = delYn;
+	public String getHit() {
+		return hit;
 	}
 
-	@Override
-	public String toString() {
-		return "ReviewVo [no=" + no + ", rNo=" + rNo + ", content=" + content + ", enrollDate=" + enrollDate
-				+ ", delYn=" + delYn + "]";
+	public void setHit(String hit) {
+		this.hit = hit;
 	}
+
+	public String getChangeName() {
+		return changeName;
+	}
+
+	public void setChangeName(String changeName) {
+		this.changeName = changeName;
+	}
+	
 	
 	
 	
