@@ -72,6 +72,9 @@ public class CartDao {
 		
 		return cnt;
 	}
+	
+	//상품 추가하기(insert)
+	public int addProduct()
 
 	
 
