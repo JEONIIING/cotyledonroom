@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -6,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>상품목록</title>
+    <title>누베스알바</title>
     <link rel="stylesheet" href="/resources/css/market/product.css">
     <link rel="stylesheet" href="/resources/css/common/sidebar.css">
     <link rel="stylesheet" href="/resources/css/common/main.css">
@@ -14,6 +15,8 @@
 <body>
 	<%@include file="/WEB-INF/views/common/header_be.jsp" %>      
 	<%@include file="/WEB-INF/views/common/sidebar_mk.jsp" %>
+
+	<c:forEach items="${ productList1 }" var="p1">
 
     <div>
       <h1>MARKET</h1>
@@ -26,10 +29,10 @@
    		    <div class="detail" style="display: inline-block;">
            		<div >
                     <a href="/market/productlist" class="btnback"><span>BACK TO SHOP</span></a><br><br>
-                    <h1 class="title">누베스 알바 600ml - 펌 영양샴푸</h1><br>
-                    <p class="price">65,000원</p><br>
+                    <h1 class="title">${p1.name } - ${p1.ex }</h1><br>  
+                    <p class="price">${p1.price }원</p><br>
                     <div class="txtbox">
-                        <p><b>펌 영양샴푸</b></p><p><br></p>
+                        <p><b>${p1.ex }</b></p><p><br></p>
                         <p>(1) 펌 모발을 탄력 있고 탄탄하게 유지</p><br>
                         <p>(2) 열 손상으로부터 모발 보호</p><br>
                         <p>(3) 손상된 모발에 수분과 영양 공급</p><br>
@@ -50,16 +53,16 @@
                             </tr>
                         </div></div><br><br><br></div></div></td>
                         <td>
-                            <img src="/resources/image/product/베레플루비아상세.png" alt="">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/resources/image/product/${p1.src }/1.png" alt="">
                         </td>
                     </tr>
                     </div>
         <div class="detail_img">
-            <div class="prodviewEdit"><img src="/resources/image/product/누베스알바/1.png" alt=""></div>
-            <div class="prodviewEdit"><img src="/resources/image/product/누베스알바/2.png" alt=""></div>
-            <div class="prodviewEdit"><img src="/resources/image/product/누베스알바/3.png" alt=""></div>
-            <div class="prodviewEdit"><img src="/resources/image/product/누베스알바/4.png" alt=""></div>
-        </div>
+            <div class="prodviewEdit"><img src="/resources/image/product/${p1.src }/2.png" alt=""></div>
+            <div class="prodviewEdit"><img src="/resources/image/product/${p1.src }/3.png" alt=""></div>
+            <div class="prodviewEdit"><img src="/resources/image/product/${p1.src }/4.png" alt=""></div>
+        </div></c:forEach>
 <%@include file="/WEB-INF/views/common/footer.jsp" %>
+
   </body>
 </html>

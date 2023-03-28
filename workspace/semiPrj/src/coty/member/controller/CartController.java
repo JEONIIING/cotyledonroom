@@ -36,6 +36,8 @@ public class CartController extends HttpServlet{
 			//서비스 호출
 			List<ProductVo> cartList = cs.selectList(pageVo);
 			
+			System.out.println(cs.selectList(pageVo));
+			System.out.println(cartList);
 			//화면
 			req.setAttribute("cartList", cartList);
 			req.setAttribute("pageVo", pageVo);

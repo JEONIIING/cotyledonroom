@@ -58,7 +58,7 @@
         </table>
 
 
-        <div class="board_page">
+        <div class="page-area">
             <c:if test="${ pageVo.currentPage > 1 }">
                     <a href="/member/cart?page=${pageVo.currentPage-1}">이전</a>
                 </c:if>
