@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-      <c:if test ="${alertLoginMsg != null}">
+      <c:if test ="${alertEditMsg != null}">
 			
 		<script type="text/javascript">
 		
@@ -44,9 +44,10 @@
   </tr>
   <tr>
     <td>아이디</td>
-    <td><input type="text" name="memberId" value="${loginMember.id}"></td>
+    <td><input type="text" name="memberId" value="${loginMember.id}" readonly="readonly"></td>
   </tr>
   <tr>
+  <!-- ${loginMember.pwd} -->
     <td>비밀번호</td>
     <td><input type="text" name="memberPwd" value="${loginMember.pwd}"></td>
   </tr>

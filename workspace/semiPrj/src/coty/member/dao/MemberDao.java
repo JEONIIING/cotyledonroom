@@ -184,15 +184,14 @@ public class MemberDao {
 		//회원정보 수정
 		public MemberVo editMember(Connection conn, MemberVo loginMember) throws Exception {
 			
-			String sql = "UPDATE CUSTOMER SET ID=?, PWD=?, NICK=?, ADDRESS=?, EMAIL=?, PHONE=? WHERE NO=?";
+			String sql = "UPDATE CUSTOMER SET PWD=?, NICK=?, ADDRESS=?, EMAIL=?, PHONE=? WHERE NO=?";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, loginMember.getId());
-			pstmt.setString(2, loginMember.getPwd());
-			pstmt.setString(3, loginMember.getNick());
-			pstmt.setString(4, loginMember.getAddress());
-			pstmt.setString(5, loginMember.getEmail());
-			pstmt.setString(6, loginMember.getPhone());
-			pstmt.setString(7, loginMember.getNo());
+			pstmt.setString(1, loginMember.getPwd());
+			pstmt.setString(2, loginMember.getNick());
+			pstmt.setString(3, loginMember.getAddress());
+			pstmt.setString(4, loginMember.getEmail());
+			pstmt.setString(5, loginMember.getPhone());
+			pstmt.setString(6, loginMember.getNo());
 			
 			int result = pstmt.executeUpdate();
 			
