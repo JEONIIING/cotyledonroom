@@ -14,17 +14,6 @@ import coty.communication.vo.ReviewVo;
 @WebServlet("/communication/reviewdetaillist")
 public class ReviewDetailListController extends HttpServlet {
 
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("/WEB-INF/views/communication/review_detail_list.jsp").forward(req, resp);
-	
-	}
-	
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		doGet(req, resp);
-	
-	}
 	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -39,9 +28,9 @@ public class ReviewDetailListController extends HttpServlet {
 			ReviewService rvs = new ReviewService();
 			ReviewVo vo = rvs.selectOne(no);
 
-			System.out.println(vo);	//테스트용 . 내일 지울예정.
 			
 			//화면
+			System.out.println(vo);
 			req.setAttribute("reviewVo", vo);
 			req.getRequestDispatcher("/WEB-INF/views/communication/review_detail_list.jsp").forward(req, resp);
 			

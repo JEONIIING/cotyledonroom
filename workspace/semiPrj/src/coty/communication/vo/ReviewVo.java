@@ -11,13 +11,16 @@ public class ReviewVo {
 	private String delYn;
 	private String hit;
 	private String changeName;
+	private String customerNick;
+	private String shopName;
+	private String designerName;
 	
 	public ReviewVo() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public ReviewVo(String no, String rNo, String content, String enrollDate, String delYn, String hit,
-			String changeName) {
+			String changeName, String customerNick, String shopName, String designerName) {
 		super();
 		this.no = no;
 		this.rNo = rNo;
@@ -26,12 +29,16 @@ public class ReviewVo {
 		this.delYn = delYn;
 		this.hit = hit;
 		this.changeName = changeName;
+		this.customerNick = customerNick;
+		this.shopName = shopName;
+		this.designerName = designerName;
 	}
 
 	@Override
 	public String toString() {
 		return "ReviewVo [no=" + no + ", rNo=" + rNo + ", content=" + content + ", enrollDate=" + enrollDate
-				+ ", delYn=" + delYn + ", hit=" + hit + ", changeName=" + changeName + "]";
+				+ ", delYn=" + delYn + ", hit=" + hit + ", changeName=" + changeName + ", customerNick=" + customerNick
+				+ ", shopName=" + shopName + ", designerName=" + designerName + "]";
 	}
 
 	public String getNo() {
@@ -89,7 +96,30 @@ public class ReviewVo {
 	public void setChangeName(String changeName) {
 		this.changeName = changeName;
 	}
-	
+
+	public String getCustomerNick() {
+		return customerNick;
+	}
+
+	public void setCustomerNick(String customerNick) {
+		this.customerNick = customerNick;
+	}
+
+	public String getShopName() {
+		return shopName;
+	}
+
+	public void setShopName(String shopName) {
+		this.shopName = shopName;
+	}
+
+	public String getDesignerName() {
+		return designerName;
+	}
+
+	public void setDesignerName(String designerName) {
+		this.designerName = designerName;
+	}
 	
 	
 	

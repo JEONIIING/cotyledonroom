@@ -1,12 +1,14 @@
 package coty.communication.controller;
 
 import java.io.File;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.UUID;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +18,11 @@ import javax.servlet.http.Part;
 import coty.communication.service.ReviewService;
 import coty.communication.vo.ReviewAttachmentVo;
 import coty.communication.vo.ReviewVo;
+
+@MultipartConfig(
+		maxFileSize = 1024 * 1024 * 50 ,		//파일 하나당 크기
+		maxRequestSize = 1024 * 1024 * 50 * 10	//리퀘스트 총 크기
+	)
 
 @WebServlet("/communication/reviewenroll")
 public class ReviewEnrollController extends HttpServlet{

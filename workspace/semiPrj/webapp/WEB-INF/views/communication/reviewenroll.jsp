@@ -31,6 +31,8 @@
         <br>
         <Strong>리뷰 등록</Strong>
     </div>
+    
+    <form action="/communication/reviewenroll" method="post" enctype="multipart/form-data">
     <div class="board_write_wrap">
         <div class="board_write">
             
@@ -45,7 +47,7 @@
                 </dl>
                 <dl>
                     <dt>사진첨부</dt>
-                    <dd><input type="file" placeholder="사진첨부"></dd>
+                    <dd><input type="file" name="f" placeholder="사진첨부"></dd>
                 </dl>
             </div>
             <div class="cont">
@@ -53,10 +55,11 @@
             </div>             
         </div>
         <div class="bt_wrap">
-            <a href="/communication/reviewlist" class="on">등록</a>
+            <input type="submit" value="작성">
             <a href="/communication/reviewlist">취소</a>
         </div>
     </div>
+    </form>
  </div>
 </div>
 <br><br><br><br>
