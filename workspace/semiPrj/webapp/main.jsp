@@ -38,7 +38,9 @@
 	
     <%@include file="/WEB-INF/views/common/footer.jsp"%>
     
-  
+	 <%
+	 request.getSession().getAttribute("loginMember");
+	 %>
 
 
 

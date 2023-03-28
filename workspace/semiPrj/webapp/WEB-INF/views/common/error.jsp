@@ -7,7 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>회원가입중 오류발생</h1>
+	<%
+	String errorMsg = (String)request.getAttribute("errorMsg");
+	%>
+	<h1><%= errorMsg %></h1>
 
 </body>
 </html>

@@ -64,9 +64,9 @@
 					<td class="text">이메일</td>
 					<td><input class="box" type="email" name="memberEmail" placeholder="abc@naver.com" required>
 					</td>
-					<tr>
+				<!-- 	<tr>
 					<td  class="text" id="email-result" class='aaa bbb ccc'>이메일 검사</td>
-				</tr>
+				</tr> -->
 				</tr>
 				<tr>
 					<td class="text">주소</td>
@@ -111,7 +111,6 @@
 	
 	 //기본값은 false
     let isPwdOk = false;
-    let isEmailOk = false;
     let isIdOk = false;
 
     const pwd = document.querySelector('input[name=memberPwd]');
@@ -156,13 +155,13 @@
         
     });
 
-    const email = document.querySelector('input[type = email]');
+ /*    const email = document.querySelector('input[type = email]');
     const emailResult = document.querySelector("#email-result");
 
     email.addEventListener("blur",  () => {
         //정규식 이용해서 검사
         const str = email.value;
-        const reg = /^[a-zA-Z]+[@]+[a-zA-Z]+.[a-z,A-Z]/;
+        const reg = /^[a-zA-Z](?=.*\d)(?=.*[_])+[@]+[a-zA-Z](?=.*\d)+.[a-z,A-Z](?=.*\d)/;
         const result = reg.test(str);
 
         if(result){
@@ -177,15 +176,13 @@
             emailResult.classList.add('red-color');
         }
         
-    });
+    }); */
 
     function checkValid() {
         if(!isPwdOk){
             alert('비밀번호를 확인하세요');
             return false;
-        }if(!isEmailOk) {
-            alert('이메일을 확인하세요');
-            return false;
+        
         }
        
         return true;

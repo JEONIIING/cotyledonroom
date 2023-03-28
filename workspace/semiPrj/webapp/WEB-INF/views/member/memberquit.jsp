@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/resources/css/common/sidebar.css">
 </head>
 <body>
-   <%@include file="/WEB-INF/views/common/header_af.jsp" %>
+   <%@include file="/WEB-INF/views/common/header_be.jsp" %>
     <%@include file="/WEB-INF/views/common/sidebar_my.jsp" %>
 
 <div>
