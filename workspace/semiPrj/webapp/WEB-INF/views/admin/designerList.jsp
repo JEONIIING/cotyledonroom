@@ -13,11 +13,11 @@
     <link rel="stylesheet" href="/resources/css/admin/admin.css">
     <link rel="stylesheet" href="/resources/css/admin/a_main.css">
     <link rel="stylesheet" href="/resources/css/admin/designerForm.css">
-	   
+	 
 </head>
 <body>
 		<%@ include file="/WEB-INF/views/common/header_am.jsp" %>
-		<div style="height: px;">
+		
     <div class="board_wrap">
       <div class="board_title">
           <Strong>디자이너 목록</Strong>
@@ -34,9 +34,9 @@
               </div>
 
 				<c:forEach items="${designerList}" var="devo">
-		              <div>
+		              <div class="listbody">
 		                  <div class="num">${devo.no}</div>
-		                  <div class="title"><a href="/admin/designerInfo">${devo.nick}</a></div>
+		                  <div class="title">${devo.nick}</a></div>
 		                  <div class="writer">${devo.id}</div>
 		                  <div class="shop">${devo.shop}</div>
 		                  <div class="tel">${devo.phone}</div>
@@ -48,31 +48,32 @@
 
 
           <div class="board_page">
-              <a href="#" class="bt first"><<</a>
-              <a href="#" class="bt prev"><</a>
-			<c:forEach var ="i" begin="${pageVo.startPage}" end="${pageVo.endPage}">
+              <c:if test="${pageVo.currentPage > 1}">
+	              <a href="/admin/designerList?page=${pageVo.currentPage - 1}" class="bt prev"><</a>
+              </c:if>
+              
+				<c:forEach var ="i" begin="${pageVo.startPage}" end="${pageVo.endPage}">
+					<c:if test="${pageVo.currentPage == i}">
+						<span class="selecNum">${i}</span>
+					</c:if>
+					<c:if test="${pageVo.currentPage != i}">
+		              	<a href="/admin/designerList?page=${i}" class="num">${i}</a>
+					</c:if>
+				</c:forEach>
 
-              <a href="/admin/designerList?page=${i}" class="num on">${i}</a>
-
-			</c:forEach>
-
-             <!--  <a href="/admin/designerList?page=1" class="num on">1</a>
-              <a href="/admin/designerList?page=2" class="num">2</a>
-              <a href="/admin/designerList?page=3" class="num">3</a>
-              <a href="/admin/designerList?page=4" class="num">4</a>
-              <a href="/admin/designerList?page=5" class="num">5</a> -->
-              <a href="#" class="bt next">></a>
-              <a href="#" class="bt last">>></a>
+              <c:if test="${pageVo.currentPage < pageVo.maxPage}">
+	              <a href="/admin/designerList?page=${pageVo.currentPage + 1}" class="bt next">></a>
+              </c:if>
+             
           </div>
 
 
           <div class="bt_wrap">
               <a href="/admin/designerForm" class="on">계정등록</a>
-              <!-- <a href="#">수정</a> -->
           </div>
       </div>
   </div> 
-  </div>
+
 
   <br><br><br><br><br>
 		
@@ -90,3 +91,14 @@
     	
     </c:if>
     <c:remove var="alertMsg"/>
+
+
+    <script>
+    const listbodies = document.querySelectorAll(".listbody");
+    listbodies.forEach(function(listbody) {
+        listbody.addEventListener("click", function(event){
+            const no = event.target.parentNode.children[0].innerText
+            location.href="/admin/designerInfo?no=" + no;
+        });
+    });
+    </script>

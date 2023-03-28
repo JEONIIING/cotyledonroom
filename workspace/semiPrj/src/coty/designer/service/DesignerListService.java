@@ -46,5 +46,22 @@ public class DesignerListService {
 		
 		return result;
 	}
+	
+	//디자이너 상세정보 조회
+	public DesignerVo selectInfo(String no) throws Exception {
+		//비지니스 로직
+		
+		//conn
+		Connection conn = JDBCTemplate.getConnection();
+		
+		//DAO
+		DesignerListDao dao = new DesignerListDao();
+		DesignerVo designerVo = dao.selectInfo(conn, no);
+		
+		//close
+		JDBCTemplate.close(conn);
+		
+		return designerVo;
+	}
 
 }

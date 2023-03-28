@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +15,8 @@ import coty.designer.service.DesignerListService;
 import coty.designer.service.DesignerService;
 import coty.util.PageVo;
 
+
+
 @WebServlet("/admin/designerList")
 public class DesignerListController extends HttpServlet{
 	 //디자이너 계정 목록 화면
@@ -23,7 +26,9 @@ public class DesignerListController extends HttpServlet{
 		
 		try {
 		//데이터 꺼내기 (페이징 처리를 위한 데이터 준비)
-		int currentPage = Integer.parseInt(req.getParameter("page"));
+		String pageParam =req.getParameter("page"); 
+        int currentPage = (pageParam != null) ? Integer.parseInt(pageParam) : 1;
+//		int currentPage = Integer.parseInt(req.getParameter("page"));
 		int listCount = dls.selectCount();//전체글 갯수 구하기
 		int pageLimit = 5; //한페이지에 몇페이징씩 할건지
 		int boardLimit = 5; //한페이지에 몇개의 글 보여줄건지 
@@ -35,10 +40,8 @@ public class DesignerListController extends HttpServlet{
 		 List<DesignerVo> designerList = dls.selectDesignerList(pageVo); //페이징관련정보
 		
 		//화면
-		System.out.println(designerList);
-		
 		req.setAttribute("designerList", designerList);
-		req.setAttribute("PageVo", pageVo);
+		req.setAttribute("pageVo", pageVo);
 		req.getRequestDispatcher("/WEB-INF/views/admin/designerList.jsp").forward(req, resp);
 		} catch (Exception e) {
 			System.out.println("[ERROR] 디자이너 목록 조회 중 예외 발생...");

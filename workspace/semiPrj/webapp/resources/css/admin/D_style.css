@@ -288,3 +288,18 @@ a{
   border: 0;
   resize: vertical;
 }
+
+.selecNum{
+	padding-top: 9px;
+    font-size: 1.4rem;    display: inline-block;
+    width: 32px;
+    height: 32px;
+    box-sizing: border-box;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    border-left: 0;
+    line-height: 100%;
+}
+.listbody:hover{
+	cursor: pointer;
+}
