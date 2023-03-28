@@ -48,7 +48,7 @@
                                 <option value="5">5</option>
                             </select>
                             <tr>
-                                <td><button class="btnbuy" onclick=""><a href="/member/cart">장바구니</a></button></td>
+                                <td><button class="btnbuy" onclick="insertCart();">장바구니</button></td>
                                 <td><button class="btnbuy" onclick="gotoBuy()">바로 구매</button></td>
                             </tr>
                         </div></div><br><br><br></div></div></td>
@@ -61,8 +61,23 @@
             <div class="prodviewEdit"><img src="/resources/image/product/${p1.src }/2.png" alt=""></div>
             <div class="prodviewEdit"><img src="/resources/image/product/${p1.src }/3.png" alt=""></div>
             <div class="prodviewEdit"><img src="/resources/image/product/${p1.src }/4.png" alt=""></div>
-        </div></c:forEach>
+        </div>
 <%@include file="/WEB-INF/views/common/footer.jsp" %>
 
+
+<form method="post" action="/member/cart" id="frm">
+	<input id="pCnt" name="pCnt" type="hidden" value="">
+	<input id="pNo" name="pNo" type="hidden" value="${p1}">
+</form>
+</c:forEach>
   </body>
+  <script>
+  
+  function insertCart(){
+	  document.getElementById("pCnt").value = document.getElementById("productCnt").value
+	  
+	  document.getElementById('frm').submit();
+  }
+  
+  </script>
 </html>

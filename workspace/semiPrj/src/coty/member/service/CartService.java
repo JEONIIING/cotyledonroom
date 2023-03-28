@@ -6,13 +6,15 @@ import java.util.List;
 import coty.market.vo.ProductVo;
 import coty.market.vo.Product_ImgVo;
 import coty.member.dao.CartDao;
+import coty.member.vo.CartVo;
+import coty.member.vo.MemberVo;
 import coty.util.JDBCTemplate;
 import coty.util.PageVo;
 
 public class CartService {
 
 	//게시글 조회 (페이징 처리가 된)
-		public List<ProductVo> selectList(PageVo pageVo) throws Exception {
+		public List<CartVo> selectList(PageVo pageVo, MemberVo loginMember) throws Exception {
 			
 			//비즈니스 로직
 			
@@ -21,7 +23,7 @@ public class CartService {
 			
 			//SQL (DAO)
 			CartDao dao = new CartDao();
-			List<ProductVo> cartList = dao.selectList(conn , pageVo);
+			List<CartVo> cartList = dao.selectList(conn , pageVo, loginMember);
 			
 			//close
 			JDBCTemplate.close(conn);
@@ -42,6 +44,26 @@ public class CartService {
 			int result = dao.selectCount(conn);
 			
 			//close
+			JDBCTemplate.close(conn);
+			
+			return result;
+		}
+
+		public int addProduct(CartVo cartVo) throws Exception {
+			
+			//로직
+			
+			Connection conn = JDBCTemplate.getConnection();
+			
+			CartDao dao = new CartDao();
+			int result = dao.addProduct(conn, cartVo);
+			
+			if(result == 1) {
+				JDBCTemplate.commit(conn);
+			}else {
+				JDBCTemplate.rollback(conn);
+			}
+			
 			JDBCTemplate.close(conn);
 			
 			return result;
