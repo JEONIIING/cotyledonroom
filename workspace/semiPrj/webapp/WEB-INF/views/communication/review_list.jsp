@@ -27,7 +27,6 @@
 	<%@ include file="/WEB-INF/views/common/header_be.jsp" %>
     <%@ include file="/WEB-INF/views/common/sidebar_com.jsp" %>
 	
-	<div class="aaaa">
     <div class="board_wrap">
       <div class="board_title">
           <Strong>리뷰 게시판</Strong>
@@ -45,13 +44,13 @@
               
               
               <c:forEach items="${reviewList}" var="rvo">
-              <div>
+              <div class="gogo">
                   <div class="num">${rvo.no}</div>
                   <div class="picture"><img class="reviewphoto" src="/resources/image/리뷰사진7.jpg" alt="이미지"></div>
-                  <div class="title"><a href="/communication/reviewdetaillist">${rvo.content}</a></div>
-                  <div class="memberNick">냐나냥</div>
-                  <div class="shop">인천점</div>
-                  <div class="designer">호이</div>
+                  <div class="title"><a href="">${rvo.content}</a></div>
+                  <div class="memberNick">${rvo.customerNick}</div>
+                  <div class="shop">${rvo.shopName}</div>
+                  <div class="designer">${rvo.designerName}</div>
               </div>
               </c:forEach>
               
@@ -99,10 +98,19 @@
 </body>
 </html>
 
-<script>
-	const tbody = document.querySelector("main tbody");
-	tbody.addEventListener("click" , function(event){
+<!-- <script>
+	const gogo = document.querySelector(".gogo");
+	gogo.addEventListener("click" , function(event){
 		const no = event.target.parentNode.children[0].innerText;
-		location.href = "/board/detail?no=" + no;
+		location.href = "/communication/reviewdetaillist?no=" + no;
 	});
+</script> -->
+<script>
+const elements = document.querySelectorAll('.gogo');
+elements.forEach(element => {
+  element.addEventListener('click', () => {
+    const no = element.querySelector('.num').innerText;
+    location.href = "/communication/reviewdetaillist?no=" + no;
+  });
+});
 </script>

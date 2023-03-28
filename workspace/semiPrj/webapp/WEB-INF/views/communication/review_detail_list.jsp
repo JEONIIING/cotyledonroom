@@ -16,7 +16,6 @@
     
     <%@ include file="/WEB-INF/views/common/header_be.jsp" %>
     <%@ include file="/WEB-INF/views/common/sidebar_com.jsp" %>
-    <%@ include file="/WEB-INF/views/common/sidebar_com.jsp" %>
     
 <br>
 
@@ -31,7 +30,7 @@
             <div class="info">
                 <dl>
                     <dt>번호</dt>
-                    <dd>1</dd>
+                    <dd>${reviewVo.no}</dd>
                 </dl>
                 <dl>
                     <dt>닉네임</dt>
@@ -51,12 +50,9 @@
                 </dl>
                 <dl>
                     <dt>작성일</dt>
-                    <dd>2023.03.15</dd>
+                    <dd>${reviewVo.enrollDate}</dd>
                 </dl>
-                <dl>
-                    <dt>조회</dt>
-                    <dd>33</dd>
-                </dl>
+                
 
             </div>
             <div class="cont">
@@ -64,10 +60,7 @@
                     <img src="/resources/image/shop3.jpg" alt="" style="width: 300px;"> <br>
                 </div>
                 <div>
-                    마음에 쏙 듭니다 <br>
-                    마음에 쏙 듭니다 <br>
-                    마음에 쏙 듭니다 <br>
-                    마음에 쏙 듭니다
+                    ${reviewVo.content}
                 </div>
             </div>
             
