@@ -23,14 +23,15 @@
       </div>
       <div class="board_list_wrap">
           <div class="board_list">
+          	  
               <div class="top">
                   <div class="num">번호</div>
                   <div class="title">제목</div>
                   <div class="writer">글쓴이</div>
                   <div class="date">작성일</div>
               </div>
-
-              
+			
+       
               <c:forEach items="${noticeList}" var="nvo">
               <div>
                   <div class="num">${nvo.no}</div>
@@ -39,18 +40,33 @@
                   <div class="date">${nvo.enrollDate}</div>
               </div>
 			  </c:forEach>
+			  a!
           </div>
 
 
           <div class="board_page">
               <a href="#" class="bt first"><<</a>
-              <a href="#" class="bt prev"><</a>
-              <a href="#" class="num on">1</a>
-              <a href="#" class="num">2</a>
-              <a href="#" class="num">3</a>
-              <a href="#" class="num">4</a>
-              <a href="#" class="num">5</a>
-              <a href="#" class="bt next">></a>
+              
+              
+              <c:if test="${pageVo.currentPage > 1}">
+              <a href="/admin/Notice_list?page=${pageVo.currentPage-1}" class="bt prev"><</a>
+              </c:if>
+              
+              
+              <c:forEach var="i" begin="${pageVo.startPage}" end="${pageVo.endPage}" step="1">
+              	<c:if test="${pageVo.currentPage == i }">
+              		<a href="/admin/Notice_list?page=${i}" class="num on">${i}</a>
+              	</c:if>
+              
+       			<c:if test="${pageVo.currentPage != i }">
+       				<a href="/admin/Notice_list?page=${i}" class="num">${i}</a>
+              	</c:if>
+   
+              </c:forEach>
+              
+              <c:if test="${pageVo.currentPage < pageVo.maxPage}">
+              <a href="/admin/Notice_list?page=${pageVo.currentPage+1}" class="bt prev">></a>
+              </c:if>
               <a href="#" class="bt last">>></a>
           </div>
 

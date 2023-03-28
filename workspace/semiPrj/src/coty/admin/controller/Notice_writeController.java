@@ -53,7 +53,7 @@ public class Notice_writeController extends HttpServlet{
 		
 		if(result == 1) {
 			req.getSession().setAttribute("alertMsg", "게시글 작성 성공");
-			resp.sendRedirect("/");
+			resp.sendRedirect("/admin/Notice_list?page=1");
 
 		}else{
 			req.getSession().setAttribute("alertMsg", "게시글 작성 실패..");

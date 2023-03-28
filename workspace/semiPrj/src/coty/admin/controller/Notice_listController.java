@@ -11,30 +11,45 @@ import javax.servlet.http.HttpServletResponse;
 
 import coty.admin.noticeVo.Notice_a_Vo;
 import coty.admin.service.NoticeService;
+import coty.util.PageVo;
 
 @WebServlet("/admin/Notice_list")
 public class Notice_listController extends HttpServlet{
+	
+	private NoticeService ns = new NoticeService();
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 				
-		
-		List<Notice_a_Vo> noticeList = null;
-		try {
-			//서비스 호출
-			NoticeService ns = new NoticeService();
-			noticeList = ns.selectList();
+		try {			
 			
-		}catch (Exception e) {
-			System.out.println("Error 게시글 조회중 예외발생..");
+			//데이터 꺼내기
+			int currentPage = Integer.parseInt(req.getParameter("page"));
+			int listCount = ns.selectCount();
+			int pageLimit = 5;
+			int boardLimit = 5;
+			
+						
+			//데이터 뭉치기
+			
+			PageVo pageVo = new PageVo(listCount, currentPage, pageLimit, boardLimit);
+			
+			
+				//서비스 호출				
+			List<Notice_a_Vo> noticeList = ns.selectList(pageVo);
+
+			
+			
+			//화면
+			req.setAttribute("noticeList", noticeList);
+			req.setAttribute("pageVo", pageVo);
+			req.getRequestDispatcher("/WEB-INF/views/admin/Notice_list.jsp").forward(req, resp);
+			
+		} catch (Exception e) {
+			System.out.println("게시글 조회중 예외발생");
 			e.printStackTrace();
+			req.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(req, resp);
 		}
-		
-		
-		//화면
-		System.out.println(noticeList);
-		req.setAttribute("noticeList", noticeList);
-		req.getRequestDispatcher("/WEB-INF/views/admin/Notice_list.jsp").forward(req, resp);
 		
 	}
 	
