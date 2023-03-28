@@ -19,10 +19,10 @@ import coty.communication.service.ReviewService;
 import coty.communication.vo.ReviewAttachmentVo;
 import coty.communication.vo.ReviewVo;
 
-@MultipartConfig(
+/*@MultipartConfig(
 		maxFileSize = 1024 * 1024 * 50 ,		//파일 하나당 크기
 		maxRequestSize = 1024 * 1024 * 50 * 10	//리퀘스트 총 크기
-	)
+	)*/
 
 @WebServlet("/communication/reviewenroll")
 public class ReviewEnrollController extends HttpServlet{

@@ -39,7 +39,7 @@
             <div class="info">
                 <dl>
                     <dt>글쓴이</dt>
-                    <dd><input type="text" placeholder="글쓴이 입력"></dd>
+                    <dd><input type="text" >${loginMember.nick}</dd>
                 </dl>
                 <dl>
                     <dt>비밀번호</dt>
