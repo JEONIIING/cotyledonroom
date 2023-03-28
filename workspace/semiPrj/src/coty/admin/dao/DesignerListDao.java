@@ -76,7 +76,7 @@ public class DesignerListDao {
 	//디자이너 상세정보 조회
 	public DesignerVo selectInfo(Connection conn, String no) throws Exception {
 		//sql
-		String sql="SELECT * FROM DESIGNER WHERE NO= ? AND QUIT_YN = 'N'";
+		String sql="SELECT D.NO , D.ID , D.PWD , D.NAME , D.PHONE , D.EMAIL , D.NICK , D.SHOP , D.EX , A.CHANGE_NAME FROM DESIGNER D JOIN ATTACHMENT_DESIGNER A ON(D.NO=A.REF_DESIGNER_NO) WHERE D.NO= ? AND QUIT_YN = 'N'";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, no);
 		ResultSet rs = pstmt.executeQuery();
@@ -92,8 +92,8 @@ public class DesignerListDao {
 			String designerEmail = rs.getString("EMAIL");
 			String designerNick = rs.getString("NICK");
 			String designerShop = rs.getString("SHOP");
-			String src = rs.getString("SRC");
 			String ex = rs.getString("EX");
+			String changeName = rs.getString("CHANGE_NAME");
 			
 			designerVo = new DesignerVo();
 			designerVo.setNo(designerNo);
@@ -104,8 +104,8 @@ public class DesignerListDao {
 			designerVo.setEmail(designerEmail);
 			designerVo.setNick(designerNick);
 			designerVo.setShop(designerShop);
-			designerVo.setSrc(src);
 			designerVo.setEx(ex);
+			designerVo.setChangeSrc(changeName);
 		}
 		
 		//close

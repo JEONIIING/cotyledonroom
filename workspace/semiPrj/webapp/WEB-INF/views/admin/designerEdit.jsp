@@ -23,20 +23,39 @@
   <form action="/admin/designerInfo" method="post" enctype="multipart/form-data">
     <table class="content">
       <tr>
+        <td class="text" readonly>* 번호</td>
+        <td>
+	        <input type="hidden" name="num" value="${designerVo.no}">
+	        <div class="kan"> ${designerVo.no}</div>
+        </td>
+      </tr>
+      <tr>
         <td class="text" readonly>* 근무매장</td>
-        <td><div class="kan" name="shop"> ${designerVo.shop}</div></td>
+        <td>
+	        <input type="hidden" name="shop" value="${designerVo.shop}">
+	        <div class="kan" name="shop"> ${designerVo.shop}</div>
+        </td>
       </tr>
       <tr>
         <td class="text" readonly>* 닉네임</td>
-        <td><div class="kan" name="desNick"> ${designerVo.nick} </div></td>
+        <td>
+	        <input type="hidden" name="desNick" value="${designerVo.nick}">
+        	<div class="kan" name="desNick"> ${designerVo.nick} </div>
+        </td>
       </tr>
       <tr>
         <td class="text" readonly>* 이름</td>
-        <td><div class="kan" name="desName"> ${designerVo.name} </div></td>
+        <td>
+	        <input type="hidden" name="desName" value="${designerVo.name}">
+	        <div class="kan" name="desName"> ${designerVo.name} </div>
+        </td>
       </tr>
       <tr>
         <td class="text">* 디자이너 ID </td>
-        <td ><div class="kan" name="desId"> ${designerVo.id} </div></td>
+        <td >
+	        <input type="hidden" name="desId" value="${designerVo.id}">
+	        <div class="kan" name="desId"> ${designerVo.id} </div>
+        </td>
       </tr>
       <tr>
         <td class="text">* 전화번호 </td>

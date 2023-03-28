@@ -12,12 +12,14 @@ public class DesignerVo {
 	private String nick;
 	private String src;
 	private String ex;
+	private String changeSrc;
+	
 	
 	public DesignerVo() {
 	}
 	
 	public DesignerVo(String no, String id, String pwd, String name, String phone, String email, String shop,
-			String nick, String src, String ex) {
+			String nick, String src, String ex, String changeSrc) {
 		this.no = no;
 		this.id = id;
 		this.pwd = pwd;
@@ -28,12 +30,14 @@ public class DesignerVo {
 		this.nick = nick;
 		this.src = src;
 		this.ex = ex;
+		this.changeSrc = changeSrc;
 	}
 	
 	@Override
 	public String toString() {
 		return "DesignerVo [no=" + no + ", id=" + id + ", pwd=" + pwd + ", name=" + name + ", phone=" + phone
-				+ ", email=" + email + ", shop=" + shop + ", nick=" + nick + ", src=" + src + ", ex=" + ex + "]";
+				+ ", email=" + email + ", shop=" + shop + ", nick=" + nick + ", src=" + src + ", ex=" + ex
+				+ ", changeSrc=" + changeSrc + "]";
 	}
 	
 	public String getNo() {
@@ -96,7 +100,12 @@ public class DesignerVo {
 	public void setEx(String ex) {
 		this.ex = ex;
 	}
-	
+	public String getChangeSrc() {
+		return changeSrc;
+	}
+	public void setChangeSrc(String changeSrc) {
+		this.changeSrc = changeSrc;
+	}
 	
 	
 }

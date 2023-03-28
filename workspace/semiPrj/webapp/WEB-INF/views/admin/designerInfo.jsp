@@ -71,9 +71,11 @@
                 <div class="greet_title"><소개내용></div>
                 <table>
                   <tr>
-                    <td><img class="photo"src="/resources/image/${designerVo.src}.jpg" alt="이미지" ></td>
+                    <td>
+                    	<img class="photo"src="/resources/image/${designerVo.changeSrc}" alt="이미지" >
+                    </td>
                     <td class="greet_content">
-                      ${designerVo.ex}
+                      	${designerVo.ex}
                     </td>
                   </tr>
                 </table>

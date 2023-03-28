@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import coty.admin.adminVo.DesignerAttachmentVo;
 import coty.admin.adminVo.DesignerVo;
 import coty.util.JDBCTemplate;
 
@@ -15,8 +16,8 @@ public class DesignerDao {
 	
 	//디자이너 계정 생성 (INSERT)
 	public int createDesigner(Connection conn, DesignerVo deVo) throws Exception {
-		int result = 0;
 		//sql
+		int result = 0;
 		String sql="INSERT INTO DESIGNER(NO, ID, PWD, NAME ,PHONE, EMAIL, SHOP, NICK) VALUES(SEQ_DELIVERY_NO.NEXTVAL, ? ,? ,? ,? ,? ,? , ?)";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, deVo.getId());
@@ -66,27 +67,45 @@ public class DesignerDao {
 		return deLoginVo;
 	}
 	
-	
-	//디자이너 계정정보 수정 (UPDATE)
-	public int deInfoEdit(Connection conn, DesignerVo designerVo) throws Exception {
+	public int insertAttachment(Connection conn, DesignerAttachmentVo atVo) throws Exception {
 		
-		int result =0;
-		//sql
-		String sql="UPDATE DESIGNER SET PHONE= ? , EMAIL = ? , EX = ? ,SRC = ? WHERE ID = ?";
+		int result = 0;
+		//sql 
+		String sql="INSERT INTO ATTACHMENT_DESIGNER (NO ,ORIGIN_NAME, CHANGE_NAME, REF_DESIGNER_NO) VALUES (SEQ_ATTACHMENT_DESIGNER_NO.NEXTVAL, ?, ?, ?)";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, designerVo.getPhone());
-		pstmt.setString(2, designerVo.getEmail());
-		pstmt.setString(3, designerVo.getEx());
-		pstmt.setString(4, designerVo.getSrc());
-		pstmt.setString(5, designerVo.getId());
-		
+		pstmt.setString(1, atVo.getOriginName());
+		pstmt.setString(2, atVo.getChangeName());
+		pstmt.setString(3, atVo.getRefDesignerNo());
 		result = pstmt.executeUpdate();
 		
 		//close
 		JDBCTemplate.close(pstmt);
 		
 		return result;
+	
+	
 	}
+	
+	//디자이너 계정정보 수정
+	public int deInfoEdit(Connection conn, DesignerVo editVo) throws Exception {
+		System.out.println("edit - dao");
+		int editResult =0;
+		//sql
+		String sql="UPDATE DESIGNER SET PHONE= ? , EMAIL = ? , EX = ? WHERE NO = ?";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, editVo.getPhone());
+		pstmt.setString(2, editVo.getEmail());
+		pstmt.setString(3, editVo.getEx());
+		pstmt.setString(4, editVo.getNo());
+		
+		editResult = pstmt.executeUpdate();
+		
+		//close
+		JDBCTemplate.close(pstmt);
+		
+		return editResult;
+	}
+
 	
 
 }
