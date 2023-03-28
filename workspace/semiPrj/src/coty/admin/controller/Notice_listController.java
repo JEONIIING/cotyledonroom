@@ -35,7 +35,7 @@ public class Notice_listController extends HttpServlet{
 			PageVo pageVo = new PageVo(listCount, currentPage, pageLimit, boardLimit);
 			
 			
-				//서비스 호출				
+			//서비스 호출				
 			List<Notice_a_Vo> noticeList = ns.selectList(pageVo);
 
 			
