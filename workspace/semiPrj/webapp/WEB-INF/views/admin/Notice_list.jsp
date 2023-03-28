@@ -29,18 +29,19 @@
                   <div class="title">제목</div>
                   <div class="writer">글쓴이</div>
                   <div class="date">작성일</div>
+                  <div class="writer">조회수</div>
               </div>
 			
        
               <c:forEach items="${noticeList}" var="nvo">
-              <div>
+              <div class="gogo">
                   <div class="num">${nvo.no}</div>
-                  <div class="title"><a href="/admin/Notice_view">${nvo.title}</a></div>
+                  <div class="title">${nvo.title}</div>
                   <div class="writer">${nvo.writer}</div>
                   <div class="date">${nvo.enrollDate}</div>
+                  <div class="writer">${nvo.hit}</div>
               </div>
 			  </c:forEach>
-			  a!
           </div>
 
 
@@ -83,4 +84,16 @@
 <%@include file="/WEB-INF/views/common/footer.jsp" %>
    
   </body>
+<script>
+const elements = document.querySelectorAll('.gogo');
+elements.forEach(element => {
+  element.addEventListener('click', () => {
+    const no = element.querySelector('.num').innerText;
+    location.href = "/admin/Notice_view?no=" + no;
+  });
+});
+
+</script>
 </html>
+
+

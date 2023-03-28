@@ -25,42 +25,35 @@
       <div class="board_view_wrap">
           <div class="board_view">
               <div class="title">
-                  글 제목 들어감요
+                  ${Notice_a_Vo.title}
 
               </div>
               <div class="info">
+              <h1>@{noticeVo}</h1>
                   <dl>
                       <dt>번호</dt>
-                      <dd>1</dd>
+                      <dd>${Notice_a_Vo.no}</dd>
                   </dl>
                   <dl>
                       <dt>글쓴이</dt>
-                      <dd>김이름</dd>
+                      <dd>${Notice_a_Vo.writer}</dd>
                   </dl>
                   <dl>
                       <dt>작성일</dt>
-                      <dd>2023.03.15</dd>
+                      <dd>${Notice_a_Vo.enrollDate}</dd>
                   </dl>
                   <dl>
-                      <dt>조회</dt>
-                      <dd>33</dd>
+                      <dt>조회수</dt>
                   </dl>
 
               </div>
               <div class="cont">
-                  글내용이 들어갑니다요<br>
-                  글내용이 들어갑니다요<br>
-                  글내용이 들어갑니다요<br>
-                  글내용이 들어갑니다요<br>
-                  글내용이 들어갑니다요<br>
-                  글내용이 들어갑니다요<br>
-                  글내용이 들어갑니다요<br>
-                  글내용이 들어갑니다요
+                 ${Notice_a_Vo.content}
               </div>
               
           </div>
           <div class="bt_wrap">
-              <a href="/admin/Notice_list" class="on">목록</a>
+              <a href="/admin/Notice_list?page=1" class="on">목록</a>
               <a href="/admin/Notice_edit">수정</a>
               <a href="/admin/Notice_edit">삭제</a>
           </div>

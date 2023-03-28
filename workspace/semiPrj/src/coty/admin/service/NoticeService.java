@@ -64,4 +64,31 @@ public class NoticeService {
 		return result;
 	}
 
+	//게시글 상세조회
+	public Notice_a_Vo selectOne(String no) throws Exception {
+		
+		//비즈니스 로직
+		
+		//conn
+		Connection conn = JDBCTemplate.getConnection();
+		//DAO호출(조회쿼리 + 증가쿼리)
+		Notice_a_Dao dao = new Notice_a_Dao();
+		int result = dao.increaseHit(conn, no);
+		
+		
+		if (result != 1) {
+			throw new Exception("조회수 증가 실패...");
+		}
+			
+		Notice_a_Vo noticeVo = dao.selectOne(conn, no);
+		
+		
+		
+		//tx, close
+		JDBCTemplate.commit(conn);
+		JDBCTemplate.close(conn);
+		
+		return noticeVo;
+	}
+
 }
