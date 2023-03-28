@@ -6,10 +6,7 @@
     <c:if test ="${alertLoginMsg != null}">
 		
 	<script type="text/javascript">
-	MemberVo loginMember = (MemberVo)session.getAttribute("loginMember");
-	
-	
-	
+
 	alert("${alertLoginMsg}")
 	
 	

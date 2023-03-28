@@ -5,7 +5,6 @@ import java.sql.Connection;
 import coty.member.dao.MemberDao;
 import coty.member.vo.MemberVo;
 import coty.util.JDBCTemplate;
-import oracle.jdbc.logging.annotations.Log;
 
 public class MemberService {
 		//회원가입
@@ -74,23 +73,88 @@ public class MemberService {
 		}
 		
 		// 아이디 찾기
-	    public String findId(MemberVo vo) throws Exception{       
+	    public MemberVo findId(MemberVo vo) throws Exception{       
     	  
     	//conn
     	Connection conn = JDBCTemplate.getConnection();
     	
     	//sql 실행
           MemberDao dao = new MemberDao();
-          String result = dao.findId(conn, vo);
+          MemberVo findId = dao.findId(conn, vo);
           
         //tx close
-			if(result != null) {
+			if(findId != null) {
 				JDBCTemplate.commit(conn);
 			}else {
 				JDBCTemplate.rollback(conn);
 			}
 			JDBCTemplate.close(conn);
-			return result;
+			return findId;
 		}
-	}
+	    
+	    //비밀번호 찾기
+		public MemberVo findPwd(MemberVo vo)throws Exception {
+			//conn
+	    	Connection conn = JDBCTemplate.getConnection();
+	    	
+	    	//sql 실행
+	          MemberDao dao = new MemberDao();
+	          MemberVo findPwd = dao.findPwd(conn, vo);
+	          
+	        //tx close
+				if(findPwd != null) {
+					JDBCTemplate.commit(conn);
+				}else {
+					JDBCTemplate.rollback(conn);
+				}
+				JDBCTemplate.close(conn);
+				return findPwd;
+			}
+	    
+	  //회원정보 보여주기
+		public MemberVo selectMember(MemberVo vo)throws Exception {
+			//비지니스 로직
+			
+			//conn
+			Connection conn = JDBCTemplate.getConnection();
+			
+			//sql실행
+			MemberDao dao = new MemberDao();
+			MemberVo selectMember = dao.selectMember(conn, vo);
+			
+			//tx close
+			if(selectMember != null) {
+				JDBCTemplate.commit(conn);
+			}else {
+				JDBCTemplate.rollback(conn);
+			}
+			JDBCTemplate.close(conn);
+			return selectMember;
+			
+		}
+		
+		  //회원정보 수정하기 
+			public MemberVo editMember(MemberVo loginMember) throws Exception {
+		  
+		  //비지니스 로직
+		  Connection conn = JDBCTemplate.getConnection();
+		
+		  //sql 
+		  MemberDao dao = new MemberDao(); 
+		  MemberVo editMember = dao.editMember(conn, loginMember);
+		  
+		  //tx close 
+		  if(editMember != null) { 
+		  JDBCTemplate.commit(conn); 
+		  }
+		  else {
+		  JDBCTemplate.rollback(conn); 
+		  } 
+		  JDBCTemplate.close(conn); 
+		  return editMember; 
+		  }
+		 
+	    
+	    
+	}//class
 

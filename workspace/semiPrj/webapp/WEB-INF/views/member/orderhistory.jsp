@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/resources/css/member/S_orderhistory.css">
 
 </head>
-   <%@include file="/WEB-INF/views/common/header_af.jsp" %>
+   <%@include file="/WEB-INF/views/common/header_be.jsp" %>
    <%@include file="/WEB-INF/views/common/sidebar_my.jsp" %>
 <br>
 <br>
