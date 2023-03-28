@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import coty.admin.adminVo.DesignerVo;
+import coty.util.JDBCTemplate;
+
 import static coty.util.JDBCTemplate.*;
 
 public class DesignerDao {
@@ -62,6 +64,28 @@ public class DesignerDao {
 		
 		
 		return deLoginVo;
+	}
+	
+	
+	//디자이너 계정정보 수정 (UPDATE)
+	public int deInfoEdit(Connection conn, DesignerVo designerVo) throws Exception {
+		
+		int result =0;
+		//sql
+		String sql="UPDATE DESIGNER SET PHONE= ? , EMAIL = ? , EX = ? ,SRC = ? WHERE ID = ?";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, designerVo.getPhone());
+		pstmt.setString(2, designerVo.getEmail());
+		pstmt.setString(3, designerVo.getEx());
+		pstmt.setString(4, designerVo.getSrc());
+		pstmt.setString(5, designerVo.getId());
+		
+		result = pstmt.executeUpdate();
+		
+		//close
+		JDBCTemplate.close(pstmt);
+		
+		return result;
 	}
 	
 

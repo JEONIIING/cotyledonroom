@@ -3,6 +3,7 @@ package coty.admin.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,6 +71,48 @@ public class DesignerListDao {
 		JDBCTemplate.close(rs);
 		
 		return cnt;
+	}
+
+	//디자이너 상세정보 조회
+	public DesignerVo selectInfo(Connection conn, String no) throws Exception {
+		//sql
+		String sql="SELECT * FROM DESIGNER WHERE NO= ? AND QUIT_YN = 'N'";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, no);
+		ResultSet rs = pstmt.executeQuery();
+		
+		//rs => obj
+		DesignerVo designerVo = null;
+		if(rs.next()) {
+			String designerNo = rs.getString("NO");
+			String designerID = rs.getString("ID");
+			String designerPwd = rs.getString("PWD");
+			String designerName = rs.getString("NAME");
+			String designerPhone = rs.getString("PHONE");
+			String designerEmail = rs.getString("EMAIL");
+			String designerNick = rs.getString("NICK");
+			String designerShop = rs.getString("SHOP");
+			String src = rs.getString("SRC");
+			String ex = rs.getString("EX");
+			
+			designerVo = new DesignerVo();
+			designerVo.setNo(designerNo);
+			designerVo.setId(designerID);
+			designerVo.setPwd(designerPwd);
+			designerVo.setName(designerName);
+			designerVo.setPhone(designerPhone);
+			designerVo.setEmail(designerEmail);
+			designerVo.setNick(designerNick);
+			designerVo.setShop(designerShop);
+			designerVo.setSrc(src);
+			designerVo.setEx(ex);
+		}
+		
+		//close
+		JDBCTemplate.close(pstmt);
+		JDBCTemplate.close(rs);
+		
+		return designerVo;
 	}
 	
 	

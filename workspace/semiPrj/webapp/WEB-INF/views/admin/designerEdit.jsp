@@ -20,62 +20,52 @@
 
   <div class="red_bar"></div>
   
-  <form action="/admin/designerInfo" method="post">
+  <form action="/admin/designerInfo" method="post" enctype="multipart/form-data">
     <table class="content">
       <tr>
-        <td class="text" readonly>* 매장번호</td>
-        <td><div class="kan" name="number"> 3 </div></td>
+        <td class="text" readonly>* 근무매장</td>
+        <td><div class="kan" name="shop"> ${designerVo.shop}</div></td>
+      </tr>
+      <tr>
+        <td class="text" readonly>* 닉네임</td>
+        <td><div class="kan" name="desNick"> ${designerVo.nick} </div></td>
       </tr>
       <tr>
         <td class="text" readonly>* 이름</td>
-        <td><div class="kan" name="desName"> 리아 </div></td>
-      </tr>
-      <tr>
-        <td class="text" readonly>* 생성일자</td>
-        <td><div class="kan" name="desName"> 김하나 </div></td>
+        <td><div class="kan" name="desName"> ${designerVo.name} </div></td>
       </tr>
       <tr>
         <td class="text">* 디자이너 ID </td>
-        <td ><div class="kan" name="desId"> yec220409 </div></td>
-      </tr>
-      <tr>
-        <td class="text">* 비밀번호</td>
-        <td ><input class="box" type="password" name="desPwd1"></td>
-      </tr>
-      <tr>
-        <td class="text">* 비밀번호 확인</td>
-        <td >
-          <input class="box" type="password" name="desPwd2">
-          <span class="conform">*</span>
-        </td>
+        <td ><div class="kan" name="desId"> ${designerVo.id} </div></td>
       </tr>
       <tr>
         <td class="text">* 전화번호 </td>
         <td >
-          <input class="box" type="tel" name="tel" value="" required>
+          <input class="box" type="tel" name="tel" value="${designerVo.phone}" required>
         </td>
       </tr>
       <tr>
         <td class="text">* 이메일 </td>
         <td >
-          <input class="box" type="text" name="email" value="" required>
+          <input class="box" type="text" name="email" value="${designerVo.email}" required >
         </td>
       </tr>
       
       <tr>
         <td class="text">* 소개내용</td>
-        <td ><textarea name="" id="" cols="100" rows="20" required></textarea></td>
+        <td >
+	        <textarea name="detail" id="" cols="100" rows="20" required placeholder="디자이너 소개내용을 작성해주세요.">${designerVo.ex}</textarea>
+        </td>
       </tr>
       <tr>
         <td class="text">* 디자이너 이미지</td>
         <td>
-          <input class="box" type="password" name="memberPwd">
-          <input type="file" name="" id="" required multiple>
+          <input type="file" name="f" multiple="multiple" >
         </td>
       </tr>
       <tr>
         <td colspan="2">
-          <input class="check" input type="submit" value="확인">
+          <input class="check" type="submit" value="확인">
           <button class="cancel" type="button"  onclick="history.back(-1);"><a href="javascript:window.history.back();">취소</a></button>
         <td>
         </td>

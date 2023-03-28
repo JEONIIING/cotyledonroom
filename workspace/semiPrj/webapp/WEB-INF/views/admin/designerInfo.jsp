@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -25,20 +26,20 @@
     <div class="board_view_wrap">
         <div class="board_view">
             <div class="title">
-              리아
+              ${designerVo.nick}
             </div>
             <div class="info">
                 <dl>
-                    <dt>매장번호 : </dt>
-                    <dd>3</dd>
+                    <dt>근무 매장 : </dt>
+                    <dd>${designerVo.shop}</dd>
                 </dl>
                 <dl>
                     <dt>디자이너 ID : </dt>
-                    <dd>yec220409</dd>
+                    <dd>${designerVo.id}</dd>
                 </dl>
                 <dl>
                     <dt>디자이너 PWD : </dt>
-                    <dd>adsglwkj0129*</dd>
+                    <dd>${designerVo.pwd}</dd>
                 </dl>
                 <dl>
                     <dt>탈퇴 여부</dt>
@@ -49,19 +50,19 @@
             <div class="info">
               <dl>
                   <dt>이름 : </dt>
-                  <dd>김하나</dd>
+                  <dd>${designerVo.name}</dd>
               </dl>
               <dl>
                   <dt>전화번호 : </dt>
-                  <dd>010-1234-1234</dd>
+                  <dd>${designerVo.phone}</dd>
               </dl>
               <dl>
                   <dt>디자이너 Email : </dt>
-                  <dd>adfg@naver.com</dd>
+                  <dd>${designerVo.email}</dd>
               </dl>
               <dl>
                   <dt>디자이너 DB번호</dt>
-                  <dd>5</dd>
+                  <dd>${designerVo.no}</dd>
               </dl>
 
           </div>
@@ -70,9 +71,9 @@
                 <div class="greet_title"><소개내용></div>
                 <table>
                   <tr>
-                    <td><img class="photo"src="/resources/image/디자이너1.jpg" alt="이미지" ></td>
+                    <td><img class="photo"src="/resources/image/${designerVo.src}.jpg" alt="이미지" ></td>
                     <td class="greet_content">
-                      경력 15년/ 거의 대부분의 시간을 서 있어야 하기 때문에, 허리에 무리가 갑니다. 허리 통증이 지속되다보니 중간 중간 스트레칭을 하거나 자세를 바꾸는 등으로 허리를 풀어주려고 합니다.
+                      ${designerVo.ex}
                     </td>
                   </tr>
                 </table>
@@ -88,6 +89,17 @@
 </div>
 		
 		<%@ include file="/WEB-INF/views/common/footer.jsp" %>
+		<% 
+			request.getSession().getAttribute("designerVo");
+		%>
 
 </body>
 </html>
+
+
+<c:if test="${alertMsg != nill}">
+	<script>
+		alert('${alertMsg}');
+	</script>
+</c:if>
+<c:remove var="alertMsg"/>
