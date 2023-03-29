@@ -1,11 +1,16 @@
 package coty.designer.service;
 
 import java.sql.Connection;
+import java.util.List;
 
 import coty.admin.adminVo.DesignerAttachmentVo;
 import coty.admin.adminVo.DesignerVo;
 import coty.admin.dao.DesignerDao;
+import coty.member.dao.CartDao;
+import coty.member.vo.CartVo;
+import coty.member.vo.MemberVo;
 import coty.util.JDBCTemplate;
+import coty.util.PageVo;
 
 import static coty.util.JDBCTemplate.*;
 
@@ -95,9 +100,64 @@ public class DesignerService {
 		return editResult;
 		
 	}
-	
-	
-	
+	//게시글 조회 (페이징 처리가 된)
+		public List<CartVo> selectList(PageVo pageVo, MemberVo loginMember) throws Exception {
+			
+			//비즈니스 로직
+			
+			//conn
+			Connection conn = JDBCTemplate.getConnection();
+			
+			//SQL (DAO)
+			CartDao dao = new CartDao();
+			List<CartVo> cartList = dao.selectList(conn , pageVo, loginMember);
+			
+			//close
+			JDBCTemplate.close(conn);
+			
+			return cartList;
+		}
+		
+		//게시글 전체 갯수 조회 (삭제되지않은)
+		public int selectCount() throws Exception {
+			
+			//비지니스 로직
+			
+			//conn
+			Connection conn = JDBCTemplate.getConnection();
+			
+			//SQL (DAO)
+			CartDao dao = new CartDao();
+			int result = dao.selectCount(conn);
+			
+			//close
+			JDBCTemplate.close(conn);
+			
+			return result;
+		}
+
+		public int addProduct(CartVo cartVo) throws Exception {
+			
+			//로직
+			
+			Connection conn = JDBCTemplate.getConnection();
+			
+			CartDao dao = new CartDao();
+			int result = dao.addProduct(conn, cartVo);
+			
+			if(result == 1) {
+				JDBCTemplate.commit(conn);
+			}else {
+				JDBCTemplate.rollback(conn);
+			}
+			
+			JDBCTemplate.close(conn);
+			
+			return result;
+		}
+
+
+
 	
 	
 	

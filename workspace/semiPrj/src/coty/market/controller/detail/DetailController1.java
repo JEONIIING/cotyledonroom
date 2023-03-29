@@ -23,7 +23,6 @@ public class DetailController1 extends HttpServlet{
 			
 			List<ProductVo> productList1 = ps.selectList1();
 			
-			System.out.println(productList1);
 			req.setAttribute("productList1", productList1);
 			req.getRequestDispatcher("/WEB-INF/views/market/detail/ProductDetail1.jsp").forward(req, resp);
 			
