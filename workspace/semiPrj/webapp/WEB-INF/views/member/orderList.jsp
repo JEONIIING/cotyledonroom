@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,7 +15,9 @@
 </head>
 <body>
     <%@ include file="/WEB-INF/views/common/header_be.jsp" %>
-    <%@ include file="/WEB-INF/views/common/sidebar_my.jsp" %>
+    <%@ include file="/WEB-INF/views/common/sidebar_my.jsp" %> 
+    
+    
 <br>
 <br>
 <div class="order_title">
@@ -30,6 +33,7 @@
     <div class="board_list_wrap">
         <div class="board_list">
             <div class="top">
+   
                 <div class="num">주문번호</div>
                 <!-- <div class="title"> 상품이름</div> -->
                 <div class="writer" >상품이름</div>
@@ -38,52 +42,52 @@
                 <div class="date">날짜</div>
                 <div class="count">배송상태</div>
                 <div class="count">환불여부</div>
+               
+            	  
             </div>
-            <div>
-               
-                <div class="num"><a href="/member/orderhistory">12345</a></div>
-                <div class="num"><a href="/member/orderhistory">샴푸</a></div>
-                <div class="num">1</div>
-                <div class="num">500,000</div>
-                <div class="num">2023.03.16</div>
-                <div class="num">배송중</div>
-                <div class="num">X</div>
+               <c:forEach items = "${OrderList}" var="ovo"> 
+            <div class="orderlistdetail">
+               	
+                <div class="num"><a href="/member/orderhistory">${ovo.no}</a></div>
+                <div class="num"><a href="/member/orderhistory">${ovo.name}</a></div>
+                <div class="num">${ovo.amount}</div>
+                <div class="num">${ovo.total}</div>
+                <div class="num">${ovo.ordate}</div>
+                <div class="num">${ovo.state}</div>
+                <div class="num">${ovo.re_yn}</div>
             </div>
-            <div>
+               </c:forEach>
                
-              <div class="num"><a href="#">12345</a></div>
-              <div class="num"><a href="#">샴푸</a></div>
-              <div class="num">1</div>
-              <div class="num">500,000</div>
-              <div class="num">2023.03.16</div>
-              <div class="num">배송중</div>
-              <div class="num">X</div>
-          </div>
-          <div>
-               
-            <div class="num"><a href="#">12345</a></div>
-            <div class="num"><a href="#">샴푸</a></div>
-            <div class="num">1</div>
-            <div class="num">500,000</div>
-            <div class="num">2023.03.16</div>
-            <div class="num">배송중</div>
-            <div class="num">X</div>
-        </div>
+            
            
         </div>
 
 
-        <div class="board_page">
-            <a href="#" class="bt first"><<</a>
-            <a href="#" class="bt prev"><</a>
-            <a href="#" class="num on">1</a>
-            <a href="#" class="num">2</a>
-            <a href="#" class="num">3</a>
-            <a href="#" class="num">4</a>
-            <a href="#" class="num">5</a>
-            <a href="#" class="bt next">></a>
-            <a href="#" class="bt last">>></a>
-        </div>
+     <div class="board_page">
+              <a href="#" class="bt first"><<</a>
+              
+              
+              <c:if test="${pagevo.currentPage > 1}">
+              <a href="/member/orderlist?page=${pagevo.currentPage-1}" class="bt prev"><</a>
+              </c:if>
+              
+              
+              <c:forEach var="i" begin="${pagevo.startPage}" end="${pagevo.endPage}" step="1">
+              	<c:if test="${pagevo.currentPage == i }">
+              		<a href="/member/orderlist?page=${i}" class="num on">${i}</a>
+              	</c:if>
+              
+       			<c:if test="${pagevo.currentPage != i }">
+       				<a href="/member/orderlist?page=${i}" class="num">${i}</a>
+              	</c:if>
+   
+              </c:forEach>
+              
+              <c:if test="${pagevo.currentPage < pagevo.maxPage}">
+              <a href="/member/orderlist?page=${pagevo.currentPage+1}" class="bt prev">></a>
+              </c:if>
+              <a href="#" class="bt last">>></a>
+          </div>
 
 
        
@@ -97,3 +101,14 @@
 
 </body>
 </html>
+
+		<script>
+		const elements = document.querySelectorAll('.orderlistdetail');
+		elements.forEach(element => {
+		  element.addEventListener('click', () => {
+		    const no = element.querySelector('.num').innerText;
+		    location.href = "/member/orderList?no=" + no;
+		  });
+		});
+		
+		</script>

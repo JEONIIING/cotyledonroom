@@ -13,7 +13,7 @@
     <div class="admin">My 쇼핑</div>
     <ul>
       <li><a href="/member/cart">장바구니</a></li>
-      <li><a href="/member/orderlist">주문목록</a></li>
+      <li><a href="/member/orderlist?page=1">주문목록</a></li>
       <li><a href="/member/address">배송지목록</a></li>
       <br>
       <div class="admin">My 예약</div>
