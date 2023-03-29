@@ -25,6 +25,7 @@
   <form action="/admin/memberInfo" method="post">
     <table class="content">
       <tr>
+      	<input type="hidden" name="num" value="${memberVo.no}">
         <td class="text" readonly>* 닉네임 : </td>
         <td><div class="kan" name="memberNick"> ${memberVo.nick} </div></td>
       </tr>

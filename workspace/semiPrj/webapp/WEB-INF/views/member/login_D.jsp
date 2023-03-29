@@ -36,7 +36,7 @@
   
   </div>
   
-  <form action="/designer/rv_chart" method="post">
+  <form action="/designer/main" method="post">
     <table class="content">
       <tr>
         <td class="text">아이디</td>

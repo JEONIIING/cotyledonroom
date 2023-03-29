@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import coty.admin.adminVo.DesignerVo;
 import coty.designer.service.DesignerService;
@@ -17,7 +18,9 @@ public class DesignerQuitController extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//데이터 꺼내기
-		String designerNo = req.getParameter("no");
+		HttpSession session = req.getSession();
+		DesignerVo designerVo = (DesignerVo)session.getAttribute("designerVo");
+		String designerNo = designerVo.getNo();
 		
 		//서비스 실행
 		DesignerService ds = new DesignerService();
@@ -36,5 +39,6 @@ public class DesignerQuitController extends HttpServlet{
 			e.printStackTrace();
 		}
 		
+		session.invalidate();
 	}
 }

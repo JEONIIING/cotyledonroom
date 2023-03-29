@@ -53,9 +53,11 @@ public class D_rv_chartController extends HttpServlet{
 			e.printStackTrace();
 			req.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(req, resp);
 		}
+		
 
 	}
 	
+
 	//디자이너 로그인
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -83,5 +85,6 @@ public class D_rv_chartController extends HttpServlet{
 		req.getSession().setAttribute("alertResMsg", "예약 취소 완료");
 		req.getSession().setAttribute("");
 	}
+
 }
 

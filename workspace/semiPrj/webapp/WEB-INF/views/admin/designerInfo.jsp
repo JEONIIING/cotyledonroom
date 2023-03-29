@@ -90,11 +90,8 @@
         </div>
     </div>
 </div>
-		
+				
 		<%@ include file="/WEB-INF/views/common/footer.jsp" %>
-		<% 
-			DesignerVo designerVo = (DesignerVo)request.getSession().getAttribute("designerVo");
-		%>
 
 </body>
 </html>
@@ -106,6 +103,9 @@
 	</script>
 </c:if>
 <c:remove var="alertMsg"/>
+		<% 
+			DesignerVo designerVo = (DesignerVo)request.getSession().getAttribute("designerVo");
+		%>
 
 <script>
 	var designerNo = <%= designerVo.getNo()%>;
