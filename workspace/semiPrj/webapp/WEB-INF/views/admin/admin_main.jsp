@@ -25,3 +25,9 @@
    
   </body>
 </html>
+<c:if test="${alertMsg != null}">
+	<script>
+		alert('%{alertMsg}');
+	</script>
+</c:if>
+<c:remove var="alertMst"/>

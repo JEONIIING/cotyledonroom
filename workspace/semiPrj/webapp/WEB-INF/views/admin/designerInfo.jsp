@@ -1,3 +1,4 @@
+<%@page import="coty.admin.adminVo.DesignerVo"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -31,7 +32,7 @@
             <div class="info">
                 <dl>
                     <dt>근무 매장 : </dt>
-                    <dd>${designerVo.shop}</dd>
+                    <dd>${designerVo.shopName}</dd>
                 </dl>
                 <dl>
                     <dt>디자이너 ID : </dt>
@@ -72,7 +73,7 @@
                 <table>
                   <tr>
                     <td>
-                    	<img class="photo"src="/resources/image/${designerVo.changeSrc}" alt="이미지" >
+                    	<img class="photo"src="/resources/image/${designerVo.changeName}" alt="이미지" >
                     </td>
                     <td class="greet_content">
                       	${designerVo.ex}
@@ -85,14 +86,14 @@
         <div class="bt_wrap">
             <a href="/admin/designerList" class="on">목록</a>
             <a href="/admin/designerEdit">수정</a>
-            <button class = "drop" type="button" onclick="button_desExit();">탈퇴</button>
+            <button class = "drop" type="button" onclick="confirmDeQuit();">탈퇴</button>
         </div>
     </div>
 </div>
 		
 		<%@ include file="/WEB-INF/views/common/footer.jsp" %>
 		<% 
-			request.getSession().getAttribute("designerVo");
+			DesignerVo designerVo = (DesignerVo)request.getSession().getAttribute("designerVo");
 		%>
 
 </body>
@@ -105,3 +106,13 @@
 	</script>
 </c:if>
 <c:remove var="alertMsg"/>
+
+<script>
+	var designerNo = <%= designerVo.getNo()%>;
+	function confirmDeQuit(){
+	  if(confirm("해당 디자이너의 계정을 탈퇴하시겠습니까?")){
+		window.location.href="http://127.0.0.1:8888/admin/designerQuit?no=" + designerNo;
+		};
+	}
+
+</script>

@@ -20,7 +20,7 @@
   </div>
   
   
-  <form action="/admin/designerList" onsubmit="return checkValid();" method="post">
+  <form action="/admin/designerList" onsubmit="return checkValid();" method="post" enctype="multipart/form-data">
     <table class="content">
       <tr>
         <td class="text">* 아이디</td>
@@ -51,10 +51,10 @@
         <td class="text">* 근무 매장 </td>
         <td class="sel">
 	       	<select name="shop">
-	        	<option value="역삼점">역삼점</option>
-	        	<option value="신사점">신사점</option>
-	        	<option value="논현점">논현점</option>
-	        	<option value="압구정점">압구정점</option>
+	        	<option value="1">역삼점</option>
+	        	<option value="2">신사점</option>
+	        	<option value="3">논현점</option>
+	        	<option value="4">압구정점</option>
 	        </select>
         
         </td>
@@ -71,6 +71,11 @@
       <tr>
         <td class="text">* 디자이너 닉네임 </td>
         <td ><input class="box" type="text" name="deNick" required>
+        </td>
+       </tr> 
+      <tr>
+        <td class="text">* 디자이너 사진 </td>
+        <td ><input type="file" name="f" multiple="multiple" required>
         </td>
        </tr> 
         <td colspan="2">

@@ -99,6 +99,7 @@
         listbody.addEventListener("click", function(event){
             const no = event.target.parentNode.children[0].innerText
             location.href="/admin/designerInfo?no=" + no;
+            
         });
     });
     </script>
