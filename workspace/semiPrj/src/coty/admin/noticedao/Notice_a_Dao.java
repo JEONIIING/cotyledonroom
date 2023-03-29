@@ -110,7 +110,7 @@ public class Notice_a_Dao {
 			noticeVo.setContent(content);
 			noticeVo.setWriter(writer);
 			noticeVo.setEnrollDate(enrollDate);
-			noticeVo.setEnrollDate(hit);
+			noticeVo.setHit(hit);
 		}
 		
 		//close
@@ -134,5 +134,41 @@ public class Notice_a_Dao {
 		
 		return result;
 	}
+	
+	public int update(Connection conn, String No, String Title, String Content) throws Exception {
+		
+		//SQL (close)
+		String sql = "UPDATE NOTICE SET TITLE = ?, CONTENT = ? WHERE NO = ?";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		
+		pstmt.setString(1, Title);
+		pstmt.setString(2, Content);
+		pstmt.setString(3, No);
+		int result = pstmt.executeUpdate();
+		
+		close(pstmt);
+		
+		return result;
+				
+	}
+	
+	//공지사항 삭제
+	public int delete(Connection conn, String no) throws Exception {
+		
+		//SQL
+		String sql = "DELETE FROM NOTICE WHERE NO = ?";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, no);
+		int result = pstmt.executeUpdate();
+		//close
+		close(pstmt);
+		
+		return result;
+	}
+	
+
+
+	
+
 	
 }

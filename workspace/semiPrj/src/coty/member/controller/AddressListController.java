@@ -7,14 +7,19 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-@WebServlet("/member/orderhistory")
-public class Orderhistory extends HttpServlet{
+@WebServlet("/member/address")
+public class AddressListController extends HttpServlet{
+
+	//게시글 목록 (화면)
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("/WEB-INF/views/member/orderhistory.jsp").forward(req, resp);
+			
+		req.getRequestDispatcher("/WEB-INF/views/member/address.jsp").forward(req, resp);
+		
 	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doGet(req, resp);
 	}
 }
+

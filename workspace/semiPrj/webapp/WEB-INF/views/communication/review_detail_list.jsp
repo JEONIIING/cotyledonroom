@@ -34,19 +34,19 @@
                 </dl>
                 <dl>
                     <dt>닉네임</dt>
-                    <dd>김이름</dd>
+                    <dd>${reviewVo.writer}</dd>
                 </dl>
                 <dl>
                     <dt>매장</dt>
-                    <dd>강남점</dd>
+                    <dd>${reviewVo.shopName}</dd>
                 </dl>
                 <dl>
                     <dt>디자이너</dt>
-                    <dd>주리</dd>
+                    <dd>${reviewVo.designerName}</dd>
                 </dl>
                 <dl>
                     <dt>시술</dt>
-                    <dd>여성 디자인펌</dd>
+                    <dd>${reviewVo.styleName}</dd>
                 </dl>
                 <dl>
                     <dt>작성일</dt>
@@ -56,9 +56,7 @@
 
             </div>
             <div class="cont">
-                <div>
-                    <img src="/resources/image/shop3.jpg" alt="" style="width: 300px;"> <br>
-                </div>
+                
                 <div>
                     ${reviewVo.content}
                 </div>
@@ -66,7 +64,7 @@
             
         </div>
         <div class="bt_wrap">
-            <a href="/communication/reviewlist" class="on">목록</a>
+            <a href="/communication/reviewlist?page=1" class="on">목록</a>
             <a href="/communication/reviewedit">수정</a>
             <a href="#">삭제</a>
         </div>

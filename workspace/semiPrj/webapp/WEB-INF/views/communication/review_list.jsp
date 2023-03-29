@@ -48,7 +48,7 @@
                   <div class="num">${rvo.no}</div>
                   <div class="picture"><img class="reviewphoto" src="/resources/image/리뷰사진7.jpg" alt="이미지"></div>
                   <div class="title"><a href="">${rvo.content}</a></div>
-                  <div class="memberNick">${rvo.customerNick}</div>
+                  <div class="memberNick">${rvo.writer}</div>
                   <div class="shop">${rvo.shopName}</div>
                   <div class="designer">${rvo.designerName}</div>
               </div>

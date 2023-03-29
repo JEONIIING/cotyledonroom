@@ -91,4 +91,48 @@ public class NoticeService {
 		return noticeVo;
 	}
 
+	
+	//공지사항 삭제
+	public int delete(String no) throws Exception {
+		
+		//conn
+		Connection conn = JDBCTemplate.getConnection();
+		
+		//DAO
+		Notice_a_Dao dao = new Notice_a_Dao();
+		int result = dao.delete(conn, no);
+		
+		//tx , close
+		if(result == 1) {
+			JDBCTemplate.commit(conn);
+		}else {
+			JDBCTemplate.rollback(conn);
+		}
+		
+		JDBCTemplate.close(conn);
+		
+		return result;
+	}
+	
+	public int update(String No, String Title, String Content) throws Exception {
+		//conn
+		Connection conn = JDBCTemplate.getConnection();
+		
+		//DAO
+		
+		Notice_a_Dao dao = new Notice_a_Dao();
+		int result = dao.update(conn, No, Title, Content);
+		
+		//tx, close
+		if(result == 1) {
+			JDBCTemplate.commit(conn);
+		}else {
+			JDBCTemplate.rollback(conn);
+		}
+		JDBCTemplate.close(conn);
+		
+		return result;
+	}
+
+
 }

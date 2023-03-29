@@ -37,5 +37,5 @@ public class Notice_viewController extends HttpServlet{
 		}
 		
 	}
-	
+		
 }

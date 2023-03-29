@@ -17,7 +17,7 @@ public class ReviewDao {
 		public List<ReviewVo> selectList(Connection conn , PageVo pageVo) throws Exception {
 
 			//SQL (close)
-			String sql = "SELECT * FROM ( SELECT ROWNUM AS RNUM , TEMP.* FROM ( SELECT r.NO, r.CONTENT, r.ENROLL_DATE, r.DEL_YN, d.NAME as DESIGNER_NAME, s.NAME as SHOP_NAME, c.NICK as CUSTOMER_NICK, st.NAME as STYLE_NAME FROM REVIEW r INNER JOIN RESERVATION rv ON r.R_NO = rv.NO INNER JOIN DESIGNER d ON rv.D_NO = d.NO INNER JOIN SHOP s ON d.S_NO = s.NO INNER JOIN CUSTOMER c ON rv.C_NO = c.NO INNER JOIN STYLE st ON rv.S_NO = st.NO ) TEMP ) WHERE RNUM BETWEEN ? AND ?";
+			String sql = "SELECT * FROM ( SELECT ROWNUM AS RNUM , TEMP.* FROM ( SELECT r.NO, r.CONTENT, r.ENROLL_DATE, r.DEL_YN, d.NAME as DESIGNER_NAME, s.NAME as SHOP_NAME, c.NICK as CUSTOMER_NICK, st.NAME as STYLE_NAME FROM REVIEW r INNER JOIN RESERVATION rv ON r.R_NO = rv.NO INNER JOIN DESIGNER d ON rv.D_NO = d.NO INNER JOIN SHOP s ON d.S_NO = s.NO INNER JOIN CUSTOMER c ON rv.C_NO = c.NO INNER JOIN STYLE st ON rv.S_NO = st.NO ORDER BY NO DESC ) TEMP ) WHERE RNUM BETWEEN ? AND ?";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			int startRow = (pageVo.getCurrentPage()-1) * pageVo.getBoardLimit() + 1; 
 			int endRow = startRow + pageVo.getBoardLimit() - 1;
@@ -31,11 +31,12 @@ public class ReviewDao {
 			while( rs.next() ) {
 				
 				String no = rs.getString("NO");
-				String customerNick = rs.getString("CUSTOMER_NICK");
+				String writer = rs.getString("CUSTOMER_NICK");
 				String shopName =  rs.getString("SHOP_NAME");
 				String designerName =  rs.getString("DESIGNER_NAME");
 				//String rNo = rs.getString("R_NO");
 				String content = rs.getString("CONTENT");
+				
 				//String enrollDate = rs.getString("ENROLL_DATE");
 				
 				ReviewVo vo = new ReviewVo();
@@ -43,9 +44,10 @@ public class ReviewDao {
 				//vo.setrNo(rNo);
 				vo.setContent(content);
 				//vo.setEnrollDate(enrollDate);
-				vo.setCustomerNick(customerNick);
+				vo.setWriter(writer);
 				vo.setShopName(shopName);
 				vo.setDesignerName(designerName);
+				
 				
 				reviewList.add(vo);
 				
@@ -82,7 +84,7 @@ public class ReviewDao {
 		public ReviewVo selectOne(Connection conn, String no) throws Exception {
 			
 			//SQL
-			String sql = "SELECT r.NO, r.CONTENT, r.ENROLL_DATE, A.CHANGE_NAME,  d.NAME as DESIGNER_NAME, s.NAME as SHOP_NAME, c.NICK as CUSTOMER_NICK, st.NAME as STYLE_NAME FROM REVIEW r  JOIN ATTACHMENT A ON (R.NO = A.REF_REVIEW_NO) INNER JOIN RESERVATION rv ON r.R_NO = rv.NO INNER JOIN DESIGNER d ON rv.D_NO = d.NO INNER JOIN SHOP s ON d.S_NO = s.NO INNER JOIN CUSTOMER c ON rv.C_NO = c.NO INNER JOIN STYLE st ON rv.S_NO = st.NO WHERE R.NO = ? AND R.DEL_YN = 'N'";
+			String sql = "SELECT r.NO, r.CONTENT, r.ENROLL_DATE,  d.NAME as DESIGNER_NAME, s.NAME as SHOP_NAME, c.NICK as CUSTOMER_NICK, st.NAME as STYLE_NAME FROM REVIEW r  INNER JOIN RESERVATION rv ON r.R_NO = rv.NO INNER JOIN DESIGNER d ON rv.D_NO = d.NO INNER JOIN SHOP s ON d.S_NO = s.NO INNER JOIN CUSTOMER c ON rv.C_NO = c.NO INNER JOIN STYLE st ON rv.S_NO = st.NO WHERE R.NO = ? AND R.DEL_YN = 'N'";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, no);
 			ResultSet rs = pstmt.executeQuery();
@@ -93,13 +95,19 @@ public class ReviewDao {
 				String reviewNo = rs.getString("NO");
 				String content = rs.getString("CONTENT");
 				String enrollDate = rs.getString("ENROLL_DATE");
-				String changeName = rs.getString("CHANGE_NAME");
+				String shopName =  rs.getString("SHOP_NAME");
+				String designerName =  rs.getString("DESIGNER_NAME"); 
+				String styleName = rs.getString("STYLE_NAME");
+				//String changeName = rs.getString("CHANGE_NAME");
 				
 				reviewVo = new ReviewVo();
 				reviewVo.setNo(reviewNo);
 				reviewVo.setContent(content);
 				reviewVo.setEnrollDate(enrollDate);
-				reviewVo.setChangeName(changeName);
+				reviewVo.setShopName(shopName);
+				reviewVo.setDesignerName(designerName);
+				reviewVo.setStyleName(styleName);
+				//reviewVo.setChangeName(changeName);
 			}
 			
 			JDBCTemplate.close(rs);
@@ -114,9 +122,11 @@ public class ReviewDao {
 		public int write(Connection conn, ReviewVo vo) throws Exception {
 			
 			//SQL (close)
-			String sql = "INSERT INTO REVIEW(NO , CONTENT) VALUES (SEQ_REVIEW_NO.NEXTVAL , ?)";
+			String sql = "INSERT INTO REVIEW(NO , CONTENT , WRITER ,R_NO) VALUES (SEQ_REVIEW_NO.NEXTVAL , ? , ? , ?)";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getContent());
+			pstmt.setString(2, vo.getWriter());
+			pstmt.setString(3, vo.getrNo());
 			int result = pstmt.executeUpdate();
 			
 			JDBCTemplate.close(pstmt);

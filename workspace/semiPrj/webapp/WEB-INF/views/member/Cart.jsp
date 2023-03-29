@@ -32,7 +32,7 @@
         <Strong>장바구니</Strong>
     </div>
     <div class="board_list_wrap">
-        <table class="board_list" border="1">
+        <table class="board_list">
             <thead>
             	<tr>
 	                <td class="writer">상품번호</td>
@@ -46,14 +46,17 @@
             <tbody>
     	      <c:forEach items="${cartList}" var="cvo">
             	<tr> 
-	                <td class="num">${cvo.no}</td>
-	                <td class="num2"><img class="cart_img" src="/resources/image/${cvo.src}.png" alt=""></td>
+	                <td class="num">${cvo.pNo}</td>
 	                <td class="num">${cvo.name }</td>
+	                <td class="num"><img class="cart_img" src="/resources/image/product/${cvo.src}/0.png" alt=""></td>
 	                <td class="num">${cvo.price }</td>
 	                <td class="num">${cvo.amount }</td>
-	                <td class="num"><button onclick="location.href='${cvo.src}.jsp'" value="삭제하기"></button></td>
+	                <td class="num"><button onclick="deleteCart();">삭제하기</button></td>
+					<form method="post" action="/member/cartdelete" id="delete">
+						<input id="delete" name="delete" type="hidden" value="${cvo.no}">
+					</form>
             	</tr>
-	           </c:forEach>
+					 </c:forEach>
             </tbody>
         </table>
 
@@ -70,7 +73,7 @@
                     <c:if test="${pageVo.currentPage != i}">
                         <a href="/member/cart?page=${i}">${i}</a>
                     </c:if>
-                </c:forEach>
+ 				</c:forEach>
 
                 <c:if test="${ pageVo.currentPage < pageVo.maxPage }">
                     <a href="/member/cart?page=${pageVo.currentPage+1}">다음</a>
@@ -84,7 +87,6 @@
         </div>
     </div>
 </div>
-
 <%@include file="/WEB-INF/views/common/footer.jsp" %>
 </main>
 </div>
@@ -93,9 +95,13 @@
 
 
 <script>
+	function deleteCart(){
+		  document.getElementById('delete').submit();
+	}
+/* 
     const tbody = document.querySelector("main tbody");
     tbody.addEventListener("click" , function(event){
         const no = event.target.parentNode.children[0].innerText;
         location.href = "/board/detail?no=" + no;
-    });
+    }); */
 </script>

@@ -73,7 +73,7 @@ public class ReviewService {
 		}//method
 		
 		//게시글 작성 (+첨부파일 인서트)
-		public int write(ReviewVo vo, ReviewAttachmentVo atVo) throws Exception {
+		public int write(ReviewVo vo) throws Exception {
 			
 			//비지니스 로직
 			
@@ -83,11 +83,12 @@ public class ReviewService {
 			ReviewDao dao = new ReviewDao();
 			//SQL (DAO) == 게시글 인서트
 			int result = dao.write(conn , vo);
+			System.out.println(result);
 			//SQL (DAO) == 첨부파일 인서트
-			int atResult = dao.insertAttachment(conn, atVo);
+			//int atResult = dao.insertAttachment(conn, atVo);
 			
 			//tx , close
-			if(result * atResult == 1) {
+			if(result == 1) {
 				JDBCTemplate.commit(conn);
 			}else {
 				JDBCTemplate.rollback(conn);
@@ -95,7 +96,7 @@ public class ReviewService {
 			
 			JDBCTemplate.close(conn);
 			
-			return result * atResult;
+			return result ;
 		}
 	
 	
