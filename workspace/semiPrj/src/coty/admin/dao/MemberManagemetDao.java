@@ -118,5 +118,20 @@ public class MemberManagemetDao {
 		return memberVo;
 	}
 	
+	//회원 정보 특이사항 수정
+	public int memberInfoEdit(String com, String num, Connection conn) throws Exception {
+		//sql
+		String sql="UPDATE CUSTOMER SET COM = ? WHERE NO= ? ";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, com);
+		pstmt.setString(2, num);
+		int result = pstmt.executeUpdate();
+		
+		//close
+		JDBCTemplate.close(pstmt);
+		
+		return result;
+	}
+	
 	
 }

@@ -53,44 +53,11 @@ public class D_rv_chartController extends HttpServlet{
 			e.printStackTrace();
 			req.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(req, resp);
 		}
+		
 
 	}
 	
-	//디자이너 로그인
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		DesignerService ds = new DesignerService();
 
-		try {
-		//데이터 꺼내기
-		String deId = req.getParameter("deId");
-		String dePwd = req.getParameter("dePwd");
-		
-		//데이터 뭉치기
-		DesignerVo deVo = new DesignerVo();
-		deVo.setId(deId);
-		deVo.setPwd(dePwd);
-		
-		//서비스 실행
-		DesignerVo deLoginVo = ds.designerLogin(deVo);
-			
-		//화면 보여주기 
-		if(deLoginVo != null) {
-			//성공
-			req.getSession().setAttribute("deLoginVo", deLoginVo);
-			resp.sendRedirect("/designer/rv_chart");
-		}else {
-			//실패
-			req.getSession().setAttribute("alertMsg", "아이디와 비밀번호가 일치하지 않습니다. 다시 시도해 주십시오.");
-			resp.sendRedirect("/designer/login");
-		}	
-			
-		} catch (Exception e) {
-			System.out.println("[ERROR] 디자이너 로그인 중 예외 발생...");
-			e.printStackTrace();
-		}
-		
-	}
+	
 }
 

@@ -17,7 +17,6 @@ a{
 }
 .board_wrap{
   width: 1000px;
-  height:515px;
   margin: 30px auto;
 }
 
@@ -38,7 +37,7 @@ a{
   margin-top: 30px;
   text-align: center;
   font-size: 0;
-
+  margin: ;
 }
 
 .bt_wrap a{
@@ -93,33 +92,34 @@ a{
   font-weight: 600;
 }
 
+.board_list .checkB{
+  width: 10%;
+}
+
 .board_list .num{
-  width: 10%;
-}
-
-.board_list .meNick{
   text-align: center;
-  width: 20%;
+  width: 10%;
 }
 
+.board_list .category{
+  text-align: center;
+  width: 15%;
+}
 
-.board_list .top .meNick{
+.board_list .top .num{
   text-align: center;
 }
 
-.board_list .meId{
-  width: 20%;
-}
-.board_list .gender{
-  width: 10%;
+.board_list .pname{
+  width: 30%;
 }
 
-.board_list .signUpDay{
-  width: 20%;
+.board_list .price{
+  width: 15%;
 }
 
-.board_list .quitYn{
-  width: 10%;
+.board_list .ex{
+  width: 20%;
 }
 
 .board_page{
@@ -291,19 +291,4 @@ a{
   box-sizing: border-box;
   border: 0;
   resize: vertical;
-}
-
-.selecNum{
-	padding-top: 9px;
-    font-size: 1.4rem;    display: inline-block;
-    width: 32px;
-    height: 32px;
-    box-sizing: border-box;
-    vertical-align: middle;
-    border: 1px solid #ddd;
-    border-left: 0;
-    line-height: 100%;
-}
-.listbody:hover{
-	cursor: pointer;
 }

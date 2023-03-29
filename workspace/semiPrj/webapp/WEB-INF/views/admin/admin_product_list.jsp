@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상품관리</title>
-    <link rel="stylesheet" href="/resources/css/admin/A_css.css">
+    <link rel="stylesheet" href="/resources/css/admin/P_css.css">
     <link rel="stylesheet" href="/resources/css/admin/admin.css">
     <link rel="stylesheet" href="/resources/css/admin/a_main.css">
     <link rel="stylesheet" href="/resources/css/admin/designerForm.css">
@@ -18,7 +18,7 @@
 <body>
 		<%@ include file="/WEB-INF/views/common/header_am.jsp" %>
 		
-		<div style="height: px;">
+		<div style="height:610px;">
     <div class="board_wrap">
       <div class="board_title">
           <Strong>상품목록</Strong>
@@ -27,74 +27,48 @@
       <div class="board_list_wrap">
           <div class="board_list">
               <div class="top">
-                  <div class="num"><input type="checkbox" id="check-all"></div>
-                  <div class="title"> 상품 정보</div>
-                  <div class="name"> 상품명</div>
-                  <div class="writer">상품가격</div>
-                  <div class="date">상품코드</div>
-                  <div class="count">카테고리</div>
+                  <div class="checkB"><input type="checkbox" id="check-all"></div>
+                  <div class="num"> 번호 </div>
+                  <div class="category"> 카테고리 </div>
+                  <div class="pname">상품명</div>
+                  <div class="price">상품가격</div>
+                  <div class="ex">상품상세</div>
               </div>
-              <div>
-                  <div class="num"><input type="checkbox" class="check-item"></div>
-                  <div class="title">
-                      <a href="/admin/productInfo"><img class="p_img" src="/resources/image/네불라 115g - 헤어 무스 에센스.png" alt="이미지"></a>
-                  </div>
-                  <div class="name"><a href="./admin_product_info.jsp">네불라 115g</a></div>
-                  <div class="writer">24,000</div>
-                  <div class="date">A083F1</div>
-                  <div class="count">에센스</div>
-              </div>
-              <div>
-                <div class="num"><input type="checkbox" class="check-item"></div>
-                <div class="title">
-                    <img class="p_img" src="./image/누베스 알바 600ml.png" alt="이미지">
-                </div>
-                <div class="name"><a href="view.html">누베스 알바 600ml</a></div>
-                <div class="writer">68,000</div>
-                <div class="date">A083F1</div>
-                <div class="count">에센스</div>
-              </div>                
-              <div>
-                <div class="num"><input type="checkbox" class="check-item"></div>
-                <div class="title">
-                    <img class="p_img" src="./image/다이슨 고데기.png" alt="이미지">
-                </div>
-                <div class="name"><a href="view.html">다이슨 고데기</a></div>
-                <div class="writer">329,000</div>
-                <div class="date">A083F1</div>
-                <div class="count">기계</div>
-              </div>                <div>
-                <div class="num"><input type="checkbox" class="check-item"></div>
-                <div class="title">
-                    <img class="p_img" src="./image/다이슨 헤어드라이기.png" alt="이미지">
-                </div>
-                <div class="name"><a href="view.html">다이슨 헤어드라이기</a></div>
-                <div class="writer">613,000</div>
-                <div class="date">A083F1</div>
-                <div class="count">기계</div>
-              </div>                <div>
-                <div class="num"><input type="checkbox" class="check-item"></div>
-                <div class="title">
-                    <img class="p_img" src="./image/레미시오 100ml.png" alt="이미지">
-                </div>
-                <div class="name"><a href="view.html">레미시오 100ml</a></div>
-                <div class="writer">19,000</div>
-                <div class="date">A083F1</div>
-                <div class="count">에센스</div>
-              </div>
+              
+              <c:forEach items="${productList}" var="pvo">
+	              <div class="listbody">
+	                  <div class="checkB"><input type="checkbox" class="check-item"></div>
+	                  <div class="num">
+	                      ${pvo.no}
+	                  </div>
+	                  <div class="category">${pvo.category}</div>
+	                  <div class="pname">${pvo.name}</div>
+	                  <div class="price">${pvo.price}</div>
+	                  <div class="ex">${pvo.ex}</div>
+	              </div>
+              </c:forEach>
+              
           </div>
 
 
-          <div class="board_page">
-              <a href="#" class="bt first"><<</a>
-              <a href="#" class="bt prev"><</a>
-              <a href="#" class="num on">1</a>
-              <a href="#" class="num">2</a>
-              <a href="#" class="num">3</a>
-              <a href="#" class="num">4</a>
-              <a href="#" class="num">5</a>
-              <a href="#" class="bt next">></a>
-              <a href="#" class="bt last">>></a>
+         <div class="board_page">
+              <c:if test="${pageVo.currentPage > 1}">
+	              <a href="//admin/productList?page=${pageVo.currentPage - 1}" class="bt prev"><</a>
+              </c:if>
+              
+				<c:forEach var ="i" begin="${pageVo.startPage}" end="${pageVo.endPage}">
+					<c:if test="${pageVo.currentPage == i}">
+						<span class="selecNum">${i}</span>
+					</c:if>
+					<c:if test="${pageVo.currentPage != i}">
+		              	<a href="/admin/productList?page=${i}" class="num">${i}</a>
+					</c:if>
+				</c:forEach>
+
+              <c:if test="${pageVo.currentPage < pageVo.maxPage}">
+	              <a href="/admin/productList?page=${pageVo.currentPage + 1}" class="bt next">></a>
+              </c:if>
+             
           </div>
 
 
@@ -110,3 +84,13 @@
 
 </body>
 </html>
+<script>
+    const listbodies = document.querySelectorAll(".listbody");
+    listbodies.forEach(function(listbody) {
+        listbody.addEventListener("click", function(event){
+            const no = event.target.parentNode.children[0].innerText
+            location.href="/admin/designerInfo?no=" + no;
+            
+        });
+    });
+    </script>

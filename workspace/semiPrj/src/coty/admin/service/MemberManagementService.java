@@ -55,5 +55,26 @@ public class MemberManagementService {
 		return memberVo;
 	}
 	
+	//회원 특이사항 수정(update)
+	public int memberInfoEdit(String com, String num) throws Exception {
+		//conn
+		Connection conn = JDBCTemplate.getConnection();
+		
+		//sql(DAO)
+		MemberManagemetDao dao = new MemberManagemetDao();
+		int result = dao.memberInfoEdit(com, num, conn);
+		
+		//tx , close
+		if(result == 1) {
+			JDBCTemplate.commit(conn);
+		}else {
+			JDBCTemplate.rollback(conn);
+		}
+		JDBCTemplate.close(conn);
+		
+		return result;
+	
+	}
+	
 	
 }
