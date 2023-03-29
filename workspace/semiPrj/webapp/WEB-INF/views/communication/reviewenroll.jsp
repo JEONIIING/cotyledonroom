@@ -14,7 +14,7 @@
 </head>
 <body>
     
-    <%@ include file="/WEB-INF/views/common/header_af.jsp" %>
+    <%@ include file="/WEB-INF/views/common/header_be.jsp" %>
     <%@ include file="/WEB-INF/views/common/sidebar_my.jsp" %>
     
 <br>
@@ -32,31 +32,31 @@
         <Strong>리뷰 등록</Strong>
     </div>
     
-    <form action="/communication/reviewenroll" method="post" enctype="multipart/form-data">
+    <form action="/communication/reviewlist?page=1" method="post" enctype="multipart/form-data">
     <div class="board_write_wrap">
         <div class="board_write">
             
             <div class="info">
                 <dl>
                     <dt>글쓴이</dt>
-                    <dd><input type="text" >${loginMember.nick}</dd>
+                    <dd><input type="text" value="${loginMember.nick}" readonly="readonly"></dd>
                 </dl>
                 <dl>
-                    <dt>비밀번호</dt>
-                    <dd><input type="password" placeholder="비밀번호 입력"></dd>
+                    <dt>예약번호</dt>
+                    <dd><input type="text" placeholder="예약번호 입력" name="rNo"></dd>
                 </dl>
-                <dl>
+                <!-- <dl>
                     <dt>사진첨부</dt>
                     <dd><input type="file" name="f" placeholder="사진첨부"></dd>
-                </dl>
+                </dl> -->
             </div>
             <div class="cont">
-                <textarea placeholder="내용 입력"></textarea>
+                <textarea placeholder="내용 입력" name="content"></textarea>
             </div>             
         </div>
         <div class="bt_wrap">
             <input type="submit" value="작성">
-            <a href="/communication/reviewlist">취소</a>
+            <a href="/communication/reviewlist?page=1">취소</a>
         </div>
     </div>
     </form>

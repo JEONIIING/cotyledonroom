@@ -13,6 +13,7 @@ function nextPage1() {
       alert("매장을 선택해주세요.");
     }
 }
+fun
 
 function nextPage2() {
     var radios = document.getElementsByName("designer");
