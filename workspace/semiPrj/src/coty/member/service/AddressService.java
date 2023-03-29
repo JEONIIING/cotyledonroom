@@ -3,7 +3,9 @@ package coty.member.service;
 import java.sql.Connection;
 import java.util.List;
 
-import coty.member.dao.AddressListDao;
+import coty.admin.notice.kyw.Notice_a_Dao;
+import coty.member.dao.AddressDao;
+import coty.member.dao.MemberDao;
 import coty.member.vo.AddressVo;
 import coty.member.vo.MemberVo;
 import coty.util.JDBCTemplate;
@@ -19,7 +21,7 @@ public class AddressService {
 			Connection conn = JDBCTemplate.getConnection();
 			
 			//sql (dao)
-			AddressListDao dao = new AddressListDao();
+			AddressDao dao = new AddressDao();
 			List<AddressVo> AddressList = dao.selectList(conn , pagevo, loginMember);
 			
 			//close
@@ -37,7 +39,7 @@ public class AddressService {
 			Connection conn = JDBCTemplate.getConnection();
 			
 			//dao
-			AddressListDao dao = new AddressListDao();
+			AddressDao dao = new AddressDao();
 			int result = dao.selectCount(conn);
 			
 			//tx close
@@ -47,6 +49,28 @@ public class AddressService {
 			
 			return result;
 		}
+
+		//배송정보 삭제		
+		public int delete(String no) throws Exception {
+			//conn
+			Connection conn = JDBCTemplate.getConnection();
+			
+			//DAO
+			AddressDao dao = new AddressDao();
+			int result = dao.delete(conn, no);
+			
+			//tx , close
+			if(result == 1) {
+				JDBCTemplate.commit(conn);
+			}else {
+				JDBCTemplate.rollback(conn);
+			}
+			
+			JDBCTemplate.close(conn);
+			
+			return result;
+			}
+		
 
 }
 

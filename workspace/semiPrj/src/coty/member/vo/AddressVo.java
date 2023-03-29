@@ -3,7 +3,7 @@ package coty.member.vo;
 public class AddressVo {
 	
 	private String no;
-	private String c_no;
+	private String cno;
 	private String adname;
 	private String detail;
 	public String getNo() {
@@ -12,11 +12,11 @@ public class AddressVo {
 	public void setNo(String no) {
 		this.no = no;
 	}
-	public String getC_no() {
-		return c_no;
+	public String getCno() {
+		return cno;
 	}
-	public void setC_no(String c_no) {
-		this.c_no = c_no;
+	public void setCno(String cno) {
+		this.cno = cno;
 	}
 	public String getAdname() {
 		return adname;
@@ -34,17 +34,17 @@ public class AddressVo {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public AddressVo(String no, String c_no, String adname, String detail) {
+	public AddressVo(String no, String cno, String adname, String detail) {
 		super();
 		this.no = no;
-		this.c_no = c_no;
+		this.cno = cno;
 		this.adname = adname;
 		this.detail = detail;
 	}
 	@Override
 	public String toString() {
-		return "AddressVo [no=" + no + ", c_no=" + c_no + ", adname=" + adname + ", detail=" + detail + "]";
+		return "AddressVo [no=" + no + ", cno=" + cno + ", adname=" + adname + ", detail=" + detail + "]";
 	}
-
+	
 
 }

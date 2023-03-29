@@ -1,6 +1,19 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <c:if test ="${alertdelteMsg != null}">
+		
+	<script type="text/javascript">
+	
+	
+	alert("${alertdelteMsg}")
+	
+	</script>
+	</c:if>
+	
+	<c:remove var = "alertdelteMsg" scope="session"/>
+	
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,89 +56,52 @@
                
             <div>
                 <table style="width: 1000px; text-align: left;">
-                    <tr style="width: auto;"><th>본가</th> </tr>
-                    <tr><td>김수진</td> </tr>
+                    <tr style="width: auto;">
+                   
+                    <c:forEach items = "${AddressList}" var="adl"> 
+                    <div class="Addresslistdetail">
+                    <th>${adl.adname}</th> 
+                    </tr>
                     <tr>
-                    <td>010-8943-0864</td>
+                    <td>${adl.detail}</td>
                 </tr>
-                    <tr>
-                    <td>강원도 원주시 00fh 304 (00동, 00아파트) 00동 000호 </td>
-                </tr>
+                <tr></tr>
                 <tr>
-                    <td style="padding-top: 2%;"><button><a href="/member/addressedit">수정</a></button> 
-                    <span><button>삭제</button> </span> </td>
+                    <td style="padding-top: 2%;"><button><a href="/member/address?no=${AddressVo.no}">삭제</a></button> 
                 </tr>
+                </div>
+               </c:forEach>
                 </table>
+               </div>
+               </div>
+               
             </div>
 
             <br>
             <hr>
             <br>
-
-            <div>
-                <table style="width: 1000px; text-align: left;">
-                    <tr style="width: auto;"><th>직장</th> </tr>
-                    <tr><td>박연진</td> </tr>
-                    <tr>
-                    <td>010-8943-0864</td>
-                </tr>
-                    <tr>
-                    <td>강원도 원주시 00fh 304 (00동, 00아파트) 00동 000호 </td>
-                </tr>
-                <tr>
-                    <td style="padding-top: 2%;"><button>수정</button> 
-                    <span><button>삭제</button> </span> </td>
-                </tr>
-                </table>
-            </div>
-
-            <br>
-            <hr>
-            <br>
-
-            <div>
-                <table style="width: 1000px; text-align: left;">
-                    <tr style="width: auto;"><th>자취방</th> </tr>
-                    <tr><td>문동은</td> </tr>
-                    <tr>
-                    <td>010-8943-0864</td>
-                </tr>
-                    <tr>
-                    <td>강원도 원주시 00fh 304 (00동, 00아파트) 00동 000호 </td>
-                </tr>
-                <tr>
-                    <td style="padding-top: 2%;"><button>수정</button> 
-                    <span><button>삭제</button> </span> </td>
-                </tr>
-                </table>
-            </div>
-            
-          </div>
-         
-           
-        </div>
-
 
         <div class="board_page">
             <a href="#" class="bt first"><<</a>
+            
            <c:if test="${pagevo.currentPage > 1}">
-              <a href="/member/orderlist?page=${pagevo.currentPage-1}" class="bt prev"><</a>
+              <a href="/member/addresslist?page=${pagevo.currentPage-1}" class="bt prev"><</a>
               </c:if>
               
               
               <c:forEach var="i" begin="${pagevo.startPage}" end="${pagevo.endPage}" step="1">
               	<c:if test="${pagevo.currentPage == i }">
-              		<a href="/member/orderlist?page=${i}" class="num on">${i}</a>
+              		<a href="/member/addresslist?page=${i}" class="num on">${i}</a>
               	</c:if>
               
        			<c:if test="${pagevo.currentPage != i }">
-       				<a href="/member/orderlist?page=${i}" class="num">${i}</a>
+       				<a href="/member/addresslist?page=${i}" class="num">${i}</a>
               	</c:if>
    
               </c:forEach>
               
               <c:if test="${pagevo.currentPage < pagevo.maxPage}">
-              <a href="/member/orderlist?page=${pagevo.currentPage+1}" class="bt prev">></a>
+              <a href="/member/addresslist?page=${pagevo.currentPage+1}" class="bt prev">></a>
               </c:if>
               <a href="#" class="bt last">>></a>
           </div>
@@ -148,11 +124,11 @@
 </html>
 
 	<script>
-		const elements = document.querySelectorAll('.orderlistdetail');
+		const elements = document.querySelectorAll('.Addresslistdetail');
 		elements.forEach(element => {
 		  element.addEventListener('click', () => {
 		    const no = element.querySelector('.num').innerText;
-		    location.href = "/member/orderList?no=" + no;
+		    location.href = "/member/addressList?no=" + no;
 		  });
 		});
 		
