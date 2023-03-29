@@ -32,14 +32,14 @@
         <Strong>리뷰 등록</Strong>
     </div>
     
-    <form action="/communication/reviewlist?page=1" method="post" enctype="multipart/form-data">
+    <form action="/communication/reviewenroll" method="post" enctype="multipart/form-data">
     <div class="board_write_wrap">
         <div class="board_write">
             
             <div class="info">
                 <dl>
                     <dt>글쓴이</dt>
-                    <dd><input type="text" value="${loginMember.nick}" readonly="readonly"></dd>
+                    <dd><input type="text" name="writer" value="${loginMember.nick}" readonly="readonly"></dd>
                 </dl>
                 <dl>
                     <dt>예약번호</dt>

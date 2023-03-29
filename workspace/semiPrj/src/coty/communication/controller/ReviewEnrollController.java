@@ -39,7 +39,7 @@ public class ReviewEnrollController extends HttpServlet{
 		//데이터 꺼내기
 				String content = req.getParameter("content");
 				String rNo = req.getParameter("rNo");
-				System.out.println(content);
+				String writer = req.getParameter("writer");
 				/*
 				 * Part f = req.getPart("f"); //파일 객체 얻음
 				 * 
@@ -86,6 +86,11 @@ public class ReviewEnrollController extends HttpServlet{
 					//서비스 호출
 					ReviewService rvs = new ReviewService();
 					result = rvs.write(vo);
+					if(result == 1) {
+						resp.sendRedirect("/communication/reviewlist");
+					}else {
+						
+					}
 					
 					
 				}catch(Exception e) {

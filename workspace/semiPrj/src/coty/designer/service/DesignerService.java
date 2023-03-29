@@ -6,6 +6,8 @@ import java.util.List;
 import coty.admin.adminVo.DesignerAttachmentVo;
 import coty.admin.adminVo.DesignerVo;
 import coty.admin.dao.DesignerDao;
+import coty.designer.dao.DesignerRvDao;
+import coty.designer.vo.DesignerRvVo;
 import coty.member.dao.CartDao;
 import coty.member.vo.CartVo;
 import coty.member.vo.MemberVo;
@@ -133,7 +135,7 @@ public class DesignerService {
 	
 
 	//게시글 조회 (페이징 처리가 된)
-		public List<CartVo> selectList(PageVo pageVo, MemberVo loginMember) throws Exception {
+		public List<DesignerRvVo> selectList(PageVo pageVo, DesignerVo deLoginVo) throws Exception {
 			
 			//비즈니스 로직
 			
@@ -141,13 +143,13 @@ public class DesignerService {
 			Connection conn = JDBCTemplate.getConnection();
 			
 			//SQL (DAO)
-			CartDao dao = new CartDao();
-			List<CartVo> cartList = dao.selectList(conn , pageVo, loginMember);
+			DesignerRvDao dao = new DesignerRvDao();
+			List<DesignerRvVo> designerRvList = dao.selectList(conn , pageVo, deLoginVo);
 			
 			//close
 			JDBCTemplate.close(conn);
 			
-			return cartList;
+			return designerRvList;
 		}
 		
 		//게시글 전체 갯수 조회 (삭제되지않은)

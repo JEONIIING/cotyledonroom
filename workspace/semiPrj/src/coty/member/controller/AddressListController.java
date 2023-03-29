@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import coty.member.service.AddressService;
 import coty.member.vo.AddressVo;
@@ -24,7 +25,9 @@ public class AddressListController extends HttpServlet{
 		try {
 			
 			//데이터 꺼내기 (페이징처리 준비)
-			int currentPage = Integer.parseInt(req.getParameter("page"));
+			String pageParam = req.getParameter("page");
+            int currentPage = (pageParam != null) ? Integer.parseInt(pageParam) : 1;
+//            int currentPage = Integer.parseInt(req.getParameter("page"));
 			int listCount = as.selectCount();
 			int pageLimit = 5;
 			int boardLimit = 5;
@@ -32,16 +35,14 @@ public class AddressListController extends HttpServlet{
 		   // 로그인 데이터 가져오기
 	      MemberVo loginMember = (MemberVo) req.getSession().getAttribute("loginMember");
 
-			
 			//데이터 뭉치기
 			PageVo pagevo = new PageVo(listCount, currentPage, pageLimit, boardLimit);
 			
 			//서비스 호출
 			List<AddressVo> AddressList = as.selectList(pagevo ,loginMember);
 			
-			
 			//화면
-			
+			System.out.println();
 			req.setAttribute("AddressList", AddressList);
 			req.setAttribute("pagevo", pagevo);
 			req.getRequestDispatcher("/WEB-INF/views/member/address.jsp").forward(req, resp);		
@@ -52,10 +53,37 @@ public class AddressListController extends HttpServlet{
 			e.printStackTrace();
 			req.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(req, resp);	
 			}
+		
+		
 	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		doGet(req, resp);
-	}
+		//배송정보 삭제
+		//데이터꺼내기
+		HttpSession session = req.getSession();
+		String no = req.getParameter("no");
+		
+		//데이터 뭉치기
+		
+		//서비스 호출
+		int result = 0;
+		try {
+			result = as.delete(no);
+		} catch (Exception e) {
+			System.out.println("[ERORR] 배송정보 삭제 중 예외발생..");
+			e.printStackTrace();
+		}
+		
+		//화면
+				if(result == 1) {
+					req.getSession().setAttribute("alertdelteMsg", "배송지정보가 삭제되었습니다."); // 부신거에 다시 넣을수없으니까 새롭게 req.getsession으로 가져와서 사용해야됨
+					resp.sendRedirect("/member/address");
+				}else {
+					req.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(req, resp);
+			
+		}
+		
+	}						
+	
 }
 

@@ -1,8 +1,11 @@
 package coty.member.dao;
 
+import static coty.util.JDBCTemplate.close;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,11 +14,11 @@ import coty.member.vo.MemberVo;
 import coty.util.JDBCTemplate;
 import coty.util.PageVo;
 
-public class AddressListDao {
+public class AddressDao {
 //게시글 조회
 	public List<AddressVo> selectList(Connection conn , PageVo pageVo, MemberVo loginMember) throws Exception {
 		//sql
-		String sql = "SELECT * FROM ( SELECT ROWNUM AS RNUM, TEMP.* FROM ( SELECT DELIVERY.NO, DELIVERY.C_NO, DELIVERY.ADDRESS AS ADNAME, CUSTOMER.ADDRESS AS DETAIL FROM DELIVERY INNER JOIN CUSTOMER ON DELIVERY.C_NO = CUSTOMER.NO WHERE DELIVERY.C_NO = ? ORDER BY CUSTOMER.NO DESC ) TEMP ) WHERE RNUM BETWEEN ? AND ?";
+		String sql = "SELECT * FROM (SELECT ROWNUM AS RNUM, TEMP.* FROM ( SELECT DELIVERY.NO, DELIVERY.C_NO, DELIVERY.ADDRESS AS ADNAME, CUSTOMER.ADDRESS AS DETAIL FROM DELIVERY INNER JOIN CUSTOMER ON DELIVERY.C_NO = CUSTOMER.NO WHERE DELIVERY.C_NO = ? AND DELIVERY.DEL_YN = 'N' ORDER BY CUSTOMER.NO DESC ) TEMP ) WHERE RNUM BETWEEN ? AND ?";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		int startRow = (pageVo.getCurrentPage()-1 ) * pageVo.getBoardLimit() +1;
 		int endRow = startRow + pageVo.getBoardLimit() -1 ;
@@ -28,14 +31,14 @@ public class AddressListDao {
 		List<AddressVo> AddressList = new ArrayList<AddressVo>();
 		while (rs.next()) {
 			String no = rs.getString("NO");
-			String c_no = rs.getString("C_NO");
+			String cno = rs.getString("C_NO");
 			String adname = rs.getString("ADNAME");
 			String detail = rs.getString("DETAIL");
-	
+			
 			
 			AddressVo vo = new AddressVo();
-			vo.setNo(c_no);
-			vo.setC_no(c_no);
+			vo.setNo(no);
+			vo.setCno(cno);
 			vo.setAdname(adname);
 			vo.setDetail(detail);
 
@@ -64,6 +67,21 @@ public class AddressListDao {
 		return cnt;
 		
 	}
-			
 
-}
+	//배송정보 삭제
+	public int delete(Connection conn, String no) throws Exception {
+			//SQL
+			String sql = "DELETE FROM DELIVERY WHERE NO = ?";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, no);
+			int result = pstmt.executeUpdate();
+			//close
+			close(pstmt);
+			
+			return result;
+		}
+	}
+
+
+
+

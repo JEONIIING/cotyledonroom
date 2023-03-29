@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import coty.admin.adminVo.DesignerVo;
 import coty.designer.service.DesignerService;
+import coty.designer.vo.DesignerRvVo;
 import coty.member.service.CartService;
 import coty.member.vo.CartVo;
 import coty.member.vo.MemberVo;
@@ -33,18 +34,17 @@ public class D_rv_chartController extends HttpServlet{
 			int boardLimit = 5;
 
 			//데이터 가져오기
-			MemberVo loginMember = (MemberVo) req.getSession().getAttribute("loginMember");
-			System.out.println(loginMember);
+			DesignerVo deLoginVo = (DesignerVo) req.getSession().getAttribute("deLoginVo");
+			System.out.println(deLoginVo);
 			// 데이터 뭉치기
 			PageVo pageVo = new PageVo(listCount, currentPage, pageLimit, boardLimit);
 
 			// 서비스 호출
-			List<DesignerRvVo> cartList = ds.selectList(pageVo,loginMember);
+			List<DesignerRvVo> designerRvList = ds.selectList(pageVo,deLoginVo);
 
-			System.out.println(ds.selectList(pageVo, loginMember));
-			System.out.println(cartList);
+			System.out.println(designerRvList);
 			// 화면
-			req.setAttribute("cartList", cartList);
+			req.setAttribute("designerRvList", designerRvList);
 			req.setAttribute("pageVo", pageVo);
 			req.getRequestDispatcher("/WEB-INF/views/designer/d_rv_chart.jsp").forward(req, resp);
 
@@ -58,6 +58,33 @@ public class D_rv_chartController extends HttpServlet{
 	}
 	
 
-	
+	//디자이너 로그인
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		//수정할 데이터 꺼내기
+		String cancle = req.getParameter("cancle");
+		String no = req.getParameter("res");
+		
+		DesignerRvVo dvo = new DesignerRvVo();
+		dvo.setNo(no);
+		dvo.setRes(res);
+		
+		DesignerRvVo result = null;
+		try {
+			//서비스 호출
+			DesignerService ds = new DesignerService();
+			
+			result = ds.editres(dvo);
+			
+		}catch(Exception e) {
+			System.out.println("[ERROR] 예약 취소 중 예외 발생");
+			e.printStackTrace();
+		}
+		
+		//화면
+		req.getSession().setAttribute("alertResMsg", "예약 취소 완료");
+		req.getSession().setAttribute("");
+	}
+
 }
 
