@@ -26,33 +26,33 @@
     <table class="content">
       <tr>
         <td class="text" readonly>* 닉네임 : </td>
-        <td><div class="kan" name="memberNick"> 도리도리 </div></td>
+        <td><div class="kan" name="memberNick"> ${memberVo.nick} </div></td>
       </tr>
       <tr>
         <td class="text" readonly>* 이름</td>
-        <td><div class="kan" name="memberName"> 이사라 </div></td>
-      </tr>
-      <tr>
-        <td class="text" readonly>* 가입일자</td>
-        <td><div class="kan" name="memDate"> 2021.07.22 </div></td>
+        <td><div class="kan" name="memberName"> ${memberVo.name} </div></td>
       </tr>
       <tr>
         <td class="text">* 고객 ID </td>
-        <td ><div class="kan" name="memberId"> yec220409 </div></td>
+        <td ><div class="kan" name="memberId"> ${memberVo.id} </div></td>
       </tr>
       
       <tr>
         <td class="text">* 전화번호 </td>
-        <td ><div class="kan" name="memberTel"> 010-1234-8833 </div></td>
+        <td ><div class="kan" name="memberTel"> ${memberVo.phone} </div></td>
       </tr>
       <tr>
         <td class="text">* 이메일 </td>
-        <td ><div class="kan" name="memberEmail"> qpwo33@nate.com </div></td>
+        <td ><div class="kan" name="memberEmail"> ${memberVo.email} </div></td>
+      </tr>
+      <tr>
+        <td class="text" readonly>* 가입일자</td>
+        <td><div class="kan" name="memSignUpDay"> ${memberVo.signUpDay} </div></td>
       </tr>
       
       <tr>
         <td class="text">* 특이사항</td>
-        <td ><textarea name="" id="" cols="100" rows="20" required></textarea></td>
+        <td ><textarea name="com" id="" cols="100" rows="20" required>${member.com}</textarea></td>
       </tr>
       <tr>
         <td colspan="2">
