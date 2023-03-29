@@ -1,3 +1,5 @@
+<%@page import="coty.admin.notice.kyw.Notice_a_Dao"%>
+<%@page import="coty.admin.notice.kyw.Notice_a_Vo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -68,3 +70,5 @@
    
   </body>
 </html>
+
+<% Notice_a_Vo Notice_a_Vo = (Notice_a_Vo)request.getSession().getAttribute("Notice_a_Vo"); %>

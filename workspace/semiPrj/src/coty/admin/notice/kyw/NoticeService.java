@@ -1,4 +1,4 @@
-package coty.admin.service;
+package coty.admin.notice.kyw;
 
 import java.sql.Connection;
 import java.util.List;

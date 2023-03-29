@@ -1,4 +1,4 @@
-package coty.admin.controller;
+package coty.admin.notice.kyw;
 
 import java.io.IOException;
 
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import coty.admin.noticeVo.Notice_a_Vo;
+import coty.admin.notice.kyw.Notice_a_Vo;
 import coty.admin.service.NoticeService;
 
 @WebServlet("/admin/Notice_view")
@@ -28,7 +28,8 @@ public class Notice_viewController extends HttpServlet{
 			
 			//화면
 			
-			req.setAttribute("Notice_a_Vo", vo);
+			req.getSession().setAttribute("Notice_a_Vo", vo);
+			
 			req.getRequestDispatcher("/WEB-INF/views/admin/Notice_view.jsp").forward(req, resp);
 			
 		}catch(Exception e) {
