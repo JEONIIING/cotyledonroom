@@ -87,7 +87,15 @@
 </div>
 
     <%@ include file="/WEB-INF/views/common/footer.jsp" %>
-
+<form method="post" action="/designer/rv_chart" id="frm">
+	<input id="rNo" name="rNo" type="hidden" value="${reviewVo.no}">
+</form>
+  </body>
+  <script>
+  function insertCart(){
+	  document.getElementById('frm').submit();
+  }
+  </script>
 
 
 </body>

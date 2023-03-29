@@ -31,7 +31,7 @@
     <div class="board_list_wrap">
         <div class="board_list">
             <div class="top">
-                <div class="num">일시</div>
+                <div class="num">예약번호</div>
                 <div class="num">매장</div>
                 <div class="num">고객</div>
                 <div class="num">시술</div>
@@ -39,52 +39,30 @@
                 <div class="num"></div>
                 <div class="num"></div>
             </div>
+            <c:forEach items="${ designerRvList }" var="de">
             <div class="product_1"> 
-                <div class="num">2023.03.12 14:00</div>
-                <div class="num">강남점</div>
-                <div class="num">김수진</div>
-                <div class="num">파마</div>
-                <div class="num">시술 완료</div>
-                <div class="num"><input type="submit" value="취소하기"></div>
-                <div class="num"><a href="/WEB-INF/views/communication/review_detail_list.jsp"><input type="submit" value="댓글남기기"></a></div>
+                <div class="num">${de.rNo }</div>
+                <div class="num">${de.shopName }</div>
+                <div class="num">${de.cNo }</div>
+                <div class="num">${de.styleName }</div>
+                <div class="num">${de.res }</div>
+                <c:if test="${de.res == '예약 완료'}">
+                
+                	<div class="num"><button onclick="cancle();">예약 취소</button></div>
+                	<form method="post" action="/designer/rv_chart" id="frm">
+	                	<input id="cancle" name="cancle" type="hidden" value="${de}">
+					</form>
+  					<script>
+					  function cancle(){
+						  document.getElementById('frm').submit();
+					  }
+					</script>                
+                </c:if>
+                <c:if test="${de.res == '시술 완료'}">
+                <div class="num"><a href="/communication/reviewdetaillist?page=${de.reNo }"><input type="submit" value="댓글남기기"></a></div>
+            	</c:if>
             </div>
-            <div class="product_1"> 
-              <div class="num">2023.03.12 15:00</div>
-              <div class="num">강남점</div>
-              <div class="num">김승우</div>
-              <div class="num">염색</div>
-              <div class="num">시술 완료</div>
-              <div class="num"><input type="submit" value="취소하기"></div>
-              <div class="num"><a href="/WEB-INF/views/communication/review_detail_list.jsp"><input type="submit" value="댓글남기기"></a></div>
-          </div>
-          <div class="product_1"> 
-            <div class="num">2023.03.12 16:00</div>
-            <div class="num">강남점</div>
-            <div class="num">김연우</div>
-            <div class="num">커트</div>
-            <div class="num">예약 완료</div>
-            <div class="num"><input type="submit" value="취소하기"></div>
-            <div class="num"><a href="/WEB-INF/views/communication/review_detail_list.jsp"><input type="submit" value="댓글남기기"></a></div>
-        </div>
-        <div class="product_1"> 
-          <div class="num">2023.03.12 17:00</div>
-          <div class="num">강남점</div>
-          <div class="num">서지현</div>
-          <div class="num">매직</div>
-          <div class="num">예약 완료</div>
-          <div class="num"><input type="submit" value="취소하기"></div>
-          <div class="num"><a href="/WEB-INF/views/communication/review_detail_list.jsp"><input type="submit" value="댓글남기기"></a></div>
-      </div>
-      <div class="product_1"> 
-        <div class="num">2023.03.12 18:00</div>
-        <div class="num">강남점</div>
-        <div class="num">박종찬</div>
-        <div class="num">커트</div>
-        <div class="num">예약 완료</div>
-        <div class="num"><input type="submit" value="취소하기"></div>
-        <div class="num"><a href="/WEB-INF/views/communication/review_detail_list.jsp"><input type="submit" value="댓글남기기"></a></div>
-    </div>
-            
+            </c:forEach>
            
         </div>
 

@@ -1,4 +1,4 @@
-package coty.market.controller;
+package coty.market.controller.list;
 
 import java.io.IOException;
 
