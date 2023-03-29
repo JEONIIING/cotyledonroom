@@ -39,7 +39,7 @@
           <div class="Menu"><a href="/market/productlist">MARKET</a></div>
           <div class="Menu"><a href="/member/membership">MEMBERSHIP</a></div>
           <div class="Menu"><a href="/reservation/rvSellect01">RESERVATION</a></div>
-          <div class="Menu"><a href="/communication/Notice_list_c">COMMUNICATION</a></div>
+          <div class="Menu"><a href="/communication/Notice_list?page=1">COMMUNICATION</a></div>
           </div>
 
     </header>

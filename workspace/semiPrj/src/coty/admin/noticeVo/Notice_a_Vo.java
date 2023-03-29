@@ -9,7 +9,7 @@ public class Notice_a_Vo {
 	private String deleteYn;
 	private String writer;
 	private String hit;
-	
+
 	
 	public String getNo() {
 		return no;
@@ -72,6 +72,7 @@ public class Notice_a_Vo {
 	public Notice_a_Vo() {
 		
 	}
+
 	
 	
 	
