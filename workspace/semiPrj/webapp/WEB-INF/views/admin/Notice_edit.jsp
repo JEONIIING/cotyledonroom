@@ -32,6 +32,7 @@
                   <dl>
                       <dt>제목</dt>
                       <dd><input type="text" name="Title" placeholder="제목 입력" value="${Notice_a_Vo.title}"></dd>
+
                   </dl>
               </div>
               <div class="info">
@@ -62,7 +63,7 @@
     			   border: 1px solid #000;
     			   border-radius: 2px;
     			   font-size: 1.4rem;" >
-            <a href="/admin/Notice_list?page=1">취소</a>
+            <a href="/admin/Notice_view?no=${Notice_a_Vo.no}">취소</a>
           </div>
       </div>
     </form>

@@ -1,4 +1,6 @@
-package coty.admin.noticedao;
+package coty.admin.notice.kyw;
+
+import static coty.util.JDBCTemplate.close;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,9 +8,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import coty.admin.noticeVo.Notice_a_Vo;
-import static coty.util.JDBCTemplate.*;
 import coty.util.PageVo;
+import coty.admin.notice.kyw.Notice_a_Vo;
 
 public class Notice_a_Dao {
 
@@ -135,15 +136,15 @@ public class Notice_a_Dao {
 		return result;
 	}
 	
-	public int update(Connection conn, String No, String Title, String Content) throws Exception {
+	public int update(Connection conn, Notice_a_Vo vo) throws Exception {
 		
 		//SQL (close)
 		String sql = "UPDATE NOTICE SET TITLE = ?, CONTENT = ? WHERE NO = ?";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		
-		pstmt.setString(1, Title);
-		pstmt.setString(2, Content);
-		pstmt.setString(3, No);
+		pstmt.setString(1, vo.getTitle());
+		pstmt.setString(2, vo.getContent());
+		pstmt.setString(3, vo.getNo());
 		int result = pstmt.executeUpdate();
 		
 		close(pstmt);

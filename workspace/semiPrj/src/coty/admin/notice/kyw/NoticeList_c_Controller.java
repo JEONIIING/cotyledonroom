@@ -1,4 +1,4 @@
-package coty.admin.controller;
+package coty.admin.notice.kyw;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,18 +9,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import coty.admin.noticeVo.Notice_a_Vo;
+import coty.admin.notice.kyw.Notice_a_Vo;
 import coty.admin.service.NoticeService;
 import coty.util.PageVo;
 
-@WebServlet("/admin/Notice_list")
-public class Notice_listController extends HttpServlet{
+@WebServlet("/communication/Notice_list")
+public class NoticeList_c_Controller extends HttpServlet {
 	
 	private NoticeService ns = new NoticeService();
-
+	
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-				
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
 		try {			
 			
 			//데이터 꺼내기
@@ -43,7 +43,7 @@ public class Notice_listController extends HttpServlet{
 			//화면
 			req.setAttribute("noticeList", noticeList);
 			req.setAttribute("pageVo", pageVo);
-			req.getRequestDispatcher("/WEB-INF/views/admin/Notice_list.jsp").forward(req, resp);
+			req.getRequestDispatcher("/WEB-INF/views/communication/Notice_list_c.jsp").forward(req, resp);
 			
 		} catch (Exception e) {
 			System.out.println("게시글 조회중 예외발생");
@@ -52,9 +52,5 @@ public class Notice_listController extends HttpServlet{
 		}
 		
 	}
-	
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		doGet(req, resp);
-	}
+
 }

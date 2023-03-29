@@ -1,4 +1,4 @@
-package coty.admin.noticeVo;
+package coty.admin.notice.kyw;
 
 public class Notice_a_Vo {
 	
