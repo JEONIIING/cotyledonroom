@@ -39,7 +39,7 @@ public class D_rv_chartController extends HttpServlet{
 			PageVo pageVo = new PageVo(listCount, currentPage, pageLimit, boardLimit);
 
 			// 서비스 호출
-			List<DrvVo> cartList = ds.selectList(pageVo,loginMember);
+			List<DesignerRvVo> cartList = ds.selectList(pageVo,loginMember);
 
 			System.out.println(ds.selectList(pageVo, loginMember));
 			System.out.println(cartList);
