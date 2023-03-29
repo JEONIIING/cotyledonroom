@@ -13,7 +13,7 @@ public class Rv_chartController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("/WEB-INF/views/reservation/rv_chart.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/views/member/rv_chart.jsp").forward(req, resp);
 	
 	}
 	

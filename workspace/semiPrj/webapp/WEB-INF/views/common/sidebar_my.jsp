@@ -17,7 +17,7 @@
       <li><a href="/member/address">배송지목록</a></li>
       <br>
       <div class="admin">My 예약</div>
-        <li><a href="./rv_chart.jsp">예약목록</a></li>
+        <li><a href="/reservation/rvChart">예약목록</a></li>
         <br>
         <div class="admin">회원 정보</div>
           <li><a href="/member/memberedit">회원수정</a></li>

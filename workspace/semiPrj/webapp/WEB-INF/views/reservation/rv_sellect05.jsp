@@ -51,18 +51,18 @@
             </colgroup>
             <tr>
                 <td rowspan="5">
-                    <img src="/resources/image/shop3.jpg" alt="image" style="width: 300px; height: 300px; float: left;">
+                    <img src="/resources/image/디자이너1.jpg" alt="image" style="width: 300px; height: 300px; float: left;">
                     <br><br><br>
-                    <h2>김승우 디자이너</h2>
+                    <h2>김라라 디자이너</h2>
                     <br>
-                    <p>ㅋㅋㅋ@@@@@@@@@@@@@@@@@</p>
+                    <p>최선을 다하겠습니다.</p>
                 </td>
                 <td  class="d_td">예약매장</td>
-                <td>강남점</td>
+                <td>역삼점</td>
             </tr>
             <tr>
                 <td  class="d_td">날짜</td>
-                <td>2023/03/12</td>
+                <td>2023/04/01</td>
             </tr>
             <tr>
                 <td class="d_td">시간</td>
@@ -74,12 +74,12 @@
             </tr>
             <tr>
                 <td class="d_td">시술정보</td>
-                <td>샴푸</td>
+                <td>남자 컷트</td>
             </tr>
             <tr>
                 <td>실제 이용금액은 세부 시술 내용에 따라 달라질 수 있습니다.</td>
                 <td class="d_td">예상금액</td>
-                <td>20000원</td>
+                <td>18000원</td>
             </tr>
         </table>
 

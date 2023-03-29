@@ -30,7 +30,6 @@ public class ReviewDetailListController extends HttpServlet {
 
 			
 			//화면
-			System.out.println(vo);
 			req.setAttribute("reviewVo", vo);
 			req.getRequestDispatcher("/WEB-INF/views/communication/review_detail_list.jsp").forward(req, resp);
 			

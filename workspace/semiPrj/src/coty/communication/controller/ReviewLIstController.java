@@ -24,7 +24,8 @@ public class ReviewLIstController extends HttpServlet{
 	try {
 				
 				//데이터 꺼내기 (페이징 처리를 위한 데이터 준비)
-				int currentPage = Integer.parseInt( req.getParameter("page") );
+				String pageParam =req.getParameter("page");
+				int currentPage = (pageParam != null) ? Integer.parseInt(pageParam) : 1;
 				int listCount = rvs.selectCount();
 				int pageLimit = 5;
 				int boardLimit = 5;
