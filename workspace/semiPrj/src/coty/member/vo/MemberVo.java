@@ -12,8 +12,12 @@ public class MemberVo {
 	private String address;
 	private String email;
 	private String gender_fm;
+	private String signUpDay;
+	private String quitYn;
 	private String phone;
 	private String com;
+	
+	
 	public String getNo() {
 		return no;
 	}
@@ -92,12 +96,24 @@ public class MemberVo {
 	public void setCom(String com) {
 		this.com = com;
 	}
-	public MemberVo() {
-		super();
-		// TODO Auto-generated constructor stub
+	public String getSignUpDay() {
+		return signUpDay;
 	}
+	public void setSignUpDay(String signUpDay) {
+		this.signUpDay = signUpDay;
+	}
+	public String getQuitYn() {
+		return quitYn;
+	}
+	public void setQuitYn(String quitYn) {
+		this.quitYn = quitYn;
+	}
+	
+	public MemberVo() {
+	}
+	
 	public MemberVo(String no, String m_no, String name, String id, String pwd, String nick, String ssno, String birth,
-			String address, String email, String gender_fm, String phone, String com) {
+			String address, String email, String gender_fm, String signUpDay, String quitYn, String phone, String com) {
 		super();
 		this.no = no;
 		this.m_no = m_no;
@@ -110,6 +126,8 @@ public class MemberVo {
 		this.address = address;
 		this.email = email;
 		this.gender_fm = gender_fm;
+		this.signUpDay = signUpDay;
+		this.quitYn = quitYn;
 		this.phone = phone;
 		this.com = com;
 	}
@@ -117,7 +135,8 @@ public class MemberVo {
 	public String toString() {
 		return "MemberVo [no=" + no + ", m_no=" + m_no + ", name=" + name + ", id=" + id + ", pwd=" + pwd + ", nick="
 				+ nick + ", ssno=" + ssno + ", birth=" + birth + ", address=" + address + ", email=" + email
-				+ ", gender_fm=" + gender_fm + ", phone=" + phone + ", com=" + com + "]";
+				+ ", gender_fm=" + gender_fm + ", signUpDay=" + signUpDay + ", quitYn=" + quitYn + ", phone=" + phone
+				+ ", com=" + com + "]";
 	}
 	
 	

@@ -50,8 +50,6 @@ public class AdminMainController extends HttpServlet{
 		System.out.println("[ERROR] 관리자 로그인 중 예외 발생!");
 		e.printStackTrace();
 	}
-
-	
-	
 	}
+	
 }

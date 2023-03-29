@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>고객 관리</title>
-    <link rel="stylesheet" href="/resources/css/admin/D_css.css">
+    <link rel="stylesheet" href="/resources/css/admin/MM_css.css">
     <link rel="stylesheet" href="/resources/css/admin/admin.css">
     <link rel="stylesheet" href="/resources/css/admin/a_main.css">
     <link rel="stylesheet" href="/resources/css/admin/designerForm.css">
@@ -27,73 +27,48 @@
           <div class="board_list">
               <div class="top">
                   <div class="num">번호</div>
-                  <div class="title">고객닉네임</div>
-                  <div class="writer">특이사항</div>
+                  <div class="meNick">고객닉네임</div>
+                  <div class="meId">아이디</div>
                   <div class="gender">성별</div>
-                  <div class="count">가입일자</div>
+                  <div class="signUpDay">가입일자</div>
+                  <div class="quitYn">탈퇴여부</div>
               </div>
-              <div class = "infoLine" onclick="location.href='http://192.168.200.164:5500/admin_member_info.jsp'">
-                  <div class="num">7</div>
-                  <div class="title"><a href="/admin/memberInfo">도리도리</a></div>
-                  <div class="writer">친절하신 편임</div>
-                  <div class="gender">F</div>
-                  <div class="count">2021.07.22</div>
-              </div>
-              <div class = "infoLine">
-                  <div class="num">6</div>
-                  <div class="title"><a href="">블루베리</a></div>
-                  <div class="writer">커트 할때 길이에 예민하심</div>
-                  <div class="gender">F</div>
-                  <div class="count">2021.07.22</div>
-              </div>
-              <div class = "infoLine">
-                  <div class="num">5</div>
-                  <div class="title"><a href="">동동</a></div>
-                  <div class="writer">저번에 디자이너한테 커피사줌</div>
-                  <div class="gender">F</div>
-                  <div class="count">2021.07.22</div>
-              </div>
-              <div class = "infoLine">
-                  <div class="num">4</div>
-                  <div class="title"><a href="view.html">호롤로</a></div>
-                  <div class="writer">말이 없으신 편임 </div>
-                  <div class="gender">M</div>
-                  <div class="count">2023.02.15</div>
-              </div>                
-              <div class = "infoLine">
-                  <div class="num">3</div>
-                  <div class="title"><a href="view.html">빈센조</a></div>
-                  <div class="writer">단골으로 만들기 위해 노력할것 ^,^</div>
-                  <div class="gender">F</div>
-                  <div class="count">2021.03.12</div>
-              </div>                
-              <div class = "infoLine">
-                  <div class="num">2</div>
-                  <div class="title"><a href="view.html">글로리</a></div>
-                  <div class="writer">마시는건 항상 커피달라고 하셨음</div>
-                  <div class="gender">F</div>
-                  <div class="count">2022.11.21</div>
-              </div>                
-              <div class = "infoLine">
-                  <div class="num">1</div>
-                  <div class="title"><a href="view.html">카지노</a></div>
-                  <div class="writer">도박에 대해 이야기하는걸 좋아하심</div>
-                  <div class="gender">M</div>
-                  <div class="count">22.04.05</div>
-              </div>
+              
+              <c:forEach items="${memberList}" var="mvo">
+	              <div class = "listbody">
+	                  <div class="num">${mvo.no}</div>
+	                  <div class="meNick">${mvo.nick}</a></div>
+	                  <div class="meId">${mvo.id}</div>
+	                  <div class="gender">${mvo.gender_fm}</div>
+	                  <div class="signUpDay">${mvo.signUpDay}</div>
+	                  <div class="quitYn">${mvo.quitYn}</div>
+	              </div>
+              
+              
+              </c:forEach>
+             
+              
+             
           </div>
 
 
           <div class="board_page">
-              <a href="#" class="bt first"><<</a>
-              <a href="#" class="bt prev"><</a>
-              <a href="#" class="num on">1</a>
-              <a href="#" class="num">2</a>
-              <a href="#" class="num">3</a>
-              <a href="#" class="num">4</a>
-              <a href="#" class="num">5</a>
-              <a href="#" class="bt next">></a>
-              <a href="#" class="bt last">>></a>
+              <c:if test="${pageVo.currentPage > 1}">
+	              <a href="/admin/memberList?page=${pageVo.currentPage - 1}" class="bt prev"><</a>
+              </c:if>
+              
+				<c:forEach var ="i" begin="${pageVo.startPage}" end="${pageVo.endPage}">
+					<c:if test="${pageVo.currentPage == i}">
+						<span class="selecNum">${i}</span>
+					</c:if>
+					<c:if test="${pageVo.currentPage != i}">
+		              	<a href="/admin/memberList?page=${i}" class="num">${i}</a>
+					</c:if>
+				</c:forEach>
+
+              <c:if test="${pageVo.currentPage < pageVo.maxPage}">
+	              <a href="/admin/memberList?page=${pageVo.currentPage + 1}" class="bt next">></a>
+              </c:if>
           </div>
 
 
@@ -106,3 +81,15 @@
 	<%@ include file="/WEB-INF/views/common/footer.jsp" %>
 </body>
 </html>
+
+
+<script>
+	const listbodies = document.querySelectorAll(".listbody");
+	listbodies.forEach(function(listbody) {
+	    listbody.addEventListener("click", function(event){
+	        const no = event.target.parentNode.children[0].innerText
+	        location.href="/admin/memberInfo?no=" + no;
+	    });
+	});
+
+</script>

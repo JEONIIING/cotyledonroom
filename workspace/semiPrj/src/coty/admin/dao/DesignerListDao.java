@@ -15,7 +15,7 @@ public class DesignerListDao {
 	//디자이너 목록 조회(SELECT, 페이징 처리가 된 상태)
 	public List<DesignerVo> selectDesignerList(Connection conn, PageVo pageVo) throws Exception {
 		//SQL
-		String sql="SELECT * FROM ( SELECT ROWNUM RNUM, NO, NICK, ID, SHOP, PHONE FROM ( SELECT * FROM DESIGNER WHERE QUIT_YN='N' ORDER BY NO DESC ) ) WHERE RNUM BETWEEN ? AND ?";
+		String sql="SELECT * FROM ( SELECT ROWNUM RNUM, D.NO, D.NICK, D.ID, S.NAME, D.PHONE FROM DESIGNER D JOIN SHOP S ON D.SHOP=S.NO WHERE D.QUIT_YN='N' ORDER BY D.NO DESC ) WHERE RNUM BETWEEN ? AND ?";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		int startRow = (pageVo.getCurrentPage()-1) * pageVo.getBoardLimit()+1;
 		int endRow = startRow + pageVo.getBoardLimit() - 1;
@@ -28,19 +28,17 @@ public class DesignerListDao {
 
 		while(rs.next()){
 			String no = rs.getString("NO");
-//			String dbName = rs.getString("NAME");
-			String dbId = rs.getString("ID");
-			String dbShop = rs.getString("SHOP");
-			String dbPhone = rs.getString("PHONE");
 			String dbNick = rs.getString("NICK");
+			String dbId = rs.getString("ID");
+			String dbShop = rs.getString("NAME");
+			String dbPhone = rs.getString("PHONE");
 			
 			DesignerVo deVo = new DesignerVo();
 			deVo.setNo(no);
-//			deVo.setName(dbName);
+			deVo.setNick(dbNick);
 			deVo.setId(dbId);
 			deVo.setShop(dbShop);
 			deVo.setPhone(dbPhone);
-			deVo.setNick(dbNick);
 			
 			designerList.add(deVo);
 		}
@@ -76,7 +74,7 @@ public class DesignerListDao {
 	//디자이너 상세정보 조회
 	public DesignerVo selectInfo(Connection conn, String no) throws Exception {
 		//sql
-		String sql="SELECT D.NO , D.ID , D.PWD , D.NAME , D.PHONE , D.EMAIL , D.NICK , D.SHOP , D.EX , A.CHANGE_NAME FROM DESIGNER D JOIN ATTACHMENT_DESIGNER A ON(D.NO=A.REF_DESIGNER_NO) WHERE D.NO= ? AND QUIT_YN = 'N'";
+		String sql="SELECT D.NO , D.ID , D.PWD , D.NAME , D.PHONE , D.EMAIL , D.NICK , S.NAME AS SHOPNAME , D.EX , A.CHANGE_NAME FROM DESIGNER D JOIN ATTACHMENT_DESIGNER A ON(D.NO=A.REF_DESIGNER_NO) JOIN SHOP S ON(D.SHOP=S.NO) WHERE D.NO = ? AND QUIT_YN = 'N'";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, no);
 		ResultSet rs = pstmt.executeQuery();
@@ -91,7 +89,7 @@ public class DesignerListDao {
 			String designerPhone = rs.getString("PHONE");
 			String designerEmail = rs.getString("EMAIL");
 			String designerNick = rs.getString("NICK");
-			String designerShop = rs.getString("SHOP");
+			String designerShop = rs.getString("SHOPNAME");
 			String ex = rs.getString("EX");
 			String changeName = rs.getString("CHANGE_NAME");
 			
@@ -103,9 +101,9 @@ public class DesignerListDao {
 			designerVo.setPhone(designerPhone);
 			designerVo.setEmail(designerEmail);
 			designerVo.setNick(designerNick);
-			designerVo.setShop(designerShop);
+			designerVo.setShopName(designerShop);
 			designerVo.setEx(ex);
-			designerVo.setChangeSrc(changeName);
+			designerVo.setchangeName(changeName);
 		}
 		
 		//close

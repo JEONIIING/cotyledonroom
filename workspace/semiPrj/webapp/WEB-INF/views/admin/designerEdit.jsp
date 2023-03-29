@@ -20,20 +20,20 @@
 
   <div class="red_bar"></div>
   
-  <form action="/admin/designerInfo" method="post" enctype="multipart/form-data">
+  <form action="/admin/designerInfo" method="post">
     <table class="content">
       <tr>
-        <td class="text" readonly>* 번호</td>
+        <!-- <td class="text" readonly>* 번호</td> -->
         <td>
 	        <input type="hidden" name="num" value="${designerVo.no}">
-	        <div class="kan"> ${designerVo.no}</div>
+	        <%-- <div class="kan"> ${designerVo.no}</div> --%>
         </td>
       </tr>
       <tr>
         <td class="text" readonly>* 근무매장</td>
         <td>
 	        <input type="hidden" name="shop" value="${designerVo.shop}">
-	        <div class="kan" name="shop"> ${designerVo.shop}</div>
+	        <div class="kan" name="shop"> ${designerVo.shopName}</div>
         </td>
       </tr>
       <tr>
@@ -74,12 +74,6 @@
         <td class="text">* 소개내용</td>
         <td >
 	        <textarea name="detail" id="" cols="100" rows="20" required placeholder="디자이너 소개내용을 작성해주세요.">${designerVo.ex}</textarea>
-        </td>
-      </tr>
-      <tr>
-        <td class="text">* 디자이너 이미지</td>
-        <td>
-          <input type="file" name="f" multiple="multiple" >
         </td>
       </tr>
       <tr>

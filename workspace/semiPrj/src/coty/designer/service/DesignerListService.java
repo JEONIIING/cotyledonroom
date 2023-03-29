@@ -56,7 +56,7 @@ public class DesignerListService {
 		
 		//DAO
 		DesignerListDao dao = new DesignerListDao();
-		DesignerVo designerVo = dao.selectInfo(conn, no);
+		DesignerVo designerVo = dao.selectInfo(conn, no );
 		
 		//close
 		JDBCTemplate.close(conn);

@@ -18,7 +18,7 @@ public class DesignerDao {
 	public int createDesigner(Connection conn, DesignerVo deVo) throws Exception {
 		//sql
 		int result = 0;
-		String sql="INSERT INTO DESIGNER(NO, ID, PWD, NAME ,PHONE, EMAIL, SHOP, NICK) VALUES(SEQ_DELIVERY_NO.NEXTVAL, ? ,? ,? ,? ,? ,? , ?)";
+		String sql="INSERT INTO DESIGNER(NO, ID, PWD, NAME ,PHONE, EMAIL, SHOP, NICK) VALUES(SEQ_DESIGNER_NO.NEXTVAL, ? ,? ,? ,? ,? ,? , ?)";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, deVo.getId());
 		pstmt.setString(2, deVo.getPwd());
@@ -67,16 +67,15 @@ public class DesignerDao {
 		return deLoginVo;
 	}
 	
+	//디자이너 계정 생성시 디자이너 사진경로 ATTACHMENT테이블 INSERT
 	public int insertAttachment(Connection conn, DesignerAttachmentVo atVo) throws Exception {
 		
-		int result = 0;
 		//sql 
-		String sql="INSERT INTO ATTACHMENT_DESIGNER (NO ,ORIGIN_NAME, CHANGE_NAME, REF_DESIGNER_NO) VALUES (SEQ_ATTACHMENT_DESIGNER_NO.NEXTVAL, ?, ?, ?)";
+		String sql="INSERT INTO ATTACHMENT_DESIGNER (NO ,ORIGIN_NAME, CHANGE_NAME, REF_DESIGNER_NO) VALUES (SEQ_ATTACHMENT_DESIGNER_NO.NEXTVAL, ?, ?, SEQ_DESIGNER_NO.CURRVAL)";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, atVo.getOriginName());
 		pstmt.setString(2, atVo.getChangeName());
-		pstmt.setString(3, atVo.getRefDesignerNo());
-		result = pstmt.executeUpdate();
+		int result = pstmt.executeUpdate();
 		
 		//close
 		JDBCTemplate.close(pstmt);
@@ -88,7 +87,6 @@ public class DesignerDao {
 	
 	//디자이너 계정정보 수정
 	public int deInfoEdit(Connection conn, DesignerVo editVo) throws Exception {
-		System.out.println("edit - dao");
 		int editResult =0;
 		//sql
 		String sql="UPDATE DESIGNER SET PHONE= ? , EMAIL = ? , EX = ? WHERE NO = ?";
@@ -106,6 +104,19 @@ public class DesignerDao {
 		return editResult;
 	}
 
-	
+	//디자이너 계정 탈퇴
+	public int designerQuit(Connection conn, String designerNo) throws Exception {
+		//sql
+		String sql = "UPDATE DESIGNER SET QUIT_YN='Y' WHERE NO = ?";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, designerNo);
+		int result = pstmt.executeUpdate();
+		
+		//close
+		JDBCTemplate.close(conn);
+		
+		return result;
+		
+	}
 
 }

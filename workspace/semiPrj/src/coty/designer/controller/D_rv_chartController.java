@@ -49,8 +49,6 @@ public class D_rv_chartController extends HttpServlet{
 			resp.sendRedirect("/designer/login");
 		}	
 			
-			
-			
 		} catch (Exception e) {
 			System.out.println("[ERROR] 디자이너 로그인 중 예외 발생...");
 			e.printStackTrace();

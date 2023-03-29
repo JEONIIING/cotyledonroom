@@ -11,27 +11,31 @@ import static coty.util.JDBCTemplate.*;
 
 public class DesignerService {
 
-	//디자이너 계정 생성 
-	public int createDesigner(DesignerVo deVo) throws Exception {
+	//디자이너 계정 생성 (+첨부파일 인터트)
+	public int createDesigner(DesignerVo deVo, DesignerAttachmentVo atVo) throws Exception {
 		//비지니스 로직
 		
 		//conn 
 		Connection conn = getConnection();
 		
 		int result = 0;
-		//Dao
 		DesignerDao dao = new DesignerDao();
+
+		//Dao == 계정 인서트
 		result = dao.createDesigner(conn, deVo);
 		
+		//Dao == 첨부파일 인서트
+		int atResult = dao.insertAttachment(conn, atVo);
+		
 		//tx, close
-		if(result == 1) {
+		if(result * atResult ==1) {
 			commit(conn);
 		}else {
 			rollback(conn);
 		}
 		close(conn);
 		
-		return result;
+		return result * atResult;
 		
 	}
 
@@ -71,7 +75,7 @@ public class DesignerService {
 		return result;
 	}
 	
-	//디자이너 계정정보 수정 (+첨부파일 update)
+	//디자이너 계정정보 수정
 	public int deInfoEdit(DesignerVo editVo) throws Exception {
 		int editResult =0;
 		//비지니스 로직 
@@ -94,6 +98,29 @@ public class DesignerService {
 		
 		return editResult;
 		
+	}
+	
+	//디자이너 계정 탈퇴
+	public int deInfoEdit(String designerNo) throws Exception {
+		//비지니스 로직
+		
+		//conn
+		Connection conn = JDBCTemplate.getConnection();
+		
+		//SQL(DAO)
+		DesignerDao dao = new DesignerDao();
+		int result = dao.designerQuit(conn, designerNo);
+		
+		//tx, close
+		if(result == 1) {
+			JDBCTemplate.commit(conn);
+		}else {
+			JDBCTemplate.rollback(conn);
+		}
+		
+		JDBCTemplate.close(conn);
+		
+		return result;
 	}
 	
 	
