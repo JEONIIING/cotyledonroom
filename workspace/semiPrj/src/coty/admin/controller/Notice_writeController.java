@@ -35,7 +35,7 @@ public class Notice_writeController extends HttpServlet{
 
 		
 		Notice_a_Vo vo = new Notice_a_Vo();
-		vo.setwriter(writer);
+		vo.setWriter(writer);
 		vo.setTitle(title);
 		vo.setContent(content);
 		
