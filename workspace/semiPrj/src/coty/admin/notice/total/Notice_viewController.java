@@ -1,4 +1,4 @@
-package coty.admin.notice.kyw;
+package coty.admin.notice.total;
 
 import java.io.IOException;
 
@@ -8,13 +8,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import coty.admin.notice.kyw.Notice_a_Vo;
+import coty.admin.notice.total.Notice_a_Vo;
 import coty.admin.service.NoticeService;
 
+@WebServlet("/admin/Notice_view")
+public class Notice_viewController extends HttpServlet{
 
-@WebServlet("/communication/Notice_view")
-public class NoticeView_c_Controller extends HttpServlet {
-	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
@@ -29,14 +28,15 @@ public class NoticeView_c_Controller extends HttpServlet {
 			
 			//화면
 			
-
-			req.setAttribute("Notice_Vo", vo);
-			req.getRequestDispatcher("/WEB-INF/views/communication/Notice_view_c.jsp").forward(req, resp);
+			req.getSession().setAttribute("Notice_a_Vo", vo);
 			
-			}catch(Exception e) {
-				System.out.println("게시글 상세조회중 예외발생...");
-				e.printStackTrace();
+			req.getRequestDispatcher("/WEB-INF/views/admin/Notice_view.jsp").forward(req, resp);
+			
+		}catch(Exception e) {
+			System.out.println("게시글 상세조회중 예외발생...");
+			e.printStackTrace();
 		}
+		
 	}
-
+		
 }

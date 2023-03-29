@@ -1,5 +1,5 @@
-<%@page import="coty.admin.notice.kyw.Notice_a_Dao"%>
-<%@page import="coty.admin.notice.kyw.Notice_a_Vo"%>
+<%@page import="coty.admin.notice.total.Notice_a_Dao"%>
+<%@page import="coty.admin.notice.total.Notice_a_Vo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>

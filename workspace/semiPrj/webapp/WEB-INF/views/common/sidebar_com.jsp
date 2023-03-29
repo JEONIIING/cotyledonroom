@@ -12,9 +12,9 @@
 	<div id="sidebar">
         <div class="admin">게시판 목록</div>
         <ul>
-          <li><a href="/communication/Notice_list_c">공지사항</a></li>
+          <li><a href="/communication/Notice_list?page=1">공지사항</a></li>
           <br>
-          <li><a href="/communication/FAQ_list_c">FAQ</a></li>
+          <li><a href="/communication/FAQ_list?page=1">FAQ</a></li>
           <br>
           <li><a href="/communication/QNA_list_c">QNA</a></li>
           <br>

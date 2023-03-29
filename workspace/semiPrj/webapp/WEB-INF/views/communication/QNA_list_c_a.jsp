@@ -31,7 +31,7 @@
               </div>
               <div>
                   <div class="num">5</div>
-                  <div class="title"><a href="/communication/QNA_view_c_a">글 제목이 들어갑니다.</a></div>
+                  <div class="title"><a href="/communication/QNA_view_c">글 제목이 들어갑니다.</a></div>
                   <div class="writer">김이름</div>
                   <div class="date">2023.03.15</div>
                   <div class="count"><button><a href="/communication/QNA_answerList_c">답변일람</a></button></div>
