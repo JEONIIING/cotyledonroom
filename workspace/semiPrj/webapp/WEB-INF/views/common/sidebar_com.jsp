@@ -18,7 +18,7 @@
           <br>
           <li><a href="/communication/QNA_list_c">QNA</a></li>
           <br>
-          <li><a href="/communication/reviewlist">리뷰게시판</a></li>
+          <li><a href="/communication/reviewlist?page=1">리뷰게시판</a></li>
         </ul>
       </div>
 

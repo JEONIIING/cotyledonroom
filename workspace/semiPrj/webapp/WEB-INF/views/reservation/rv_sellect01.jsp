@@ -21,7 +21,7 @@
 
 <body>
     
-	<%@ include file="/WEB-INF/views/common/header_af.jsp" %>
+	<%@ include file="/WEB-INF/views/common/header_be.jsp" %>
     <%@ include file="/WEB-INF/views/common/sidebar_my.jsp" %>
     
 
