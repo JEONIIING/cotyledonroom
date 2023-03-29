@@ -65,9 +65,9 @@
 <%@include file="/WEB-INF/views/common/footer.jsp" %>
 
 
-<form method="post" action="/member/cart" id="frm">
+<form method="post" action="/member/cartadd" id="frm">
 	<input id="pCnt" name="pCnt" type="hidden" value="">
-	<input id="pNo" name="pNo" type="hidden" value="${p1}">
+	<input id="pNo" name="pNo" type="hidden" value="${p1.no}">
 </form>
 </c:forEach>
   </body>

@@ -1,6 +1,7 @@
 package coty.member.service;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 import coty.market.vo.ProductVo;
@@ -61,6 +62,26 @@ public class CartService {
 			if(result == 1) {
 				JDBCTemplate.commit(conn);
 			}else {
+				JDBCTemplate.rollback(conn);
+			}
+			
+			JDBCTemplate.close(conn);
+			
+			return result;
+		}
+
+		public int deleteProduct(CartVo cartVo) throws Exception {
+			
+			Connection conn = JDBCTemplate.getConnection();
+			
+			CartDao dao = new CartDao();
+			int result = dao.deleteProduct(conn, cartVo);
+			
+			if(result == 1) {
+				System.out.println("커밋");
+				JDBCTemplate.commit(conn);
+			}else {
+				System.out.println("롤백..");
 				JDBCTemplate.rollback(conn);
 			}
 			
