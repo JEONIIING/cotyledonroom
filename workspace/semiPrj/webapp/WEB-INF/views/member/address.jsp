@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -107,21 +108,34 @@
 
         <div class="board_page">
             <a href="#" class="bt first"><<</a>
-            <a href="#" class="bt prev"><</a>
-            <a href="#" class="num on">1</a>
-            <a href="#" class="num">2</a>
-            <a href="#" class="num">3</a>
-            <a href="#" class="num">4</a>
-            <a href="#" class="num">5</a>
-            <a href="#" class="bt next">></a>
-            <a href="#" class="bt last">>></a>
-        </div>
-
-
+           <c:if test="${pagevo.currentPage > 1}">
+              <a href="/member/orderlist?page=${pagevo.currentPage-1}" class="bt prev"><</a>
+              </c:if>
+              
+              
+              <c:forEach var="i" begin="${pagevo.startPage}" end="${pagevo.endPage}" step="1">
+              	<c:if test="${pagevo.currentPage == i }">
+              		<a href="/member/orderlist?page=${i}" class="num on">${i}</a>
+              	</c:if>
+              
+       			<c:if test="${pagevo.currentPage != i }">
+       				<a href="/member/orderlist?page=${i}" class="num">${i}</a>
+              	</c:if>
+   
+              </c:forEach>
+              
+              <c:if test="${pagevo.currentPage < pagevo.maxPage}">
+              <a href="/member/orderlist?page=${pagevo.currentPage+1}" class="bt prev">></a>
+              </c:if>
+              <a href="#" class="bt last">>></a>
+          </div>
+          
+          
         <div class="bt_wrap">
             <a href="/member/addressenroll" class="on">등록</a>
            
         </div>
+        
     </div>
 </div>
 
@@ -132,3 +146,14 @@
 
 </body>
 </html>
+
+	<script>
+		const elements = document.querySelectorAll('.orderlistdetail');
+		elements.forEach(element => {
+		  element.addEventListener('click', () => {
+		    const no = element.querySelector('.num').innerText;
+		    location.href = "/member/orderList?no=" + no;
+		  });
+		});
+		
+		</script>

@@ -45,6 +45,7 @@
                
             	  
             </div>
+            
                <c:forEach items = "${OrderList}" var="ovo"> 
             <div class="orderlistdetail">
                	

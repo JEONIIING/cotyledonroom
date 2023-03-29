@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import coty.member.vo.AddressVo;
 import coty.member.vo.MemberVo;
 import coty.member.vo.OrderVo;
 import coty.util.JDBCTemplate;
