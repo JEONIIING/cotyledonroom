@@ -1,3 +1,4 @@
+<%@page import="coty.member.vo.MemberVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -26,47 +27,43 @@
     <div class="board_view_wrap">
         <div class="board_view">
             <div class="title">
-              <b>고객닉네임</b> : <span class="memberNick">도리도리</span>
+              <b>고객닉네임</b> : <span class="memberNick">${memberVo.nick}</span>
             </div>
             <div class="info">
                 <dl>
-                    <dt>등급번호 : </dt>
-                    <dd>1</dd>
-                </dl>
-                <dl>
                     <dt>고객 ID : </dt>
-                    <dd>yec220409</dd>
+                    <dd>${memberVo.id}</dd>
                 </dl>
                 <dl>
                     <dt>고객 생년월일 :</dt>
-                    <dd>891109</dd>
+                    <dd>${memberVo.birth}</dd>
                 </dl>
                 <dl>
                     <dt>고객 성별 :</dt>
-                    <dd>F</dd>
+                    <dd>${memberVo.gender_fm}</dd>
                 </dl>
                 <dl>
                     <dt>탈퇴 여부</dt>
-                    <dd>N</dd>
+                    <dd>${memberVo.quitYn}</dd>
                 </dl>
                 
             </div>
             <div class="info">
               <dl>
                   <dt>고객 이름 : </dt>
-                  <dd>이사라</dd>
+                  <dd>${memberVo.name}</dd>
               </dl>
               <dl>
                   <dt>고객 연락처 : </dt>
-                  <dd>010-1234-8833</dd>
+                  <dd>${memberVo.phone}</dd>
               </dl>
               <dl>
                   <dt>고객 Email : </dt>
-                  <dd>qpwo33@nate.com</dd>
+                  <dd>${memberVo.email}</dd>
               </dl>
               <dl>
                   <dt>가입일자 : </dt>
-                  <dd>2021.07.22</dd>
+                  <dd>${memberVo.signUpDay}</dd>
               </dl>
 
           </div>
@@ -76,7 +73,7 @@
                 <table>
                   <tr>
                     <td class="greet_content">
-                      친절하신 편임
+                      ${memberVo.com}
                     </td>
                   </tr>
                 </table>
@@ -95,3 +92,7 @@
    
   </body>
 </html>
+
+<%
+	MemberVo memberVo = (MemberVo)request.getSession().getAttribute("memberVo");
+%>

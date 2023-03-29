@@ -41,7 +41,7 @@ public class MemberManagementService {
 	}
 	
 	//회원 목록 상세 조회(select)
-	public MemberVo selectMemberInfo(String no) {
+	public MemberVo selectMemberInfo(String no) throws Exception {
 		//conn 
 		Connection conn = JDBCTemplate.getConnection();
 		

@@ -75,12 +75,47 @@ public class MemberManagemetDao {
 	}
 	
 	//회원 목록 상세 조회(select)
-	public MemberVo selectMemberInfo(Connection conn , String no) {
+	public MemberVo selectMemberInfo(Connection conn , String no) throws Exception {
 		//sql
-		String sql="";
+		String sql="SELECT * FROM CUSTOMER WHERE NO = ?";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, no);
+		ResultSet rs = pstmt.executeQuery();
 		
+		MemberVo memberVo = null;
+		if(rs.next()) {
+			String memNO = rs.getString("NO");
+			String memName = rs.getString("NAME");
+			String memId = rs.getString("ID");
+			String memNick = rs.getString("NICK");
+			String memBirth = rs.getString("BIRTH");
+			String memEmail = rs.getString("EMAIL");
+			String memGender = rs.getString("GENDER_FM");
+			String memSignUpDay = rs.getString("SIGN_UP_DAY");
+			String quitYn = rs.getString("QUIT_YN");
+			String phone = rs.getString("PHONE");
+			String com = rs.getString("COM");
+			
+			memberVo = new MemberVo();
+			
+			memberVo.setNo(memNO);
+			memberVo.setName(memName);
+			memberVo.setId(memId);
+			memberVo.setNick(memNick);
+			memberVo.setBirth(memBirth);
+			memberVo.setEmail(memEmail);
+			memberVo.setGender_fm(memGender);
+			memberVo.setSignUpDay(memSignUpDay);
+			memberVo.setQuitYn(quitYn);
+			memberVo.setPhone(phone);
+			memberVo.setCom(com);
+		}
 		
-		return null;
+		//close
+		JDBCTemplate.close(pstmt);
+		JDBCTemplate.close(rs);
+		
+		return memberVo;
 	}
 	
 	
