@@ -20,66 +20,59 @@
 
   
   <div style="height: 600px;">
-    <div class="aaaa">
+    
     <div class="board_wrap">
       <div class="board_title">
           <Strong>FAQ</Strong>
           <p>많이하는 질문</p>
       </div>
-      <div class="board_list_wrap">
+       <div class="board_list_wrap">
           <div class="board_list">
+          	  
               <div class="top">
                   <div class="num">번호</div>
-                  <div class="title"> 제목</div>
+                  <div class="title">제목</div>
                   <div class="writer">글쓴이</div>
                   <div class="date">작성일</div>
-                  <div class="count">조회</div>
+                  <div class="writer">조회수</div>
               </div>
-              <div>
-                  <div class="num">5</div>
-                  <div class="title"><a href="/admin/FAQ_view">글 제목이 들어갑니다.</a></div>
-                  <div class="writer">김이름</div>
-                  <div class="date">2023.03.15</div>
-                  <div class="count">33</div>
+			
+       
+              <c:forEach items="${FAQList}" var="FAQ">
+              <div class="gogo">
+                  <div class="num">${FAQ.no}</div>
+                  <div class="title">${FAQ.title}</div>
+                  <div class="writer">${FAQ.writer}</div>
+                  <div class="date">${FAQ.enrollDate}</div>
+                  <div class="writer">${FAQ.hit}</div>
               </div>
-              <div>
-                  <div class="num">4</div>
-                  <div class="title"><a href="/admin/FAQ_view">글 제목이 들어갑니다.</a></div>
-                  <div class="writer">김이름</div>
-                  <div class="date">2023.03.15</div>
-                  <div class="count">33</div>
-              </div>                
-              <div>
-                  <div class="num">3</div>
-                  <div class="title"><a href="/admin/FAQ_view">글 제목이 들어갑니다.</a></div>
-                  <div class="writer">김이름</div>
-                  <div class="date">2023.03.15</div>
-                  <div class="count">33</div>
-              </div>                <div>
-                  <div class="num">2</div>
-                  <div class="title"><a href="/admin/FAQ_view">글 제목이 들어갑니다.</a></div>
-                  <div class="writer">김이름</div>
-                  <div class="date">2023.03.15</div>
-                  <div class="count">33</div>
-              </div>                <div>
-                  <div class="num">1</div>
-                  <div class="title"><a href="/admin/FAQ_view">글 제목이 들어갑니다.</a></div>
-                  <div class="writer">김이름</div>
-                  <div class="date">2023.03.15</div>
-                  <div class="count">33</div>
-              </div>
+			  </c:forEach>
           </div>
 
 
           <div class="board_page">
               <a href="#" class="bt first"><<</a>
-              <a href="#" class="bt prev"><</a>
-              <a href="#" class="num on">1</a>
-              <a href="#" class="num">2</a>
-              <a href="#" class="num">3</a>
-              <a href="#" class="num">4</a>
-              <a href="#" class="num">5</a>
-              <a href="#" class="bt next">></a>
+              
+              
+              <c:if test="${pageVo.currentPage > 1}">
+              <a href="/admin/FAQ_list?page=${pageVo.currentPage-1}" class="bt prev"><</a>
+              </c:if>
+              
+              
+              <c:forEach var="i" begin="${pageVo.startPage}" end="${pageVo.endPage}" step="1">
+              	<c:if test="${pageVo.currentPage == i }">
+              		<a href="/admin/FAQ_list?page=${i}" class="num on">${i}</a>
+              	</c:if>
+              
+       			<c:if test="${pageVo.currentPage != i }">
+       				<a href="/admin/FAQ_list?page=${i}" class="num">${i}</a>
+              	</c:if>
+   
+              </c:forEach>
+              
+              <c:if test="${pageVo.currentPage < pageVo.maxPage}">
+              <a href="/admin/FAQ_list?page=${pageVo.currentPage+1}" class="bt prev">></a>
+              </c:if>
               <a href="#" class="bt last">>></a>
           </div>
 
@@ -90,13 +83,19 @@
           </div>
       </div>
   </div>
-  
-</div>
-</div>
+  </div>
   <br><br><br><br>
  
 <%@include file="/WEB-INF/views/common/footer.jsp" %>
-
    
   </body>
+<script>
+const elements = document.querySelectorAll('.gogo');
+elements.forEach(element => {
+  element.addEventListener('click', () => {
+    const no = element.querySelector('.num').innerText;
+    location.href = "/admin/FAQ_view?no=" + no;
+  });
+});
+ </script>
 </html>

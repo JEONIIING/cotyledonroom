@@ -1,4 +1,4 @@
-package coty.admin.notice.kyw;
+package coty.admin.notice.total;
 
 import static coty.util.JDBCTemplate.close;
 
@@ -8,8 +8,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import coty.admin.notice.total.Notice_a_Vo;
 import coty.util.PageVo;
-import coty.admin.notice.kyw.Notice_a_Vo;
 
 public class Notice_a_Dao {
 

@@ -1,4 +1,4 @@
-package coty.admin.notice.kyw;
+package coty.admin.notice.total;
 
 import java.io.IOException;
 
@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import coty.admin.notice.kyw.Notice_a_Vo;
 
+import coty.admin.notice.total.Notice_a_Vo;
 import coty.admin.service.NoticeService;
 
 @MultipartConfig(
 		maxFileSize = 1024 * 1024 * 50,
 		maxRequestSize = 1024 * 1024* 50 * 10
-	)
+)
 
 @WebServlet("/admin/Notice_edit")
 public class Notice_editController extends HttpServlet {

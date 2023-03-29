@@ -1,3 +1,5 @@
+<%@page import="coty.admin.faq.dvo.FAQ_a_Dao"%>
+<%@page import="coty.admin.faq.dvo.FAQ_a_Vo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -24,68 +26,46 @@
   <div style="height: 600px;">
     <div class="board_wrap">
       <div class="board_title">
-          <Strong>FAQ</Strong>
-          <p>많이하는 질문</p>
+          <Strong>공지사항</Strong>
       </div>
       <div class="board_view_wrap">
           <div class="board_view">
               <div class="title">
-                  글 제목 들어감요
+                  ${FAQ_a_Vo.title}
 
               </div>
               <div class="info">
+              <h1>@{FAQVo}</h1>
                   <dl>
                       <dt>번호</dt>
-                      <dd>1</dd>
+                      <dd>${FAQ_a_Vo.no}</dd>
                   </dl>
                   <dl>
                       <dt>글쓴이</dt>
-                      <dd>김이름</dd>
+                      <dd>${FAQ_a_Vo.writer}</dd>
                   </dl>
                   <dl>
                       <dt>작성일</dt>
-                      <dd>2023.03.15</dd>
+                      <dd>${FAQ_a_Vo.enrollDate}</dd>
                   </dl>
                   <dl>
-                      <dt>조회</dt>
-                      <dd>33</dd>
+                      <dt>조회수</dt>
+                      <dd>${FAQ_a_Vo.hit}</dd>
                   </dl>
 
               </div>
               <div class="cont">
-                  글내용이 들어갑니다요<br>
-                  글내용이 들어갑니다요<br>
-                  글내용이 들어갑니다요<br>
-                  글내용이 들어갑니다요<br>
-                  글내용이 들어갑니다요<br>
-                  글내용이 들어갑니다요<br>
-                  글내용이 들어갑니다요<br>
-                  글내용이 들어갑니다요
+                 ${FAQ_a_Vo.content}
               </div>
+              
           </div>
           <div class="bt_wrap">
-              <a href="/admin/FAQ_list" class="on">목록</a>
-              <a href="/admin/FAQ_edit">수정</a>
-              <a href="#">삭제</a>           
+              <a href="/admin/FAQ_list?page=1" class="on">목록</a>
+              <a href="/admin/FAQ_edit?no=${FAQ_a_Vo.no}">수정</a>
+              <a href="/admin/FAQ_delete?no=${FAQ_a_Vo.no}">삭제</a>
           </div>
-
       </div>
-
-    <div id="form-commentInfo">
-        <div id="comment-count" style="font-size: 20px;">댓글 <span id="count">0</span></div>
-        <input id="comment-input" placeholder="댓글을 입력해 주세요." style="width: 800px; height: 30px;">
-        <button id="submit" style="width: 50px; height: 35px;">등록</button>
     </div>
-    <div id=comments style="font-size: 15px; padding-bottom: 10%;">
-    </div>
-    <script src="js/comment.js"></script>
-
-
-    </div>
-
-
-
-    
   </div>
   <br><br><br><br>
 
@@ -94,3 +74,5 @@
    
   </body>
 </html>
+
+<% FAQ_a_Vo FAQ_a_Vo = (FAQ_a_Vo)request.getSession().getAttribute("FAQ_a_Vo"); %>

@@ -3,8 +3,8 @@ package coty.admin.service;
 import java.sql.Connection;
 import java.util.List;
 
-import coty.admin.notice.kyw.Notice_a_Vo;
-import coty.admin.notice.kyw.Notice_a_Dao;
+import coty.admin.notice.total.Notice_a_Dao;
+import coty.admin.notice.total.Notice_a_Vo;
 import coty.util.JDBCTemplate;
 import coty.util.PageVo;
 

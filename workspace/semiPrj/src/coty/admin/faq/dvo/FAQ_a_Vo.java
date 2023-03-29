@@ -1,6 +1,6 @@
-package coty.admin.notice.kyw;
+package coty.admin.faq.dvo;
 
-public class Notice_a_Vo {
+public class FAQ_a_Vo {
 	
 	private String no;
 	private String title;
@@ -9,8 +9,25 @@ public class Notice_a_Vo {
 	private String deleteYn;
 	private String writer;
 	private String hit;
-
 	
+	public FAQ_a_Vo() {
+	}
+	public FAQ_a_Vo(String no, String title, String content, String enrollDate, String deleteYn, String writer,
+			String hit) {
+		super();
+		this.no = no;
+		this.title = title;
+		this.content = content;
+		this.enrollDate = enrollDate;
+		this.deleteYn = deleteYn;
+		this.writer = writer;
+		this.hit = hit;
+	}
+	@Override
+	public String toString() {
+		return "FAQ_a_Vo [no=" + no + ", title=" + title + ", content=" + content + ", enrollDate=" + enrollDate
+				+ ", deleteYn=" + deleteYn + ", writer=" + writer + ", hit=" + hit + "]";
+	}
 	public String getNo() {
 		return no;
 	}
@@ -53,29 +70,5 @@ public class Notice_a_Vo {
 	public void setHit(String hit) {
 		this.hit = hit;
 	}
-	@Override
-	public String toString() {
-		return "Notice_a_Vo [no=" + no + ", title=" + title + ", content=" + content + ", enrollDate=" + enrollDate
-				+ ", deleteYn=" + deleteYn + ", writer=" + writer + ", hit=" + hit + "]";
-	}
-	public Notice_a_Vo(String no, String title, String content, String enrollDate, String deleteYn, String writer,
-			String hit) {
-		super();
-		this.no = no;
-		this.title = title;
-		this.content = content;
-		this.enrollDate = enrollDate;
-		this.deleteYn = deleteYn;
-		this.writer = writer;
-		this.hit = hit;
-	}
-	public Notice_a_Vo() {
-		
-	}
-
-	
-	
-	
-
 
 }
