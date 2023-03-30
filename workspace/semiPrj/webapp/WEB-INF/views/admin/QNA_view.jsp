@@ -22,45 +22,51 @@
   <div style="height: 600px;">
 <div class="board_wrap">
     <div class="board_title">
-        <Strong>QNA 답변</Strong>
+        <Strong>QNA 게시판</Strong>
     </div>
     <div class="board_view_wrap">
           <div class="board_view">
               <div class="title">
-                  ${QNA_a_Vo.title}
+                  ${QNA_Vo.title}
 
               </div>
               <div class="info">
               <h1>@{QNAVo}</h1>
                   <dl>
                       <dt>번호</dt>
-                      <dd>${QNA_a_Vo.no}</dd>
+                      <dd>${QNA_Vo.no}</dd>
                   </dl>
                   <dl>
                       <dt>글쓴이</dt>
-                      <dd>${QNA_a_Vo.writer}</dd>
+                      <dd>${QNA_Vo.writer}</dd>
                   </dl>
                   <dl>
                       <dt>작성일</dt>
-                      <dd>${QNA_a_Vo.enrollDate}</dd>
+                      <dd>${QNA_Vo.enrollDate}</dd>
                   </dl>
                   <dl>
                       <dt>조회수</dt>
-                      <dd>${QNA_a_Vo.hit}</dd>
+                      <dd>${QNA_Vo.hit}</dd>
                   </dl>
 
               </div>
               <div class="cont">
-                 ${QNA_a_Vo.content_a}
+                 ${QNA_Vo.content_q}
               </div>
               
           </div>
           <div class="bt_wrap">
-              <a href="/admin/QNA_list_a?page=1" class="on">목록</a>
+              <a href="/admin/QNA_list?page=1" class="on">목록</a>
+              <a href="/admin/QNA_answer?no=${QNA_Vo.no}">답변</a>
           </div>
       </div>
     </div>
 </div>
 
-</body>
+  <br><br><br><br>
+
+<%@include file="/WEB-INF/views/common/footer.jsp" %>
+
+   
+  </body>
 </html>
