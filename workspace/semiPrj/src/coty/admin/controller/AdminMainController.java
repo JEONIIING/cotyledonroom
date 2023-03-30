@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import coty.admin.adminVo.AdminVo;
 import coty.admin.service.AdminLoginService;
@@ -18,6 +19,8 @@ public class AdminMainController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.getRequestDispatcher("/WEB-INF/views/admin/admin_main.jsp").forward(req, resp);
+		HttpSession session = req.getSession();
+		session.getAttribute("adminLogimVo");
 	}
 	
 	//관리자 로그인

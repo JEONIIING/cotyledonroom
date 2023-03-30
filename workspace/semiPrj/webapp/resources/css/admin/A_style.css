@@ -292,3 +292,6 @@ a{
   border: 0;
   resize: vertical;
 }
+#infobox{
+	height: 590px;
+}
