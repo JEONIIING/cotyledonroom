@@ -12,85 +12,85 @@
     <link rel="stylesheet" href="/resources/css/admin/L_css.css">
 </head>
 <body>
-         <%@ include file="/WEB-INF/views/common/header_be.jsp" %>
-  <%@include file="/WEB-INF/views/common/sidebar_com.jsp" %>
+      <%@include file="/WEB-INF/views/common/header_be.jsp" %>
+      <%@include file="/WEB-INF/views/common/sidebar_com.jsp" %>
 
-<div class="aaaa">
-    <div class="board_wrap">
-      <div class="board_title">
-          <Strong>QNA 게시판</Strong>
-      </div>
-      <div class="board_list_wrap">
+<div style="height: 600px;">
+ <div class="board_wrap">
+     <div class="board_title">
+        <Strong>QNA 답변</Strong>
+    </div>
+   <div class="board_list_wrap">
           <div class="board_list">
+          	  
               <div class="top">
                   <div class="num">번호</div>
-                  <div class="title"> 제목</div>
+                  <div class="title">제목</div>
                   <div class="writer">글쓴이</div>
                   <div class="date">작성일</div>
-                  <div class="count">답변</div>
+                  <div class="writer">조회수</div>
               </div>
-              <div>
-                  <div class="num">5</div>
-                  <div class="title"><a href="/communication/QNA_view_c">글 제목이 들어갑니다.</a></div>
-                  <div class="writer">김이름</div>
-                  <div class="date">2023.03.15</div>
-                  <div class="count"><button><a href="/communication/QNA_answerList_c">답변일람</a></button></div>
+			
+       
+              <c:forEach items="${QNAList}" var="QNA">
+              <div class="gogo">
+                  <div class="num">${QNA.no}</div>
+                  <div class="title">${QNA.title}</div>
+                  <div class="writer">${QNA.writer}</div>
+                  <div class="date">${QNA.enrollDate}</div>
+                  <div class="writer">${QNA.hit}</div>
               </div>
-              <div>
-                  <div class="num">4</div>
-                  <div class="title"><a href="/communication/QNA_view_c">글 제목이 들어갑니다.</a></div>
-                  <div class="writer">김이름</div>
-                  <div class="date">2023.03.15</div>
-                  <div class="count"><button><a href="/communication/QNA_answerList_c">답변일람</a></button></div>
-              </div>                
-              <div>
-                  <div class="num">3</div>
-                  <div class="title"><a href="/communication/QNA_view_c">글 제목이 들어갑니다.</a></div>
-                  <div class="writer">김이름</div>
-                  <div class="date">2023.03.15</div>
-                  <div class="count"><button><a href="/communication/QNA_answerList_c" >답변일람</a></button></div>
-              </div>                <div>
-                  <div class="num">2</div>
-                  <div class="title"><a href="/communication/QNA_view_c">글 제목이 들어갑니다.</a></div>
-                  <div class="writer">김이름</div>
-                  <div class="date">2023.03.15</div>
-                  <div class="count"><button><a href="/communication/QNA_answerList_c">답변일람</a></button></div>
-              </div>                <div>
-                  <div class="num">1</div>
-                  <div class="title"><a href="/communication/QNA_view_c">글 제목이 들어갑니다.</a></div>
-                  <div class="writer">김이름</div>
-                  <div class="date">2023.03.15</div>
-                  <div class="count"><button><a href="/communication/QNA_answerList_c">답변일람</a></button></div>
-              </div>
+			  </c:forEach>
           </div>
 
 
           <div class="board_page">
               <a href="#" class="bt first"><<</a>
-              <a href="#" class="bt prev"><</a>
-              <a href="#" class="num on">1</a>
-              <a href="#" class="num">2</a>
-              <a href="#" class="num">3</a>
-              <a href="#" class="num">4</a>
-              <a href="#" class="num">5</a>
-              <a href="#" class="bt next">></a>
+              
+              
+              <c:if test="${pageVo.currentPage > 1}">
+              <a href="/communication/QNA_list_c_a?page=${pageVo.currentPage-1}" class="bt prev"><</a>
+              </c:if>
+              
+              
+              <c:forEach var="i" begin="${pageVo.startPage}" end="${pageVo.endPage}" step="1">
+              	<c:if test="${pageVo.currentPage == i }">
+              		<a href="/communication/QNA_list_c_a?page=${i}" class="num on">${i}</a>
+              	</c:if>
+              
+       			<c:if test="${pageVo.currentPage != i }">
+       				<a href="/communication/QNA_list_c_a?page=${i}" class="num">${i}</a>
+              	</c:if>
+   
+              </c:forEach>
+              
+              <c:if test="${pageVo.currentPage < pageVo.maxPage}">
+              <a href="/communication/QNA_list_c_a?page=${pageVo.currentPage+1}" class="bt prev">></a>
+              </c:if>
               <a href="#" class="bt last">>></a>
           </div>
 
 
-          <div class="bt_wrap">
-              <a href="/communication/QNA_write_c" class="on">등록</a>
-              <!-- <a href="#">수정</a> -->
-          </div>
       </div>
   </div>
-  
-</div>
+  </div>
+  <br><br><br><br><br>
 
-<%@include file="/WEB-INF/views/common/footer.jsp" %>
+
+   <%@ include file="/WEB-INF/views/common/footer.jsp" %>
 
 
 
 
 </body>
+<script>
+const elements = document.querySelectorAll('.gogo');
+elements.forEach(element => {
+  element.addEventListener('click', () => {
+    const no = element.querySelector('.num').innerText;
+    location.href = "/communication/QNA_view_c_a?no=" + no;
+  });
+});
+
+</script>
 </html>

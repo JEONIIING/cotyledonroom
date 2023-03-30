@@ -23,56 +23,49 @@
       <div class="board_title">
           <Strong>QNA 답변</Strong>
       </div>
+      <form action="/admin/QNA_answer" method="post" enctype="multipart/form-data">
       <div class="board_write_wrap">
           <div class="board_write">
               <div class="title">
                   <dl>
                       <dt>제목</dt>
-                      <dd><input type="text" placeholder="제목 입력" value="글 제목이 들어갑니다"></dd>
-                      
+                      <dd><input type="text" name="title" placeholder="제목 입력"></dd>
                   </dl>
               </div>
               <div class="info">
                   <dl>
                       <dt>글쓴이</dt>
-                      <dd><input type="text" placeholder="글쓴이 입력" value="김이름"></dd>
+                      <dd><input type="text" name="writer" placeholder="글쓴이 입력"></dd>
                   </dl>
+
                   <dl>
                       <dt>비밀번호</dt>
-                      <dd><input type="password" placeholder="비밀번호 입력" value="1234"></dd>
+                      <dd><input type="password" placeholder="비밀번호 입력"></dd>
+                  </dl>
+                  <dl>
+                      <dt>사진첨부</dt>
+                      <dd><input type="file" placeholder="사진첨부"></dd>
                   </dl>
               </div>
               <div class="cont">
-                  <textarea placeholder="내용 입력">
-  글 내용이 들어갑니다요
-  글 내용이 들어갑니다요
-  글 내용이 들어갑니다요
-  글 내용이 들어갑니다요
-  글 내용이 들어갑니다요
-  글 내용이 들어갑니다요
-  글 내용이 들어갑니다요</textarea>
+                  <textarea name="content_a" placeholder="내용 입력"></textarea>
               </div>             
           </div>
           <div class="bt_wrap">
-              <a href="/admin/QNA_list_a" class="on">수정</a>
-              <a href="/admin/QNA_list_a">취소</a>
-  
-              
+            <input class="qwerty" type="submit" value="작성하기" 
+            style="border-color: #000;background: #000;color: #fff; display: inline-block;
+   				   min-width: 90px;
+   				   padding: 10px;
+    			   margin-left: 10px;
+    			   border: 1px solid #000;
+    			   border-radius: 2px;
+    			   font-size: 1.4rem;" >
+            <a href="/admin/QNA_list">취소</a>
           </div>
       </div>
-      <div id="form-commentInfo">
-          <div id="comment-count" style="font-size: 20px;">답변 </div>
-          <input id="comment-input" placeholder="댓글을 입력해 주세요." style="width: 800px; height: 30px;">
-          <button id="submit" style="width: 50px; height: 35px;">등록</button>
-      </div>
-      <div id=comments style="font-size: 15px; padding-bottom: 10%;">
-      </div>
-      <script src="js/comment.js"></script>
-  
-  
-      </div>
-  
-    </div>
+    </form>
+   </div>
+  </div>
   <br><br><br><br>
 
 <%@include file="/WEB-INF/views/common/footer.jsp" %>

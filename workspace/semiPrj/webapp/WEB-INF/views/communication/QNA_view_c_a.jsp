@@ -57,9 +57,7 @@
               
           </div>
           <div class="bt_wrap">
-              <a href="/communication/QNA_list_c?page=1" class="on">목록</a>
-              <a href="/communication/QNA_edit_c?no=${QNA_a_Vo.no}">수정</a>
-              <a href="/communication/QNA_delete_c?no=${QNA_a_Vo.no}">삭제</a>
+              <a href="/communication/QNA_list_c_a?page=1" class="on">목록</a>
           </div>
       </div>
     </div>

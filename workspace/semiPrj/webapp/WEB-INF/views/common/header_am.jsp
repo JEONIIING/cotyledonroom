@@ -27,7 +27,8 @@
     <div class="admin">ADMIN</div>
     <div class="line"></div>
     <ul>
-      <li><a href="/admin/QNA_list_a">QNA</a></li>
+      <li><a href="/admin/QNA_list?page=1">QNA</a></li>
+      <li><a href="/admin/QNA_list_a?page=1">QNA 답변</a></li>
       <li><a href="/admin/FAQ_list?page=1">FAQ</a></li>
       <li><a href="/admin/Notice_list?page=1">공지사항</a></li>
       <li><a href="/admin/designerList">디자이너 관리</a></li>

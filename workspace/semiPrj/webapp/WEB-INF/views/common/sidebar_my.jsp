@@ -21,7 +21,8 @@
         <br>
         <div class="admin">회원 정보</div>
           <li><a href="/member/memberedit">회원수정</a></li>
-          <li><a href="./QNA_list_c.jsp">Q&A</a></li>
+          <li><a href="/communication/QNA_list_c?page=1">Q&A</a></li>
+          <li><a href="/communication/QNA_list_c_a?page=1">Q&A 답변</a></li>
           <li><a href="/member/memberquit">회원탈퇴</a></li>
   </ul>
 </div>
