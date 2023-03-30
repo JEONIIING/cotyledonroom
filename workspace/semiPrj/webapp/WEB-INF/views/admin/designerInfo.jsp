@@ -19,7 +19,7 @@
 <body>
 		<%@ include file="/WEB-INF/views/common/header_am.jsp" %>
 		
-		<div class="board_wrap">
+		<div class="board_wrap" >
     <div class="board_title">
         <Strong>디자이너 상세정보</Strong>
         <p>디자이너의 상세 정보입니다.</p>

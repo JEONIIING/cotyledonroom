@@ -34,8 +34,6 @@ public class ProductListController extends HttpServlet{
 			//서비스 호출
 			 List<AdminProductVo> productList = aps.selectProductList(pageVo); //페이징관련정보
 			
-			 System.out.println(productList);
-			
 			 //화면
 			 req.setAttribute("productList", productList);
 			 req.setAttribute("pageVo", pageVo);

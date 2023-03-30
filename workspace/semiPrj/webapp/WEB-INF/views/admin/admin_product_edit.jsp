@@ -65,7 +65,7 @@
       <tr>
         <td colspan="2">
           <input class="edit" input type="submit" value="수정">
-          <button class="cancel" type="button" ><a href="javascript:window.history.back();">취소</a></button>
+          <button class="cancel" type="button" ><a href="http://127.0.0.1:8888/admin/productList">취소</a></button>
         <td>
         </td>
       </tr>

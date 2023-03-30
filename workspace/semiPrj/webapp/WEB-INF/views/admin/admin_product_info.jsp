@@ -15,7 +15,7 @@
 <body>
 		<%@ include file="/WEB-INF/views/common/header_am.jsp" %>
 		
-		<div class="board_wrap">
+		<div class="board_wrap" id="infobox">
     <div class="board_title">
         <Strong>상품상세정보</Strong>
         <p>상품의 상세 정보입니다.</p>

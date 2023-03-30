@@ -89,7 +89,7 @@
     listbodies.forEach(function(listbody) {
         listbody.addEventListener("click", function(event){
             const no = event.target.parentNode.children[0].innerText
-            location.href="/admin/designerInfo?no=" + no;
+            location.href="http://127.0.0.1:8888/admin/productInfo";
             
         });
     });
