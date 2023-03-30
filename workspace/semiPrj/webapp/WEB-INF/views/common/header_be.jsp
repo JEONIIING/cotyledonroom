@@ -15,7 +15,6 @@
             <div class="abc-right">
             <%
 		MemberVo loginMember = (MemberVo)session.getAttribute("loginMember");
-		
 		if(loginMember != null) { %>
 			
 		 <div class="abc-menu"><%=loginMember.getNick() %> 님 환영합니다 &nbsp; &nbsp;</div><% } %>

@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import coty.communication.service.ReviewService;
 import coty.communication.vo.ReviewVo;
+import coty.designer.service.DesignerService;
+import coty.designer.vo.MentVo;
 
 @WebServlet("/communication/reviewdetaillist")
 public class ReviewDetailListController extends HttpServlet {
@@ -27,10 +29,14 @@ public class ReviewDetailListController extends HttpServlet {
 			//서비스 호출
 			ReviewService rvs = new ReviewService();
 			ReviewVo vo = rvs.selectOne(no);
+			
+			DesignerService ds = new DesignerService();
+			MentVo mentVo = ds.ment(no);
 
 			
 			//화면
 			req.setAttribute("reviewVo", vo);
+			req.setAttribute("MentVo", mentVo);
 			req.getRequestDispatcher("/WEB-INF/views/communication/review_detail_list.jsp").forward(req, resp);
 			
 		}catch(Exception e) {

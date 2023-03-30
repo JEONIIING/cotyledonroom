@@ -25,9 +25,9 @@
         <table cellspacing ="50">
           <tr><td><div class="menu">ESSENCE</div></td></tr>
           <tr>
-            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/칼리고 150ml - 두피 에센스.png" alt=""></a></td>
-            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/레미시오 100ml.png" alt=""></a></td>
-            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/미티스 100ml.png" alt=""></a></td>
+            <td><a href="/market/productdetail11"><img class="product_img" src="/resources/image/product/CALIGO/0.png" alt=""></a></td>
+            <td><a href="/market/productdetail12"><img class="product_img" src="/resources/image/product/REMISSIO/0.png" alt=""></a></td>
+            <td><a href="/market/productdetail13"><img class="product_img" src="/resources/image/product/MITIS/0.png" alt=""></a></td>
           </tr>
           <tr class="product_name">
             <td><a>칼리고 150ml</a></td>

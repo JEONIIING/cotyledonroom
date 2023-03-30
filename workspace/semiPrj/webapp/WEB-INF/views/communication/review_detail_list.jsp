@@ -1,3 +1,6 @@
+<%@page import="coty.designer.vo.MentVo"%>
+<%@page import="java.util.List"%>
+<%@page import="coty.communication.vo.ReviewVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -10,7 +13,7 @@
     <link rel="stylesheet" href="/resources/css/common/main.css">
     <link rel="stylesheet" href="/resources/css/common/sidebar.css">
     <link rel="stylesheet" href="/resources/css/member/orderList.css">
-    <link rel="stylesheet" href="/resources/css/admin/L_css.css">
+    <link rel="stylesheet" href="/resources/css/admin/J_css.css">
 </head>
 <body>
     
@@ -19,7 +22,11 @@
     
 <br>
 
-    
+<%
+	ReviewVo reviewVo = (ReviewVo)session.getAttribute("reviewVo");
+	MentVo mv = (MentVo)session.getAttribute("MentVo");
+%>
+
 <div class="board_wrap">
     <div class="board_title">
         <Strong>리뷰 상세</Strong>
@@ -61,42 +68,40 @@
                     ${reviewVo.content}
                 </div>
             </div>
-            
+			<form action="/designer/ment" method="post">
+				<table>
+					<tr>
+						<td><input class="mentbox" type="text" name="ment" required></td>
+						<td><input class="mentbtn" type="submit" value="댓글 등록"></td>
+					</tr>
+					
+				</table>
+				<input id="rNo" name="rNo" type="hidden" value="${reviewVo.no}">
+			</form>
+					
+				<div>
+					<dl>
+						<dd class="ment">
+							댓글 ::: ${MentVo.ment }
+					</dd>
+				</dl>
+			</div>
         </div>
         <div class="bt_wrap">
             <a href="/communication/reviewlist?page=1" class="on">목록</a>
             <a href="/communication/reviewedit">수정</a>
             <a href="#">삭제</a>
         </div>
-        <div id="form-commentInfo">
-            <div id="comment-count" style="font-size: 20px;">댓글 <span id="count">0</span></div>
-            <input id="comment-input" placeholder="댓글을 입력해 주세요." style="width: 800px; height: 30px;">
-            <button id="submit" style="width: 50px; height: 35px;">등록</button>
-        </div>
-        <div id=comments style="font-size: 15px;">
-        </div>
+        
     </div>
 </div>
 
 <br><br><br><br>
 
 
-<script src="/resources/js/comment.js"></script>
 
 
-</div>
 
     <%@ include file="/WEB-INF/views/common/footer.jsp" %>
-<form method="post" action="/designer/rv_chart" id="frm">
-	<input id="rNo" name="rNo" type="hidden" value="${reviewVo.no}">
-</form>
-  </body>
-  <script>
-  function insertCart(){
-	  document.getElementById('frm').submit();
-  }
-  </script>
-
-
 </body>
 </html>

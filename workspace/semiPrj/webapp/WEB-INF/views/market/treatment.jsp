@@ -24,8 +24,8 @@
         <table cellspacing ="50">
           <tr><td><div class="menu">TREATMENT</div></td></tr>
           <tr>
-            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/몰리스마레 150ml -트리트먼트.png" alt=""></a></td>
-            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/몰리스마레 450ml -트리트먼트.png" alt=""></a></td>
+            <td><a href="/market/productdetail5"><img class="product_img" src="/resources/image/product/MOLLISMARE1/0.png" alt=""></a></td>
+            <td><a href="/market/productdetail6"><img class="product_img" src="/resources/image/product/MOLLISMARE2/0.png" alt=""></a></td>
           </tr>
           <tr class="product_name">
             <td><a>몰리스마레 150ml</a></td>

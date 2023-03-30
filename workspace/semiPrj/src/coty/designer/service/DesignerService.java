@@ -6,9 +6,13 @@ import java.util.List;
 import coty.admin.adminVo.DesignerAttachmentVo;
 import coty.admin.adminVo.DesignerVo;
 import coty.admin.dao.DesignerDao;
+import coty.communication.dao.ReviewDao;
+import coty.communication.vo.ReviewVo;
 import coty.designer.dao.DesignerRvDao;
 import coty.designer.vo.DesignerRvVo;
+import coty.designer.vo.MentVo;
 import coty.member.dao.CartDao;
+import coty.member.dao.MemberDao;
 import coty.member.vo.CartVo;
 import coty.member.vo.MemberVo;
 import coty.util.JDBCTemplate;
@@ -188,6 +192,61 @@ public class DesignerService {
 			JDBCTemplate.close(conn);
 			
 			return result;
+		}
+
+		public DesignerRvVo editres(DesignerRvVo dvo) throws Exception {
+			//비지니스 로직
+			  Connection conn = JDBCTemplate.getConnection();
+			
+			  //sql 
+			  DesignerRvDao dao = new DesignerRvDao(); 
+			  DesignerRvVo editres = dao.editres(conn, dvo);
+			  
+			  //tx close 
+			  if(editres != null) { 
+			  JDBCTemplate.commit(conn); 
+			  }
+			  else {
+			  JDBCTemplate.rollback(conn); 
+			  } 
+			  JDBCTemplate.close(conn); 
+			return editres;
+		}
+
+		public int addment(MentVo vo) throws Exception {
+			//conn
+			Connection conn = JDBCTemplate.getConnection();
+			
+			//sql (dao)	
+			DesignerRvDao dao = new DesignerRvDao();
+			int result = dao.addment(conn, vo);
+		
+			//tx , close
+			if(result == 1) {
+				JDBCTemplate.commit(conn);
+			}else {
+				JDBCTemplate.rollback(conn);
+			}
+			
+			JDBCTemplate.close(conn);
+			
+			return result;
+		}
+
+		public MentVo ment(String no) throws Exception {
+			Connection conn = JDBCTemplate.getConnection();
+			
+			//DAO 호출 (조회쿼리 + 증가쿼리)
+			DesignerRvDao dao = new DesignerRvDao();
+				
+			MentVo mentVo = dao.ment(conn , no);
+			
+			//tx , close
+			JDBCTemplate.commit(conn);
+			JDBCTemplate.close(conn);
+			
+			
+			return mentVo;
 		}
 
 
