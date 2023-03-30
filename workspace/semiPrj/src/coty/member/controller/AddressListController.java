@@ -42,26 +42,27 @@ public class AddressListController extends HttpServlet{
 			List<AddressVo> AddressList = as.selectList(pagevo ,loginMember);
 			
 			//화면
-			System.out.println();
 			req.setAttribute("AddressList", AddressList);
 			req.setAttribute("pagevo", pagevo);
-			req.getRequestDispatcher("/WEB-INF/views/member/address.jsp").forward(req, resp);		
 			System.out.println(AddressList);
+			req.getRequestDispatcher("/WEB-INF/views/member/address.jsp").forward(req, resp);		
 			
 			}catch (Exception e) {
-			System.out.println("[ERORR] 배송지 목록 조회중 예외발생..");
-			e.printStackTrace();
-			req.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(req, resp);	
+				System.out.println("[ERORR] 배송지 목록 조회중 예외발생..");
+				e.printStackTrace();
+				req.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(req, resp);	
 			}
 		
-		
 	}
+	
+	
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//배송정보 삭제
 		//데이터꺼내기
 		HttpSession session = req.getSession();
-		String no = req.getParameter("no");
+		String no = req.getParameter("cno");
 		
 		//데이터 뭉치기
 		
@@ -73,6 +74,7 @@ public class AddressListController extends HttpServlet{
 			System.out.println("[ERORR] 배송정보 삭제 중 예외발생..");
 			e.printStackTrace();
 		}
+		
 		
 		//화면
 				if(result == 1) {

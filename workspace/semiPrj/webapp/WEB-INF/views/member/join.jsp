@@ -155,28 +155,6 @@
         
     });
 
- /*    const email = document.querySelector('input[type = email]');
-    const emailResult = document.querySelector("#email-result");
-
-    email.addEventListener("blur",  () => {
-        //정규식 이용해서 검사
-        const str = email.value;
-        const reg = /^[a-zA-Z](?=.*\d)(?=.*[_])+[@]+[a-zA-Z](?=.*\d)+.[a-z,A-Z](?=.*\d)/;
-        const result = reg.test(str);
-
-        if(result){
-            isEmailOk = true;
-            emailResult.innerText = '사용가능한 이메일';
-            emailResult.classList.remove('red-color');
-            emailResult.classList.add('blue-color');
-        }else {
-            isEmailOk = false;
-            emailResult.innerText = '사용불가능한 이메일';
-            emailResult.classList.remove('blue-color');
-            emailResult.classList.add('red-color');
-        }
-        
-    }); */
 
     function checkValid() {
         if(!isPwdOk){
@@ -187,11 +165,7 @@
        
         return true;
     }
- /*    if ( ! $('input[name=gender]:checked').val()) {
-    	alert('성별을 선택해주세요.');
-    	return false;
-    } */
-  
+
     
 	</script>
 

@@ -34,12 +34,12 @@
             <div style="width: 900px; overflow: hidden;">
               <table id="banner" style="width: 250px;">
                 <tr>
-                  <td><img src="/resources/image/누베스 알바 600ml.png" ></td>
-                  <td><img src="/resources/image/레조나레 100ml.png"></td>
-                  <td><img src="/resources/image/미티스 100ml.png"></td>
-                  <td><img src="/resources/image/누베스 알바 600ml.png"></td>
-                  <td><img src="/resources/image/레조나레 100ml.png"></td>
-                  <td><img src="/resources/image/미티스 100ml.png"></td>
+                  <td><img src="/resources/image/NUBESALBAR/0.png" ></td>
+                  <td><img src="/resources/image/RESONARE/0.png"></td>
+                  <td><img src="/resources/image/MITIS/0.png"></td>
+                  <td><img src="/resources/image/NUBESALBAR/0.png"></td>
+                  <td><img src="/resources/image/RESONARE/0.png"></td>
+                  <td><img src="/resources/image/MITIS/0.png"></td>
                 </tr>
               </table>
               <div>
@@ -147,7 +147,7 @@
 
 
         <div class="bt_wrap">
-            <a href="./write.jsp" class="on">뒤로가기</a>
+            <a href="/" class="on">뒤로가기</a>
             <!-- <a href="#">수정</a> -->
         </div>
     </div>
