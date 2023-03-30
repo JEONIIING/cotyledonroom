@@ -19,7 +19,7 @@
     <%@ include file="/WEB-INF/views/common/header_be.jsp" %>
 
     <br><br><br>
-    <div class="introduce" id="introduce1">COTYLEDON ROOM 역삼역점</div>
+    <div class="introduce" id="introduce1">COTYLEDON ROOM 역삼점</div>
     <div class="introduce" id="introduce2">서울특별시 강남구 테헤란로 14길 6 남도빌딩 2~4층</div>
     <div class="introduce" id="introduce3">tel : 02-222-3333 </div>
     <br>
@@ -34,16 +34,16 @@
     <div id="divtable">
     <table class="designer-table">
         <tr class="designer">
-            <td><img src="/resources/image/shop1.png" alt=""></td>
-            <td><img src="/resources/image/shop1.png" alt=""></td>
-            <td><img src="/resources/image/shop1.png" alt=""></td>
-            <td><img src="/resources/image/shop1.png" alt=""></td>
+            <td><img src="/resources/image/designer1.png" alt=""></td>
+            <td><img src="/resources/image/designer2.png" alt=""></td>
+            <td><img src="/resources/image/designer3.png" alt=""></td>
+            <td><img src="/resources/image/designer4.png" alt=""></td>
         </tr>
         <tr class="designer-name">
-            <td><p>구준표 디자이너</p></td>
-            <td><p>구준표 디자이너</p></td>
-            <td><p>구준표 디자이너</p></td>
-            <td><p>구준표 디자이너</p></td>
+            <td><p>이 설 디자이너</p></td>
+            <td><p>김서희 디자이너</p></td>
+            <td><p>강현진 디자이너</p></td>
+            <td><p>김수연 디자이너</p></td>
         </tr>
         <tr class="sns">
             <td><a href="#"><img src="/resources/image/instagram.png" alt=""></a><a href="#"><img src="/resources/image/facebook.png" alt=""></a></td>
@@ -52,16 +52,16 @@
             <td><a href="#"><img src="/resources/image/instagram.png" alt=""></a><a href="#"><img src="/resources/image/facebook.png" alt=""></a></td>
         </tr>
         <tr class="designer">
-            <td><img src="/resources/image/shop1.png" alt=""></td>
-            <td><img src="/resources/image/shop1.png" alt=""></td>
-            <td><img src="/resources/image/shop1.png" alt=""></td>
-            <td><img src="/resources/image/shop1.png" alt=""></td>
+            <td><img src="/resources/image/designer5.png" alt=""></td>
+            <td><img src="/resources/image/designer6.png" alt=""></td>
+            <td><img src="/resources/image/designer7.png" alt=""></td>
+            <td><img src="/resources/image/designer8.png" alt=""></td>
         </tr>
         <tr class="designer-name">
-            <td><p>구준표 디자이너</p></td>
-            <td><p>구준표 디자이너</p></td>
-            <td><p>구준표 디자이너</p></td>
-            <td><p>구준표 디자이너</p></td>
+            <td><p>윤설아 디자이너</p></td>
+            <td><p>최수정 디자이너</p></td>
+            <td><p>김진규 디자이너</p></td>
+            <td><p>구 준 디자이너</p></td>
         </tr>
         <tr class="sns">
             <td><a href="#"><img src="/resources/image/instagram.png" alt=""></a><a href="#"><img src="/resources/image/facebook.png" alt=""></a></td>

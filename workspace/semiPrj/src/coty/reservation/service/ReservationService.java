@@ -8,7 +8,7 @@ import coty.util.JDBCTemplate;
 
 public class ReservationService {
 
-	public int yeyak(ReservationVo vo) {
+	public int yeyak(ReservationVo vo) throws Exception {
 		
 		//비지니스로직
 		

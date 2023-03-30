@@ -78,8 +78,8 @@
             <tr>
                 <td><img class="shopimg" src="/resources/image/shop3.jpg" alt=""></td>
                 <td>
-                    <h1>강남점<br></h1>
-                    <p>주소 : 서울시 강남구 역삼동<br></p>
+                    <h1>신사점<br></h1>
+                    <p>주소 : 서울시 강남구 신사동<br></p>
                     <p>주차 : 주차 가능<br></p>
                     <p>전화 : 02-222-3333</p>
                 </td>
@@ -99,8 +99,8 @@
             <tr>
                 <td class="aa"><img class="shopimg" src="/resources/image/shop3.jpg" alt=""></td>
                 <td>
-                    <h1>역삼점<br></h1>
-                    <p>주소 : 서울시 강남구 역삼동<br></p>
+                    <h1>논현점<br></h1>
+                    <p>주소 : 서울시 강남구 논현동<br></p>
                     <p>주차 : 주차 가능<br></p>
                     <p>전화 : 02-222-4444</p>
                 </td>
@@ -120,8 +120,8 @@
             <tr>
                 <td class="aa"><img class="shopimg" src="/resources/image/shop3.jpg" alt=""></td>
                 <td>
-                    <h1>역삼점<br></h1>
-                    <p>주소 : 서울시 강남구 역삼동<br></p>
+                    <h1>압구정점<br></h1>
+                    <p>주소 : 서울시 강남구 압구정동<br></p>
                     <p>주차 : 주차 가능<br></p>
                     <p>전화 : 02-222-4444</p>
                 </td>
