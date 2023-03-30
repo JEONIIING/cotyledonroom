@@ -27,14 +27,14 @@
         <div class="bar"></div>
         
         <form action="">
-            <table class="./rv_shoplist" border="1">
+            <table class="rv_shoplist" border="1">
                 <colgroup>
                     <col class="col1"/>
                     <col class="col2"/>
                     <col class="col2"/>
                 </colgroup>
                 <tr>
-                    <td class="aa"><img class="shopimg" src="./image/shop3.jpg" alt=""></td>
+                    <td><img class="shopimg" src="/resources/image/shop3.jpg"></td>
                     <td>
                         <h1>역삼점<br></h1>
                         <p>주소 : 서울시 강남구 역삼동<br></p>
@@ -57,7 +57,7 @@
                     <col class="col2"/>
                 </colgroup>
                 <tr>
-                    <td><img class="shopimg" src="./image/shop3.jpg" alt=""></td>
+                    <td><img class="shopimg" src="/resources/image/shop3.jpg" alt=""></td>
                     <td>
                         <h1>신사점<br></h1>
                         <p>주소 : 서울시 강남구 신사동<br></p>
@@ -80,7 +80,7 @@
                     <col class="col2"/>
                 </colgroup>
                 <tr>
-                    <td class="aa"><img class="shopimg" src="./image/shop3.jpg" alt=""></td>
+                    <td class="aa"><img class="shopimg" src="/resources/image/shop5.png" alt=""></td>
                     <td>
                         <h1>논현점<br></h1>
                         <p>주소 : 서울시 강남구 논현동<br></p>
@@ -104,7 +104,7 @@
                     <col class="col2"/>
                 </colgroup>
                 <tr>
-                    <td class="aa"><img class="shopimg" src="./image/shop3.jpg" alt=""></td>
+                    <td class="aa"><img class="shopimg" src="/resources/image/shop4.png" alt=""></td>
                     <td>
                         <h1>압구정점<br></h1>
                         <p>주소 : 서울시 강남구 압구정동<br></p>

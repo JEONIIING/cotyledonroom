@@ -19,7 +19,7 @@
     <%@ include file="/WEB-INF/views/common/header_be.jsp" %>
 
     <br><br><br>
-    <div class="introduce" id="introduce1">COTYLEDON ROOM 교대점</div>
+    <div class="introduce" id="introduce1">COTYLEDON ROOM 논현점</div>
     <div class="introduce" id="introduce2">서울특별시 강남구 테헤란로 14길 6 남도빌딩 2~4층</div>
     <div class="introduce" id="introduce3">tel : 02-222-3333 </div>
     <br>
