@@ -17,8 +17,8 @@ public class JDBCTemplate {
          Class.forName("oracle.jdbc.OracleDriver");
          
          String url = "jdbc:oracle:thin:@localhost:1521:xe";
-         String id = "COTY";
-         String pwd = "1234";
+         String id = "KH";
+         String pwd = "KH";
          conn = DriverManager.getConnection(url , id, pwd);
          conn.setAutoCommit(false);
          
