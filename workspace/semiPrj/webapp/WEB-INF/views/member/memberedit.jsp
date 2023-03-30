@@ -67,10 +67,7 @@
     <td>성별</td>
     <td> 
     <input type="text" name="gender" value="${loginMember.gender_fm}" readonly="readonly">
-    <!-- <label for="female">여성</label>
-      <input type="radio" id="female" name="gender" value="female" width="1%">
-      <span><label for="male">남성</label>
-      <input type="radio" id="male" name="gender" value="male"></span> --></td>
+   
   </tr>
   <tr>
     <td>닉네임</td>

@@ -1,5 +1,21 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    
+     <c:if test ="${alertEditMsgad != null}">
+		
+	<script type="text/javascript">
+	
+	
+	alert("${alertEditMsgad}")
+	
+	</script>
+	</c:if>
+	
+	<c:remove var = "alertEditMsgad" scope="session"/>
+	
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,33 +43,30 @@
     <div class="board_title">
         <Strong>배송지 등록</Strong>
     </div>
+    <form action="/member/addressenroll" method="post" enctype="multipart/form-data">
     <div class="board_write_wrap">
         <div class="board_write">
             <div class="title">
                 <dl>
                     <dt>배송지명</dt>
-                    <dd><input type="text" placeholder="배송지 입력"></dd>
+                    <dd><input type="text" name="adname" placeholder="배송지명" ></dd>
                 </dl>
             </div>
             <div class="title">
                 <dl>
-                    <dt>수령인명</dt>
-                    <dd><input type="text" placeholder="수령인명 입력"></dd>
+                   
                 </dl>
             </div>
             <div class="title">
                 <dl>
-                    <dt>전화번호</dt>
-                    <dd><input style="width: 50px;" type="text"> -
-                        <input style="width: 50px;" type="text"> -
-                        <input style="width: 50px;" type="text"></dd>            
+              
                 </dl>
                 
             </div>
             <div class="title">
                 <dl>
                     <dt>주소</dt>
-                    <dd><input style="width: 700px; height: 150px;" type="text">           
+                    <dd><input style="width: 700px; height: 150px;" type="text" name="detail" placeholder="상세주소">           
                 </dl>
                 
             </div>
@@ -61,10 +74,18 @@
                       
         </div>
         <div class="bt_wrap">
-            <a href="./Notice_write.jsp" class="on">등록</a>
-            <a href="./Notice_list.jsp">취소</a>
+            <input class="qwerty" type="submit" value="등록" 
+            style="border-color: #000;background: #000;color: #fff; display: inline-block;
+   				   min-width: 90px;
+   				   padding: 10px;
+    			   margin-left: 10px;
+    			   border: 1px solid #000;
+    			   border-radius: 2px;
+    			   font-size: 1.4rem;" >
+            <a href="/member/address">취소</a>
         </div>
     </div>
+    </form>
  </div>
 </div>
 <br><br><br><br>

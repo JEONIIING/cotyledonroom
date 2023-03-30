@@ -74,13 +74,29 @@ public class AddressDao {
 			String sql = "DELETE FROM DELIVERY WHERE NO = ?";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, no);
+			System.out.println("no ::: " + no);
 			int result = pstmt.executeUpdate();
+			
 			//close
 			close(pstmt);
-			
 			return result;
 		}
+	//배송지작성
+	public int AddressWrite(Connection conn, AddressVo vo, MemberVo loginMember) throws Exception {
+		//SQL (close)
+		String sql = "INSERT INTO DELIVERY (NO, C_NO, ADDRESS, ADDRESSDETAIL, DEL_YN) VALUES (SEQ_DELIVERY_NO.NEXTVAL, ?, ?, ?, 'N')";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		
+		pstmt.setString(1, loginMember.getNo());
+		pstmt.setString(2, vo.getAdname());
+		pstmt.setString(3, vo.getDetail());
+		int result = pstmt.executeUpdate();
+		
+		close(pstmt);
+		 
+		return result;
 	}
+}
 
 
 

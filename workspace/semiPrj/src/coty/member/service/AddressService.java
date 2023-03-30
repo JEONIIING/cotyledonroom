@@ -3,9 +3,8 @@ package coty.member.service;
 import java.sql.Connection;
 import java.util.List;
 
-import coty.admin.notice.kyw.Notice_a_Dao;
+import coty.admin.notice.total.Notice_a_Dao;
 import coty.member.dao.AddressDao;
-import coty.member.dao.MemberDao;
 import coty.member.vo.AddressVo;
 import coty.member.vo.MemberVo;
 import coty.util.JDBCTemplate;
@@ -58,6 +57,7 @@ public class AddressService {
 			//DAO
 			AddressDao dao = new AddressDao();
 			int result = dao.delete(conn, no);
+		
 			
 			//tx , close
 			if(result == 1) {
@@ -69,8 +69,28 @@ public class AddressService {
 			JDBCTemplate.close(conn);
 			
 			return result;
-			}
+		}
 		
+		//배송지 등록
+		public int AddressWrite(AddressVo vo,  MemberVo loginMember) throws Exception {
+			//conn
+			Connection conn = JDBCTemplate.getConnection();
+			//SQL
+			AddressDao dao = new AddressDao();
+			int result = dao.AddressWrite(conn, vo, loginMember);
+			//tx, close
+		
+			
+			if(result == 1) {
+				JDBCTemplate.commit(conn);
+			}else {
+				JDBCTemplate.rollback(conn);
+			}
+			
+			JDBCTemplate.close(conn);
+			
+			return result;
+		}
 
 }
 

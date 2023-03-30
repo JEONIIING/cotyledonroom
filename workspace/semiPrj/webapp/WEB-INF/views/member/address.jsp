@@ -2,17 +2,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-    <c:if test ="${alertdelteMsg != null}">
-		
-	<script type="text/javascript">
+    <c:if test ="${alertdelteaMsg != null}">
 	
-	
-	alert("${alertdelteMsg}")
-	
-	</script>
-	</c:if>
-	
-	<c:remove var = "alertdelteMsg" scope="session"/>
+<script type="text/javascript">
+
+
+alert("${alertdelteaMsg}")
+
+</script>
+</c:if>
+
+<c:remove var = "alertdelteaMsg" scope="session"/> 
+    
+    
+    
 	
 <!DOCTYPE html>
 <html lang="en">
@@ -55,6 +58,7 @@
             <div>
                
             <div>
+            <form action="/member/address" method="post">
                 <table style="width: 1000px; text-align: left;">
                     <tr style="width: auto;">
                    
@@ -67,11 +71,13 @@
                 </tr>
                 <tr></tr>
                 <tr>
-                    <td style="padding-top: 2%;"><button><a href="/member/address?no=${AddressVo.no}">삭제</a></button> 
+                    <td style="padding-top: 1%;"><button type="button" onclick="delAddr(${adl.no});">배송지 삭제</button></td>
+               
                 </tr>
                 </div>
                </c:forEach>
                 </table>
+                </form>
                </div>
                </div>
                
@@ -132,4 +138,13 @@
 		  });
 		});
 		
+		function delAddr(no){
+			
+			location.href = "/member/address/del?no=" + no;
+			
+		}
+		
 		</script>
+		
+		
+		
