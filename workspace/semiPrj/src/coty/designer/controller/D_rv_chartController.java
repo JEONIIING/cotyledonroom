@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import coty.admin.adminVo.DesignerVo;
+import coty.communication.service.ReviewService;
+import coty.communication.vo.ReviewVo;
 import coty.designer.service.DesignerService;
 import coty.designer.vo.DesignerRvVo;
 import coty.member.service.CartService;
@@ -35,16 +37,18 @@ public class D_rv_chartController extends HttpServlet{
 
 			//데이터 가져오기
 			DesignerVo deLoginVo = (DesignerVo) req.getSession().getAttribute("deLoginVo");
-			System.out.println(deLoginVo);
+			System.out.println(deLoginVo.getNo());
 			// 데이터 뭉치기
 			PageVo pageVo = new PageVo(listCount, currentPage, pageLimit, boardLimit);
 
 			// 서비스 호출
 			List<DesignerRvVo> designerRvList = ds.selectList(pageVo,deLoginVo);
+			
+//			ReviewService rvs = new ReviewService();
+//			ReviewVo vo = rvs.selectOne(no);
 
-			System.out.println(designerRvList);
 			// 화면
-			req.setAttribute("designerRvList", designerRvList);
+			req.getSession().setAttribute("designerRvList", designerRvList);
 			req.setAttribute("pageVo", pageVo);
 			req.getRequestDispatcher("/WEB-INF/views/designer/d_rv_chart.jsp").forward(req, resp);
 
@@ -62,8 +66,8 @@ public class D_rv_chartController extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//수정할 데이터 꺼내기
-		String cancle = req.getParameter("cancle");
-		String no = req.getParameter("res");
+		String no = req.getParameter("no");
+		String res = req.getParameter("res");
 		
 		DesignerRvVo dvo = new DesignerRvVo();
 		dvo.setNo(no);
@@ -75,15 +79,20 @@ public class D_rv_chartController extends HttpServlet{
 			DesignerService ds = new DesignerService();
 			
 			result = ds.editres(dvo);
+			System.out.println(result);
 			
 		}catch(Exception e) {
 			System.out.println("[ERROR] 예약 취소 중 예외 발생");
 			e.printStackTrace();
 		}
-		
+		if(result != null) {
 		//화면
-		req.getSession().setAttribute("alertResMsg", "예약 취소 완료");
-		req.getSession().setAttribute("");
+		req.setAttribute("alertResMsg", "예약 취소 완료");
+		resp.sendRedirect("/designer/rv_chart");
+		}else {
+			req.setAttribute("errorMsg", "예약 취소 실패");
+			req.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(req, resp);
+		}
 	}
 
 }

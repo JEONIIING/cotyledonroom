@@ -27,8 +27,8 @@
         <table cellspacing ="50">
           <tr><td><div class="menu">MACHINE</div></td></tr>
           <tr>
-            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/다이슨 고데기.png" alt=""></a></td>
-            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/다이슨 헤어드라이기.png" alt=""></a></td>
+            <td><a href="/market/productdetail14"><img class="product_img" src="/resources/image/product/FLAT/0.png" alt=""></a></td>
+            <td><a href="/market/productdetail15"><img class="product_img" src="/resources/image/product/HAIRDRY/0.png" alt=""></a></td>
           </tr>
           <tr class="product_name">
             <td><a>다이슨 고데기</a></td>

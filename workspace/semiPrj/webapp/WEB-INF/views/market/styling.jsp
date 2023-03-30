@@ -26,10 +26,10 @@
         <table cellspacing ="50">
           <tr><td><div class="menu">STYLING</div></td></tr>
           <tr>
-            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/네불라 115g - 헤어 무스 에센스.png" alt=""></a></td>
-            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/레조나레 200ml.png" alt=""></a></td>
-            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/세도 심플렉스 45g.png" alt=""></a></td>
-            <td><a href="/WEB-INF/views/market/ProductDetail.jsp"><img class="product_img" src="/resources/image/테네레 템푸스 45g.png" alt=""></a></td>
+            <td><a href="/market/productdetail7"><img class="product_img" src="/resources/image/product/NEBULA/0.png" alt=""></a></td>
+            <td><a href="/market/productdetail8"><img class="product_img" src="/resources/image/product/RESONARE/0.png" alt=""></a></td>
+            <td><a href="/market/productdetail9"><img class="product_img" src="/resources/image/product/SS/0.png" alt=""></a></td>
+            <td><a href="/market/productdetail10"><img class="product_img" src="/resources/image/product/TT/0.png" alt=""></a></td>
           </tr>
           <tr class="product_name">
             <td><a>네불라 115g</a></td>

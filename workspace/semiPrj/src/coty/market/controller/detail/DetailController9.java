@@ -24,7 +24,7 @@ public class DetailController9 extends HttpServlet{
 			List<ProductVo> productList9 = ps.selectList9();
 			
 			req.setAttribute("productList9", productList9);
-			req.getRequestDispatcher("/WEB-INF/views/market/detail/ProductDetail1.jsp").forward(req, resp);
+			req.getRequestDispatcher("/WEB-INF/views/market/detail/ProductDetail9.jsp").forward(req, resp);
 			
 		} catch (Exception e) {
 			System.out.println("[ERROR] 상품 조회 중 예외 발생");

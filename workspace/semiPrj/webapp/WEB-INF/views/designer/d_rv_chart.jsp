@@ -50,7 +50,8 @@
                 
                 	<div class="num"><button onclick="cancle();">예약 취소</button></div>
                 	<form method="post" action="/designer/rv_chart" id="frm">
-	                	<input id="cancle" name="cancle" type="hidden" value="${de}">
+                		<input id="no" name="no" type="hidden" value="${de.no}">
+	                	<input id="res" name="res" type="hidden" value="${de.res}">
 					</form>
   					<script>
 					  function cancle(){
@@ -59,7 +60,15 @@
 					</script>                
                 </c:if>
                 <c:if test="${de.res == '시술 완료'}">
-                <div class="num"><a href="/communication/reviewdetaillist?page=${de.reNo }"><input type="submit" value="댓글남기기"></a></div>
+                <div class="num"><a href="/designer/ment?page=${de.reNo }"><input type="submit" value="댓글남기기" onclick="ment();"></a></div>
+                <form method="post" action="/designer/ment" id="frm1">
+                		<input id="rNo" name="rNo" type="hidden" value="${de.reNo}">
+					</form>
+					<script>
+					  function cancle(){
+						  document.getElementById('frm1').submit();
+					  }
+					</script>
             	</c:if>
             </div>
             </c:forEach>

@@ -47,12 +47,14 @@ public class DesignerDao {
 		
 		DesignerVo deLoginVo = null;
 		if(rs.next()) {
+			String dbNo = rs.getString("NO");
 			String dbId = rs.getString("ID");
 			String dbPwd = rs.getString("PWD");
 			String dbName = rs.getString("NAME");
 			String dbNick = rs.getString("NICK");
 			
 			deLoginVo = new DesignerVo();
+			deLoginVo.setNo(dbNo);
 			deLoginVo.setId(dbId);
 			deLoginVo.setPwd(dbPwd);
 			deLoginVo.setName(dbName);

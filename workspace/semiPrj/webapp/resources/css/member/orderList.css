@@ -15,3 +15,20 @@
 .order_title strong{
     font-size: 32px;
 }
+
+.mentbox{
+	width: 300px;
+	height: 40px;
+}
+
+.info {
+	font-size: 20px;
+}
+
+.mentbtn{
+	width: 150px;
+	height: 40px;
+}
+.ment{
+	font-size: 24px;
+}
