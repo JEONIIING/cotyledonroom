@@ -36,7 +36,7 @@ Semi Project는 웹페이지 제작의 전체적인 과정을 직접 겪어보�
 - Front-end : HTML, CSS, Javascript, jQuery
 - 라이브러리 : JSTL, ojdbc8
 - Server: Apach Tomcat 9.0
-- Oracle 11g
+- DB : Oracle 11g
 - Tool : VScode, Eclipse, SQLDeveloper, Git, SourceTree, ERD Cloud , Figma, 디스코드, 노션
 
 
